@@ -1,0 +1,231 @@
+.custom-model {
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+  min-height: 5vh;
+  width: 80%;
+  background: url('../img/modal_bg.png');
+  background-size: 100% 100%;
+  color: white;
+  font-family: 'Cinzel-Regular';
+  padding: 2%;
+  ion-content {
+    padding: 2%;
+  }
+}
+
+.statement-model {
+  font-size: 1em;
+  .close {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    font-size: 1.7em;
+  }
+  .heading {
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'CinzelDecorative-Bold';
+  }
+  .top_field {
+    // border-bottom: 1px solid $border-image;
+    border-image: $border-image;
+    border-image-slice: 2;
+    border-bottom: 1px solid;
+    padding: 2%;
+    select {
+      font-family: 'Cinzel-Regular';
+      font-size: 1em;
+      background: url('../img/model/input_bg.png');
+      background-size: 100% 100%; // border-image:$border-color;
+      // border-image-slice: 2;
+      // border-bottom: 1px solid;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
+      padding: 2px 3%;
+      height: 1.8em;
+      margin: 0px 1%;
+      option {
+        font-family: 'Cinzel-Regular';
+        font-size: 1em;
+        background-color: #3f474f; // background: url('../img/model/input_bg.png');
+        // background-size: 100% 100%;
+        color: white;
+        padding: 2px 3%;
+      }
+    }
+    input {
+      display: inline-block;
+      padding: 2%;
+      color: white;
+      font-family: 'Cinzel-Regular';
+      font-size: 1em;
+      background: url('../img/model/input_bg.png');
+      background-size: 100% 100%;
+      width: 20%;
+      height: 20%;
+      height: 1.8em;
+      margin: 0px 1%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+  .statement_content {
+    overflow-y: scroll;
+    height: 75%;
+    &::-webkit-scrollbar {
+      width: 3px;
+      height: 6px;
+    }
+    &::-webkit-scrollbar-button {
+      width: 6px;
+      height: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #c43a3a;
+      border: 0px none #ffffff;
+      border-radius: 100px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #c43a3a;
+    }
+    &::-webkit-scrollbar-thumb:active {
+      background: #c43a3a;
+    }
+    &::-webkit-scrollbar-track {
+      background: #5c5757;
+      border: 0px none #ffffff;
+      border-radius: 100px;
+    }
+    &::-webkit-scrollbar-track:hover {
+      background: #5c5757;
+    }
+    &::-webkit-scrollbar-track:active {
+      background: #5c5757;
+    }
+    &::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+    table {
+      width: 90%;
+      text-align: center;
+      margin: 2% auto;
+      th {
+        font-family: 'Cinzel-Bold';
+        font-size: .9em;
+      }
+      td {
+        font-size: .8em;
+        border-bottom: 1px solid grey;
+        line-height: 1.5;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        vertical-align: bottom;
+      }
+    }
+    tr {
+      th {
+        &:nth-child(1) {
+          text-align: left;
+        }
+      }
+      td {
+        &:nth-child(1) {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.small-model {
+  top: 15%;
+  right: 25%;
+  bottom: 15%;
+  left: 25%;
+  width: 50%;
+}
+
+.player-details {
+  background: url('../img/player_bg.png');
+  background-size: 100% 100%;
+  .outer {
+    padding: 2% 4%;
+    width: 100%;
+    .profile {
+      display: flex;
+      flex-direction: row;
+      .profile_info {
+        flex: 0.7;
+        font-size: 1.1em;
+        font-family: "Cinzel-Bold";
+        line-height: 1.8;
+        .amt {
+          padding-bottom: 5px;
+          .coin {
+            width: 1em;
+            vertical-align: middle;
+          }
+        }
+      }
+      .profile_pic {
+        flex: 0.25;
+      }
+    }
+    .profile_data {
+      font-size: .9em;
+      padding-top: 5%;
+      .p_heading {
+        text-align: center;
+        padding: 0px;
+        border-image: $border-image;
+        border-image-slice: 2;
+        border-bottom: 2px solid;
+        padding-bottom: 4%;
+      }
+      .table_stats {
+        .chips_won {
+          padding: 5% 0px;
+          line-height: 1.5;
+          border-image: $border-image;
+          border-image-slice: 2;
+          border-bottom: 1px solid;
+          padding-bottom: 4%;
+          .coin {
+            width: 1em;
+            vertical-align: middle;
+            padding: 1%;
+          }
+        }
+        .hands_won {
+          padding: 5% 0px;
+          line-height: 1.5;
+          border-image: $border-image;
+          border-image-slice: 2;
+          border-bottom: 1px solid;
+          padding-bottom: 4%;
+        }
+      }
+      .player_rank {
+        .last_week {
+          border-image: $border-image;
+          border-image-slice: 2;
+          border-bottom: 1px solid;
+          padding-bottom: 4%;
+          padding: 5% 0px;
+          line-height: 1.5;
+        }
+      }
+    }
+    .active_days {
+      position: absolute;
+      right: 15%;
+      bottom: 2%;
+      font-size: 0.7em;
+    }
+  }
+}
+
+.active .modal-backdrop-bg {
+  background: rgba(0, 0, 0, 0.2);
+}

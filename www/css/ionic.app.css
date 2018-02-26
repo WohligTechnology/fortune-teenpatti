@@ -9871,3 +9871,773 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+@font-face {
+  font-family: 'Cinzel-Black';
+  /*to use later*/
+  src: url("../font/Cinzel-Black.ttf");
+  /*URL to the font*/ }
+
+@font-face {
+  font-family: 'Cinzel-Bold';
+  /*to use later*/
+  src: url("../font/Cinzel-Bold.ttf");
+  /*URL to the font*/ }
+
+@font-face {
+  font-family: 'Cinzel-Regular';
+  /*to use later*/
+  src: url("../font/Cinzel-Regular.ttf");
+  /*URL to the font*/ }
+
+@font-face {
+  font-family: 'CinzelDecorative-Black';
+  /*to use later*/
+  src: url("../font/CinzelDecorative-Black.ttf");
+  /*URL to the font*/ }
+
+@font-face {
+  font-family: 'CinzelDecorative-Bold';
+  /*to use later*/
+  src: url("../font/CinzelDecorative-Bold.ttf");
+  /*URL to the font*/ }
+
+@font-face {
+  font-family: 'CinzelDecorative-Regular';
+  /*to use later*/
+  src: url("../font/CinzelDecorative-Regular.ttf");
+  /*URL to the font*/ }
+
+body {
+  font-family: 'Cinzel-Bold';
+  font-size: 1.8vw;
+  color: white; }
+
+.right {
+  float: right; }
+
+.left {
+  float: left; }
+
+.img-responsive {
+  max-width: 100%; }
+
+.text_glow {
+  color: #FF8072;
+  text-shadow: 0px 0px 25px red;
+  -webkit-text-stroke: .2px red;
+  text-stroke: .2px red; }
+
+.shadow_glow {
+  -webkit-box-shadow: 0px 0px 60px 0px rgba(255, 255, 255, 0.47);
+  -moz-box-shadow: 0px 0px 60px 0px rgba(255, 255, 255, 0.47);
+  box-shadow: 0px 0px 60px 0px rgba(255, 255, 255, 0.47); }
+
+.text_grey {
+  text-shadow: 0px 0px 5px #000000;
+  color: grey;
+  -webkit-text-stroke: .1px black; }
+
+.button_bg {
+  background: #2f1d46;
+  border: 1px solid rgba(228, 218, 218, 0.23);
+  border-top: 0px;
+  border-left: 0px;
+  -webkit-box-shadow: inset 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 2px 4px 7px -2px rgba(8, 8, 8, 0.75);
+  border-radius: 4px; }
+
+.custom_menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 11;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms;
+  background: rgba(0, 0, 0, 0.7);
+  background-size: 100% 100%;
+  font-family: 'Cinzel-Bold'; }
+  .custom_menu.activated {
+    transform: none; }
+  .custom_menu .menu_cont {
+    margin-left: -50%; }
+    .custom_menu .menu_cont.activated {
+      transform: none; }
+
+.custom_menu_right .menu_cont {
+  float: right;
+  margin-right: -40%;
+  transition: margin-right 500ms !important; }
+
+.custom_menu_right.menu_open .menu_cont {
+  transition: margin-right 500ms !important;
+  margin-right: 0%; }
+
+.menu_open {
+  opacity: 1;
+  visibility: visible;
+  left: 0;
+  transition: opacity 500ms; }
+  .menu_open .menu_cont {
+    margin-left: 0px; }
+
+.lobby {
+  background: url("../img/lobby/background.png");
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh; }
+  .lobby .top {
+    position: relative;
+    top: 0;
+    z-index: 5; }
+    .lobby .top .left .profile {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      .lobby .top .left .profile .pic {
+        width: 10vw;
+        margin: 5%;
+        margin-right: 2%; }
+        .lobby .top .left .profile .pic img {
+          width: 100%; }
+      .lobby .top .left .profile .info {
+        white-space: nowrap;
+        text-align: center;
+        line-height: 1.5;
+        font-size: 0.9em; }
+    .lobby .top .right .setting {
+      margin: 10px;
+      font-size: 2.5em; }
+  .lobby .main {
+    width: 100vw;
+    height: 100vh;
+    position: absolute; }
+    .lobby .main .logo {
+      width: 40%;
+      opacity: .7;
+      margin: 0 auto;
+      margin-top: 5%;
+      transition: all 500ms;
+      opacity: 1;
+      visibility: visible; }
+      .lobby .main .logo img {
+        max-width: 100%; }
+    .lobby .main .category {
+      width: 95%;
+      margin: 0 auto;
+      transition: all 500ms; }
+      .lobby .main .category .col {
+        height: 30vh;
+        margin: 10px; }
+        .lobby .main .category .col img {
+          max-width: 100%; }
+    .lobby .main .variation_type {
+      width: 75%;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 500ms; }
+  .lobby .variation_active .logo {
+    transition: all 500ms;
+    opacity: 0;
+    visibility: hidden; }
+  .lobby .variation_active .play_type {
+    margin-top: -10%;
+    transition: 500ms; }
+    .lobby .variation_active .play_type .play_now,
+    .lobby .variation_active .play_type .play_joker,
+    .lobby .variation_active .play_type .private_table {
+      opacity: .3; }
+  .lobby .variation_active .variation_type {
+    transition: all 500ms;
+    opacity: 1;
+    visibility: visible; }
+
+.profile_menu .menu_cont {
+  width: 40%;
+  background: url("../img/menu_bg.png");
+  background-size: 100% 100%;
+  height: 100%;
+  transition: all 500ms; }
+  .profile_menu .menu_cont .close {
+    position: absolute;
+    font-size: 1.5em;
+    padding: 1%; }
+  .profile_menu .menu_cont .profile {
+    display: flex;
+    flex-direction: row;
+    padding: 10%;
+    padding-bottom: 5%; }
+    .profile_menu .menu_cont .profile .details {
+      flex: .75;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding-right: 2%;
+      line-height: 1.5; }
+      .profile_menu .menu_cont .profile .details .amt .coin {
+        width: 1em;
+        vertical-align: middle; }
+    .profile_menu .menu_cont .profile .profile_pic {
+      flex: .25;
+      align-self: center; }
+  .profile_menu .menu_cont .menu_list .item {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: .9em;
+    border-image: linear-gradient(to right, rgba(254, 255, 255, 0) 5%, rgba(255, 255, 255, 0.671) 50%, rgba(160, 217, 239, 0) 95%);
+    border-bottom: 1px solid;
+    border-image-slice: 2;
+    padding: 5% 10%; }
+    .profile_menu .menu_cont .menu_list .item i {
+      padding-right: 5%;
+      vertical-align: text-top;
+      font-size: 1.2em; }
+    .profile_menu .menu_cont .menu_list .item .item-content {
+      background: transparent;
+      color: white;
+      padding: 0px; }
+
+.setting_menu {
+  background: rgba(0, 0, 0, 0.5); }
+  .setting_menu .menu_cont {
+    width: 40%;
+    background: url("../img/menu_bg.png");
+    background-size: 100% 100%;
+    height: 100%;
+    transition: all 500ms; }
+    .setting_menu .menu_cont .heading {
+      background: url("../img/menu_heading.png");
+      background-size: 100% 100%;
+      font-size: 1.5em;
+      padding: 4% 5%;
+      margin-left: 1px;
+      margin-right: 1px; }
+      .setting_menu .menu_cont .heading span {
+        padding-left: 10%; }
+      .setting_menu .menu_cont .heading i {
+        float: right;
+        padding-right: 5%; }
+    .setting_menu .menu_cont .menu_list a {
+      background: none;
+      padding: none; }
+    .setting_menu .menu_cont .menu_list .list {
+      width: 100%;
+      height: 100%; }
+    .setting_menu .menu_cont .item {
+      background: transparent;
+      color: white;
+      border: none;
+      font-size: 1em;
+      border-image: linear-gradient(to right, rgba(254, 255, 255, 0) 5%, rgba(255, 255, 255, 0.671) 50%, rgba(160, 217, 239, 0) 95%);
+      border-bottom: 1px solid;
+      border-image-slice: 2;
+      padding: 5% 10%; }
+      .setting_menu .menu_cont .item .item-content {
+        background: transparent;
+        color: white;
+        padding: 0px; }
+      .setting_menu .menu_cont .item .custom_toggle {
+        display: inline-block;
+        width: 5em;
+        height: 3em;
+        position: absolute;
+        right: 10%;
+        top: 10%; }
+        .setting_menu .menu_cont .item .custom_toggle.toggle_on {
+          background: url("../img/on.png");
+          background-size: 100% 100%; }
+        .setting_menu .menu_cont .item .custom_toggle.toggle_off {
+          background: url("../img/off.png");
+          background-size: 100% 100%; }
+
+.table {
+  background: url("../img/background.png");
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh;
+  position: relative; }
+  .table .top {
+    background: rgba(59, 30, 67, 0.54);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    position: relative;
+    top: 0;
+    font-size: .7em;
+    z-index: 10; }
+    .table .top .table-info {
+      position: absolute;
+      right: 0;
+      padding: 2%;
+      padding: 0% 4%;
+      background: url("../img/table/table_bg.png");
+      background-size: 100% 100%;
+      margin: 5px; }
+      .table .top .table-info td {
+        padding: 0px 5px; }
+    .table .top .left_side {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      .table .top .left_side .option {
+        font-size: 3em;
+        margin: 1% 3%;
+        margin-right: 0;
+        display: inline-block; }
+      .table .top .left_side .back {
+        display: inline-block;
+        padding: 0px 10px;
+        margin: 1% 4%;
+        margin: 1% 0%;
+        margin-left: 3%;
+        margin-right: 1%;
+        font-size: .9em; }
+      .table .top .left_side .mode {
+        display: inline-block;
+        padding: 0px 10px;
+        margin: 1% 0%;
+        font-size: .9em; }
+    .table .top .right_side {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 3em;
+      margin: 1% 3%; }
+  .table .table_field {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+    .table .table_field .doll {
+      width: 8%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 0; }
+    .table .table_field .bg_table {
+      width: 85%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 8%;
+      z-index: 1;
+      height: 70%; }
+    .table .table_field .plyr {
+      width: 16%;
+      position: absolute;
+      z-index: 1; }
+      .table .table_field .plyr .name {
+        font-size: 1em;
+        transform: translate(-25%);
+        overflow: hidden;
+        text-overflow: ellipsis; }
+      .table .table_field .plyr .profile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        line-height: 0; }
+        .table .table_field .plyr .profile .player_pic {
+          width: 50%; }
+          .table .table_field .plyr .profile .player_pic img {
+            width: 100%; }
+        .table .table_field .plyr .profile .cards {
+          width: 50%;
+          position: relative;
+          margin-top: -20%; }
+          .table .table_field .plyr .profile .cards img {
+            max-width: 30%;
+            position: absolute; }
+            .table .table_field .plyr .profile .cards img:nth-child(1) {
+              left: 5%; }
+            .table .table_field .plyr .profile .cards img:nth-child(2) {
+              left: 15%; }
+            .table .table_field .plyr .profile .cards img:nth-child(3) {
+              left: 35%; }
+      .table .table_field .plyr .amt {
+        width: 50%;
+        text-align: center;
+        font-size: 0.8em; }
+        .table .table_field .plyr .amt .coin {
+          width: 1em;
+          vertical-align: middle; }
+  .table .bottom {
+    position: absolute;
+    background: rgba(5, 2, 9, 0.7);
+    width: 100%;
+    height: 13vh;
+    bottom: 0px;
+    z-index: 5;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
+    .table .bottom .main_player {
+      width: 18%;
+      position: relative;
+      bottom: 0; }
+      .table .bottom .main_player .main_player_pic {
+        width: 100%;
+        padding: 10%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        bottom: 40%; }
+      .table .bottom .main_player .cards {
+        position: absolute;
+        bottom: 0;
+        transform: translate(-50%, -5%);
+        width: 100%;
+        left: 50%; }
+        .table .bottom .main_player .cards .see {
+          position: absolute;
+          top: 15%;
+          left: 50%;
+          transform: translate(-50%);
+          width: 100%;
+          background: url("../img/table/see.png");
+          background-size: 100% 100%; }
+        .table .bottom .main_player .cards img {
+          width: 30%; }
+          .table .bottom .main_player .cards img:nth-child(1) {
+            position: relative;
+            transform: rotate(-10deg) translate(40%); }
+          .table .bottom .main_player .cards img:nth-child(2) {
+            position: relative;
+            transform: rotate(0deg) translate(0%) scale(1.1); }
+          .table .bottom .main_player .cards img:nth-child(3) {
+            position: relative;
+            transform: rotate(10deg) translate(-40%, 10%); }
+      .table .bottom .main_player .amt {
+        position: relative;
+        margin: 2%;
+        padding: 3%;
+        padding-top: 3%;
+        -webkit-text-stroke: 0; }
+        .table .bottom .main_player .amt img {
+          width: 1em;
+          vertical-align: middle; }
+    .table .bottom .pack,
+    .table .bottom .slideshow,
+    .table .bottom .minus,
+    .table .bottom .chal,
+    .table .bottom .plus {
+      background: url("../img/table/bg_button1.png");
+      background-size: 100% 100%;
+      padding: 1.5% 2.5%;
+      margin: 0% 0.5%;
+      font-size: 1.2em; }
+    .table .bottom .minus,
+    .table .bottom .plus {
+      font-size: 3em;
+      padding: 1% 2.5%; }
+  .table .player1 {
+    top: 30%;
+    left: 5%; }
+  .table .player2 {
+    left: 22%;
+    top: 0; }
+  .table .player3 {
+    right: 15%;
+    top: 0; }
+  .table .player4 {
+    top: 30%;
+    right: 0; }
+  .table .player5 {
+    transform: translateY(-90%);
+    bottom: 0;
+    right: 25%; }
+
+.option_menu .menu_cont {
+  width: 40%;
+  background: url("../img/menu_bg.png");
+  background-size: 100% 100%;
+  height: 100%;
+  transition: all 500ms; }
+  .option_menu .menu_cont .heading {
+    background: url("../img/menu_heading.png");
+    background-size: 100% 100%;
+    font-size: 1.5em;
+    padding: 4% 5%;
+    margin-left: 1px;
+    margin-right: 1px; }
+    .option_menu .menu_cont .heading i {
+      padding-right: 10%; }
+  .option_menu .menu_cont .menu_list .item {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 1em;
+    border-image: linear-gradient(to right, rgba(254, 255, 255, 0) 5%, rgba(255, 255, 255, 0.671) 50%, rgba(160, 217, 239, 0) 95%);
+    border-bottom: 1px solid;
+    border-image-slice: 2;
+    padding: 5% 10%; }
+    .option_menu .menu_cont .menu_list .item i {
+      padding-right: 5%;
+      vertical-align: text-top;
+      font-size: 1.2em; }
+    .option_menu .menu_cont .menu_list .item .item-content {
+      background: transparent;
+      color: white;
+      padding: 0px; }
+
+.login {
+  background: url("../img/login/bg.png");
+  background-size: cover; }
+  .login .logo {
+    width: 100%;
+    text-align: center;
+    margin-top: 0px; }
+    .login .logo img {
+      width: 100%; }
+  .login .login_block {
+    padding: 7%;
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: -15%;
+    background: url("../img/login/login_bg.png");
+    background-size: 100% 100%;
+    padding-bottom: 0; }
+    .login .login_block input {
+      height: 8vh;
+      width: 100%;
+      border-radius: 6px;
+      background: transparent; }
+    .login .login_block .login_button_submit {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
+      .login .login_block .login_button_submit .col-20 {
+        padding: 0px; }
+      .login .login_block .login_button_submit button {
+        line-height: 0.5;
+        min-height: 30px;
+        margin-bottom: 10%;
+        text-align: center;
+        vertical-align: middle;
+        color: white;
+        width: 100%;
+        transform: translateY(10%);
+        background: linear-gradient(to bottom, rgba(152, 56, 83, 0.48) 0%, #983853 100%);
+        font-weight: bold;
+        font-family: 'Cinzel-Bold';
+        font-weight: bold;
+        font-size: 1em;
+        border: 0px; }
+    .login .login_block .login_button {
+      background: url("../img/login/input_bg.png");
+      background-size: 100% 100%;
+      height: 4em;
+      border-radius: 5px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 10% 0;
+      margin-top: 0px; }
+      .login .login_block .login_button .col-20 {
+        text-align: left; }
+      .login .login_block .login_button .icon {
+        width: 45%;
+        transform: translateY(20%); }
+      .login .login_block .login_button input {
+        transform: translateY(15%);
+        height: 100%;
+        font-weight: bold;
+        font-family: 'Cinzel-Bold';
+        font-weight: bold;
+        font-size: 1em;
+        color: white; }
+    .login .login_block .valid {
+      color: white;
+      float: left;
+      padding-left: 5%;
+      margin-top: -7%;
+      line-height: 2; }
+    .login .login_block .invailduser {
+      width: 100%; }
+
+.custom-model {
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+  min-height: 5vh;
+  width: 80%;
+  background: url("../img/modal_bg.png");
+  background-size: 100% 100%;
+  color: white;
+  font-family: 'Cinzel-Regular';
+  padding: 2%; }
+  .custom-model ion-content {
+    padding: 2%; }
+
+.statement-model {
+  font-size: 1em; }
+  .statement-model .close {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    font-size: 1.7em; }
+  .statement-model .heading {
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'CinzelDecorative-Bold'; }
+  .statement-model .top_field {
+    border-image: linear-gradient(to right, rgba(254, 255, 255, 0) 5%, rgba(255, 255, 255, 0.671) 50%, rgba(160, 217, 239, 0) 95%);
+    border-image-slice: 2;
+    border-bottom: 1px solid;
+    padding: 2%; }
+    .statement-model .top_field select {
+      font-family: 'Cinzel-Regular';
+      font-size: 1em;
+      background: url("../img/model/input_bg.png");
+      background-size: 100% 100%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
+      padding: 2px 3%;
+      height: 1.8em;
+      margin: 0px 1%; }
+      .statement-model .top_field select option {
+        font-family: 'Cinzel-Regular';
+        font-size: 1em;
+        background-color: #3f474f;
+        color: white;
+        padding: 2px 3%; }
+    .statement-model .top_field input {
+      display: inline-block;
+      padding: 2%;
+      color: white;
+      font-family: 'Cinzel-Regular';
+      font-size: 1em;
+      background: url("../img/model/input_bg.png");
+      background-size: 100% 100%;
+      width: 20%;
+      height: 20%;
+      height: 1.8em;
+      margin: 0px 1%;
+      border: 1px solid rgba(255, 255, 255, 0.1); }
+  .statement-model .statement_content {
+    overflow-y: scroll;
+    height: 75%; }
+    .statement-model .statement_content::-webkit-scrollbar {
+      width: 3px;
+      height: 6px; }
+    .statement-model .statement_content::-webkit-scrollbar-button {
+      width: 6px;
+      height: 6px; }
+    .statement-model .statement_content::-webkit-scrollbar-thumb {
+      background: #c43a3a;
+      border: 0px none #ffffff;
+      border-radius: 100px; }
+    .statement-model .statement_content::-webkit-scrollbar-thumb:hover {
+      background: #c43a3a; }
+    .statement-model .statement_content::-webkit-scrollbar-thumb:active {
+      background: #c43a3a; }
+    .statement-model .statement_content::-webkit-scrollbar-track {
+      background: #5c5757;
+      border: 0px none #ffffff;
+      border-radius: 100px; }
+    .statement-model .statement_content::-webkit-scrollbar-track:hover {
+      background: #5c5757; }
+    .statement-model .statement_content::-webkit-scrollbar-track:active {
+      background: #5c5757; }
+    .statement-model .statement_content::-webkit-scrollbar-corner {
+      background: transparent; }
+    .statement-model .statement_content table {
+      width: 90%;
+      text-align: center;
+      margin: 2% auto; }
+      .statement-model .statement_content table th {
+        font-family: 'Cinzel-Bold';
+        font-size: .9em; }
+      .statement-model .statement_content table td {
+        font-size: .8em;
+        border-bottom: 1px solid grey;
+        line-height: 1.5;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        vertical-align: bottom; }
+    .statement-model .statement_content tr th:nth-child(1) {
+      text-align: left; }
+    .statement-model .statement_content tr td:nth-child(1) {
+      text-align: left; }
+
+.small-model {
+  top: 15%;
+  right: 25%;
+  bottom: 15%;
+  left: 25%;
+  width: 50%; }
+
+.player-details {
+  background: url("../img/player_bg.png");
+  background-size: 100% 100%; }
+  .player-details .outer {
+    padding: 2% 4%;
+    width: 100%; }
+    .player-details .outer .profile {
+      display: flex;
+      flex-direction: row; }
+      .player-details .outer .profile .profile_info {
+        flex: 0.7;
+        font-size: 1.1em;
+        font-family: "Cinzel-Bold";
+        line-height: 1.8; }
+        .player-details .outer .profile .profile_info .amt {
+          padding-bottom: 5px; }
+          .player-details .outer .profile .profile_info .amt .coin {
+            width: 1em;
+            vertical-align: middle; }
+      .player-details .outer .profile .profile_pic {
+        flex: 0.25; }
+    .player-details .outer .profile_data {
+      font-size: .9em;
+      padding-top: 5%; }
+      .player-details .outer .profile_data .p_heading {
+        text-align: center;
+        padding: 0px;
+        border-image: linear-gradient(to right, rgba(254, 255, 255, 0) 5%, rgba(255, 255, 255, 0.671) 50%, rgba(160, 217, 239, 0) 95%);
+        border-image-slice: 2;
+        border-bottom: 2px solid;
+        padding-bottom: 4%; }
+      .player-details .outer .profile_data .table_stats .chips_won {
+        padding: 5% 0px;
+        line-height: 1.5;
+        border-image: linear-gradient(to right, rgba(254, 255, 255, 0) 5%, rgba(255, 255, 255, 0.671) 50%, rgba(160, 217, 239, 0) 95%);
+        border-image-slice: 2;
+        border-bottom: 1px solid;
+        padding-bottom: 4%; }
+        .player-details .outer .profile_data .table_stats .chips_won .coin {
+          width: 1em;
+          vertical-align: middle;
+          padding: 1%; }
+      .player-details .outer .profile_data .table_stats .hands_won {
+        padding: 5% 0px;
+        line-height: 1.5;
+        border-image: linear-gradient(to right, rgba(254, 255, 255, 0) 5%, rgba(255, 255, 255, 0.671) 50%, rgba(160, 217, 239, 0) 95%);
+        border-image-slice: 2;
+        border-bottom: 1px solid;
+        padding-bottom: 4%; }
+      .player-details .outer .profile_data .player_rank .last_week {
+        border-image: linear-gradient(to right, rgba(254, 255, 255, 0) 5%, rgba(255, 255, 255, 0.671) 50%, rgba(160, 217, 239, 0) 95%);
+        border-image-slice: 2;
+        border-bottom: 1px solid;
+        padding-bottom: 4%;
+        padding: 5% 0px;
+        line-height: 1.5; }
+    .player-details .outer .active_days {
+      position: absolute;
+      right: 15%;
+      bottom: 2%;
+      font-size: 0.7em; }
+
+.active .modal-backdrop-bg {
+  background: rgba(0, 0, 0, 0.2); }

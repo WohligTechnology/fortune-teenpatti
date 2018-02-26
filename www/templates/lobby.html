@@ -1,4 +1,156 @@
-<div>
+<div class="lobby">
 
-    Lobby
+  <div class="top">
+    <div class="left">
+      <div class="profile" ng-click="openLeftMenu()">
+        <div class="pic">
+          <img src="img/player_pic.png" alt="profile pic">
+        </div>
+        <div class="info">
+          <div> Lorem ipsum </div>
+          <div> 41,104 </div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="setting" ng-click="openRightMenu()">
+        <i class="ionic ion-gear-b text_glow"></i>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="main" ng-class="{'variation_active':activeVariation}">
+    <div class="logo">
+      <img src="img/lobby/logo.png" alt="logo">
+    </div>
+    <div class="category play_type">
+      <div class="row">
+        <div class="col play_now"  ng-click="playNow()">
+          <img src="img/lobby/playnow.png">
+        </div>
+        <div class="col play_joker" ng-click="playJoker()">
+          <img src="img/lobby/playjoker.png">
+        </div>
+        <div class="col variation">
+          <img src="img/lobby/variations.png" ng-click="toggleVariations()">
+        </div>
+        <div class="col private_table" ng-click="playPrivate()">
+          <img src="img/lobby/privatetable.png">
+        </div>
+      </div>
+    </div>
+    <div class="category variation_type">
+        <div class="row">
+          <div class="col blue_block" ui-sref="table">
+            <img src="img/lobby/var_mufils.png">
+          </div>
+          <div class="col block2" ui-sref="table">
+            <img src="img/lobby/var_2card.png">
+          </div>
+          <div class="col block3" ui-sref="table">
+            <img src="img/lobby/var_4card.png">
+          </div>
+        </div>
+      </div>
+
+
+
+  </div>
+</div>
+
+
+
+
+<!-- left menu (profile) -->
+<div class="custom_menu profile_menu" ng-class="{'menu_open':leftMenu}">
+  <div class="menu_cont">
+    <div class="close" ng-click="closeLeftMenu()">
+      <i class="icon ion-close text_glow"></i>
+    </div>
+
+    <div class="profile">
+      <div class="details">
+        <div class="name">Ernest rutherford</div>
+        <div class="amt">
+          <img class="coin img-responsive" src="img/coin.svg"> 3.07 L
+        </div>
+        <div class="badges">
+          membership : premium
+        </div>
+      </div>
+      <div class="profile_pic">
+        <img src="img/player_pic.png" class="pic img-responsive">
+      </div>
+    </div>
+    <ion-list class="menu_list custom-scroll">
+      <ion-item>
+        <div ng-click="openPLStatementModal()">profit and loss</div>
+      </ion-item>
+      <ion-item>
+        <div ng-click="openACStatementModal()">account statement </div>
+
+      </ion-item>
+      <ion-item>
+        <div ng-click="openTransferStatementModal()"> transfer statement</div>
+
+      </ion-item>
+      <ion-item>
+          <div ui-sref="login">Logout</div>
+  
+        </ion-item>
+    </ion-list>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- right menu(setting) -->
+<div class="custom_menu custom_menu_right setting_menu" ng-class="{'menu_open': rightMenu}">
+
+  <div class="menu_cont">
+    <div class="heading">
+
+      <span> setting </span>
+      <i class="icon ion-chevron-right" ng-click="closeRightMenu()"></i>
+    </div>
+    <ion-list class="menu_list">
+      <ion-item>
+        sound
+        <div class="custom_toggle" ng-class="{'toggle_on':sound,'toggle_off':!sound}" ng-click="sound=!sound">
+
+        </div>
+      </ion-item>
+      <!-- <ion-item class="">
+        Sound
+        <label class="toggle right custom_toggle">
+          <input type="checkbox">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </ion-item> -->
+      <ion-item>
+        notification
+        <div class="custom_toggle" ng-class="{'toggle_on':notification,'toggle_off':!notification}" ng-click="notification=!notification">
+
+        </div>
+      </ion-item>
+      <ion-item>
+        vibration
+        <div class="custom_toggle" ng-class="{'toggle_on':vibration,'toggle_off':!vibration}" ng-click="vibration=!vibration">
+        </div>
+      </ion-item>
+
+    </ion-list>
+
+  </div>
 </div>

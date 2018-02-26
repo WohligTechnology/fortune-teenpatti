@@ -1,0 +1,234 @@
+.lobby {
+  background: url("../img/lobby/background.png");
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh;
+  .top {
+    position: relative;
+    top: 0;
+    z-index: 5;
+    .left {
+      .profile {
+        display: flex;
+        flex-direction: row;
+        align-items: center; // width:20vw;
+        .pic {
+          width: 10vw;
+          margin: 5%;
+          margin-right: 2%;
+          img {
+            width: 100%;
+          }
+        }
+        .info {
+          white-space: nowrap;
+          text-align: center;
+          line-height: 1.5;
+          font-size: 0.9em;
+        }
+      }
+    }
+    .right {
+      .setting {
+        margin: 10px;
+        font-size: 2.5em;
+      }
+    }
+  }
+  .main {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    .logo {
+      // position: absolute;
+      // top: 20%;
+      width: 40%; // left: 50%;
+      // transform: translate(-50%);
+      opacity: .7;
+      margin: 0 auto;
+      margin-top: 5%;
+      transition: all 500ms;
+      opacity: 1;
+      visibility: visible;
+      img {
+        max-width: 100%;
+      }
+    }
+    .category {
+      width: 95%;
+      margin: 0 auto;
+      transition: all 500ms;
+      .col {
+        height: 30vh; // background: red;
+        margin: 10px;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+    .variation_type {
+      width: 75%;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 500ms;
+    }
+  }
+  .variation_active {
+    .logo {
+      transition: all 500ms;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .play_type {
+      margin-top: -10%;
+      transition: 500ms;
+      .play_now,
+      .play_joker,
+      .private_table {
+        opacity: .3;
+      }
+    }
+    .variation_type {
+      transition: all 500ms;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+//side menu for right side
+//profile menu
+.profile_menu {
+  .menu_cont {
+    width: 40%;
+    background: url('../img/menu_bg.png');
+    background-size: 100% 100%;
+    height: 100%;
+    transition: all 500ms;
+    .close {
+      position: absolute;
+      font-size: 1.5em;
+      padding: 1%;
+    }
+    .profile {
+      display: flex;
+      flex-direction: row;
+      padding: 10%;
+      padding-bottom: 5%;
+      .details {
+        flex: .75;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding-right: 2%;
+        line-height: 1.5;
+        .amt {
+          .coin {
+            width: 1em;
+            vertical-align: middle;
+          }
+        }
+      }
+      .profile_pic {
+        flex: .25;
+        align-self: center;
+      }
+    }
+    .menu_list {
+      .item {
+        background: transparent;
+        color: white;
+        border: none;
+        font-size: .9em;
+        border-image: linear-gradient(to right, rgba(254, 255, 255, 0) 5%, rgba(255, 255, 255, 0.671) 50%, rgba(160, 217, 239, 0) 95%);
+        border-bottom: 1px solid;
+        border-image-slice: 2;
+        padding: 5% 10%;
+        i {
+          padding-right: 5%;
+          vertical-align: text-top;
+          font-size: 1.2em;
+        }
+        .item-content {
+          background: transparent;
+          color: white;
+          padding: 0px;
+        }
+      }
+    }
+  }
+}
+
+//side menu for right side
+//settingmenu
+.setting_menu {
+  // background: url('../img/sidemenu_right_bg.png'); 
+  // background: url('../img/sidemenu_bg.png');
+  // background-size: 100% 100%;
+  background: rgba(0, 0, 0, 0.5);
+  .menu_cont {
+    width: 40%;
+    background: url('../img/menu_bg.png');
+    background-size: 100% 100%; // border: 1px solid transparent;
+    height: 100%;
+    transition: all 500ms;
+    .heading {
+      background: url('../img/menu_heading.png');
+      background-size: 100% 100%;
+      font-size: 1.5em;
+      padding: 4% 5%;
+      margin-left: 1px;
+      margin-right: 1px;
+      span {
+        padding-left: 10%;
+      }
+      i {
+        float: right;
+        padding-right: 5%;
+      }
+    }
+    .menu_list {
+      a {
+        background: none;
+        padding: none;
+      }
+      .list {
+        width: 100%;
+        height: 100%;
+      }
+    } //to open from right
+    .item {
+      background: transparent;
+      color: white;
+      border: none;
+      font-size: 1em;
+      border-image: linear-gradient(to right, rgba(254, 255, 255, 0) 5%, rgba(255, 255, 255, 0.671) 50%, rgba(160, 217, 239, 0) 95%);
+      border-bottom: 1px solid;
+      border-image-slice: 2;
+      padding: 5% 10%;
+      .item-content {
+        background: transparent;
+        color: white; // padding: 4% 10%;
+        padding: 0px;
+      }
+      .custom_toggle {
+        display: inline-block;
+        width: 5em;
+        height: 3em; // background: red;
+        position: absolute;
+        right: 10%;
+        top: 10%;
+        &.toggle_on {
+          background: url("../img/on.png");
+          background-size: 100% 100%; // width: 4em;
+          // height: 2.5em;
+          // top: 15%;
+        }
+        &.toggle_off {
+          background: url("../img/off.png");
+          background-size: 100% 100%;
+        }
+      }
+    }
+  }
+}

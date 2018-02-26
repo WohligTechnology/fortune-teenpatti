@@ -1,0 +1,199 @@
+<div class="table">
+
+  <!-- top block -->
+  <div class="top">
+    <div class="left_side">
+      <div class="option" ng-click="openLeftMenu()">
+        <i class="icon ion-navicon-round text_glow"></i>
+      </div>
+      <div class="back button_bg" ui-sref="lobby">back to lobby</div>
+      <div class="mode button_bg">game mode : Normal</div>
+    </div>
+    <div class="right_side">
+      <i class="icon ion-ios-information-outline text_glow" ng-click="showTableinfo=!showTableinfo"></i>
+    </div>
+    <div class=" table-info border-gradient" ng-if="showTableinfo">
+        <table class="bg-style">
+          <tr>
+            <th colspan="2" class="heading">Table Info</th>
+          </tr>
+          <tr>
+            <td>
+              Boot Amount
+            </td>
+            <td>
+             5000
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Chal Limit
+            </td>
+            <td>
+             300
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Max Blind
+            </td>
+            <td>
+              2L
+            </td>
+          </tr>
+        </table>
+      </div>
+  </div>
+
+  <div class="table_field">
+    <img src="img/doll.png" alt="doll" class="doll">
+    <img src="img/table.png" alt="table" class="bg_table">
+
+    <div class="plyr player1" ng-click="openPlayerDetails()">
+      <div class="name">sarah boysen</div>
+      <div class="profile">
+        <div class="player_pic">
+          <img src="img/player_pic.png" alt="player_pic" class="pic">
+
+        </div>
+        <div class="cards">
+          <img src="img/card.png" alt="card">
+          <img src="img/card.png" alt="card">
+          <img src="img/card.png" alt="card">
+        </div>
+      </div>
+      <div class="amt">
+        <img src="img/coin.svg" class="coin">64000</div>
+    </div>
+
+    <div class="plyr player2" ng-click="openPlayerDetails()">
+      <div class="name">sarah boysen</div>
+      <div class="profile">
+        <div class="player_pic">
+          <img src="img/player_pic.png" alt="player_pic" class="pic">
+
+        </div>
+        <div class="cards">
+          <img src="img/card.png" alt="card">
+          <img src="img/card.png" alt="card">
+          <img src="img/card.png" alt="card">
+        </div>
+      </div>
+      <div class="amt">
+        <img src="img/coin.svg" class="coin">64000</div>
+    </div>
+    <div class="plyr player3" ng-click="openPlayerDetails()">
+      <div class="name">sarah boysen</div>
+      <div class="profile">
+        <div class="player_pic">
+          <img src="img/player_pic.png" alt="player_pic" class="pic">
+
+        </div>
+        <div class="cards">
+          <img src="img/card.png" alt="card">
+          <img src="img/card.png" alt="card">
+          <img src="img/card.png" alt="card">
+        </div>
+      </div>
+      <div class="amt">
+        <img src="img/coin.svg" class="coin">64000</div>
+    </div>
+    <div class="plyr player4" ng-click="openPlayerDetails()">
+      <div class="name">sarah boysen</div>
+      <div class="profile">
+        <div class="player_pic">
+          <img src="img/player_pic.png" alt="player_pic" class="pic">
+
+        </div>
+        <div class="cards">
+          <img src="img/card.png" alt="card">
+          <img src="img/card.png" alt="card">
+          <img src="img/card.png" alt="card">
+        </div>
+      </div>
+      <div class="amt">
+        <img src="img/coin.svg" class="coin">64000</div>
+    </div>
+    <div class="plyr player5" ng-click="openPlayerDetails()">
+      <div class="name">sarah boysen</div>
+      <div class="profile">
+        <div class="player_pic">
+          <img src="img/player_pic.png" alt="player_pic" class="pic">
+
+        </div>
+        <div class="cards">
+          <img src="img/card.png" alt="card">
+          <img src="img/card.png" alt="card">
+          <img src="img/card.png" alt="card">
+        </div>
+      </div>
+      <div class="amt">
+        <img src="img/coin.svg" class="coin">64000</div>
+    </div>
+    <!-- close of table field -->
+  </div>
+
+  <!-- bottom block -->
+  <div class="bottom">
+    <div class="pack shadow_glow text_grey">
+      Pack
+    </div>
+    <div class="main_player ">
+      <img src="img/player_pic.png" alt="profile" class="main_player_pic">
+      <div class="cards">
+
+        <img src="img/card.png" alt="card">
+        <img src="img/card.png" alt="card">
+        <img src="img/card.png" alt="card">
+        <div class="see" ng-click="showCard()">see</div>
+      </div>
+      <div class="amt button_bg shadow_glow">
+        <img src="img/coin.svg">64,000
+      </div>
+    </div>
+
+    <div class="slideshow text_glow shadow_glow ">SlideShow</div>
+    <div class="minus shadow_glow text_glow  text_grey">-</div>
+    <div class="chal shadow_glow text_glow">Chal 135600</div>
+    <div class="plus shadow_glow text_glow">+</div>
+  </div>
+
+</div>
+
+
+<!-- left menu (option) -->
+
+
+<div class="custom_menu option_menu" ng-class="{'menu_open':leftMenu}">
+  <div class="menu_cont">
+
+
+    <div class="heading">
+      <i class="icon ion-ios-arrow-back" ng-click="closeLeftMenu()"></i>
+      <span> Menu </span>
+    </div>
+    <ion-list class="menu_list custom-scroll">
+      <ion-item ui-sref="lobby">
+        <i class="icon ion-android-arrow-back text_glow"></i>Back to lobby
+      </ion-item>
+      <ion-item>
+        <i class="icon ion-person text_glow"> </i> standup
+      </ion-item>
+      <ion-item>
+        <i class="icon ion-help text_glow"></i> help
+      </ion-item>
+      <!-- <ion-item>
+          <i class="icon ion-android-arrow-back text_glow"> feedback
+      </ion-item> -->
+      <ion-item>
+        <i class="icon ion-ios-copy text_glow"></i> terms of service
+
+      </ion-item>
+      <ion-item>
+        <i class="icon ion-ios-paper text_glow"></i> privacy and policy
+
+      </ion-item>
+    </ion-list>
+
+  </div>
+</div>

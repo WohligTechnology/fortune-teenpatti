@@ -30,13 +30,26 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   //   templateUrl: 'templates/app.html',
   //   controller: 'AppCtrl'
   // })
+  .state('login', {
+    url: '/login',
+    cache:false,
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
+  })
   .state('lobby', {
     url: '/lobby',
     templateUrl: 'templates/lobby.html',
+    cache:false,
     controller: 'LobbyCtrl'
+  })
+  .state('table', {
+    url: '/table',
+    cache: false,
+    templateUrl: 'templates/table.html',
+    controller: 'TableCtrl'
   })
 
   ;
   // if none of the above states are matche d, use this as the fallback
-  $urlRouterProvider.otherwise('lobby');
+  $urlRouterProvider.otherwise('login');
 });
