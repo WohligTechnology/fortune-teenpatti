@@ -1,48 +1,48 @@
-<div class="table">
+<div class="table" ng-click="closeAll()">
 
   <!-- top block -->
   <div class="top">
     <div class="left_side">
-      <div class="option" ng-click="openLeftMenu()">
+      <div class="option" ng-click="$event.stopPropagation();openLeftMenu()">
         <i class="icon ion-navicon-round text_glow"></i>
       </div>
       <div class="back button_bg" ui-sref="lobby">back to lobby</div>
       <div class="mode button_bg">game mode : Normal</div>
     </div>
     <div class="right_side">
-      <i class="icon ion-ios-information-outline text_glow" ng-click="showTableinfo=!showTableinfo"></i>
+      <i class="icon ion-ios-information-outline text_glow" ng-click="$event.stopPropagation();showTableinfo=!showTableinfo"></i>
     </div>
     <div class=" table-info border-gradient" ng-if="showTableinfo">
-        <table class="bg-style">
-          <tr>
-            <th colspan="2" class="heading">Table Info</th>
-          </tr>
-          <tr>
-            <td>
-              Boot Amount
-            </td>
-            <td>
-             5000
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Chal Limit
-            </td>
-            <td>
-             300
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Max Blind
-            </td>
-            <td>
-              2L
-            </td>
-          </tr>
-        </table>
-      </div>
+      <table class="bg-style">
+        <tr>
+          <th colspan="2" class="heading">Table Info</th>
+        </tr>
+        <tr>
+          <td>
+            Boot Amount
+          </td>
+          <td>
+            5000
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Chal Limit
+          </td>
+          <td>
+            300
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Max Blind
+          </td>
+          <td>
+            2L
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <div class="table_field">
@@ -54,13 +54,17 @@
       <div class="profile">
         <div class="player_pic">
           <img src="img/player_pic.png" alt="player_pic" class="pic">
-
+          <div class="status">
+            <span> seen</span>
+          </div>
         </div>
         <div class="cards">
           <img src="img/card.png" alt="card">
           <img src="img/card.png" alt="card">
           <img src="img/card.png" alt="card">
+
         </div>
+
       </div>
       <div class="amt">
         <img src="img/coin.svg" class="coin">64000</div>
@@ -71,7 +75,9 @@
       <div class="profile">
         <div class="player_pic">
           <img src="img/player_pic.png" alt="player_pic" class="pic">
-
+          <div class="status">
+            <span> blind</span>
+          </div>
         </div>
         <div class="cards">
           <img src="img/card.png" alt="card">
@@ -87,7 +93,9 @@
       <div class="profile">
         <div class="player_pic">
           <img src="img/player_pic.png" alt="player_pic" class="pic">
-
+          <div class="status">
+            <span> blind</span>
+          </div>
         </div>
         <div class="cards">
           <img src="img/card.png" alt="card">
@@ -103,7 +111,9 @@
       <div class="profile">
         <div class="player_pic">
           <img src="img/player_pic.png" alt="player_pic" class="pic">
-
+          <div class="status">
+            <span> seen</span>
+          </div>
         </div>
         <div class="cards">
           <img src="img/card.png" alt="card">
@@ -119,7 +129,9 @@
       <div class="profile">
         <div class="player_pic">
           <img src="img/player_pic.png" alt="player_pic" class="pic">
-
+          <div class="status">
+            <span> blind</span>
+          </div>
         </div>
         <div class="cards">
           <img src="img/card.png" alt="card">
@@ -135,7 +147,7 @@
 
   <!-- bottom block -->
   <div class="bottom">
-    <div class="pack shadow_glow text_grey">
+    <div class="pack shadow_glow text_glow" ng-click="pack()">
       Pack
     </div>
     <div class="main_player ">
@@ -153,9 +165,9 @@
     </div>
 
     <div class="slideshow text_glow shadow_glow ">SlideShow</div>
-    <div class="minus shadow_glow text_glow  text_grey">-</div>
-    <div class="chal shadow_glow text_glow">Chal 135600</div>
-    <div class="plus shadow_glow text_glow">+</div>
+    <div class="minus shadow_glow text_glow  " ng-click="reduceChal()">-</div>
+    <div class="chal shadow_glow text_glow">Chal {{chalAmount}}</div>
+    <div class="plus shadow_glow text_glow" ng-click="increaseChal()">+</div>
   </div>
 
 </div>
@@ -164,8 +176,8 @@
 <!-- left menu (option) -->
 
 
-<div class="custom_menu option_menu" ng-class="{'menu_open':leftMenu}">
-  <div class="menu_cont">
+<div class="custom_menu option_menu" ng-class="{'menu_open':leftMenu}" ng-click="closeAll()">
+  <div class="menu_cont" ng-click="$event.stopPropagation()">
 
 
     <div class="heading">

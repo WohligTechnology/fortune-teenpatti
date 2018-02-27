@@ -13,6 +13,8 @@ myApp.controller('TableCtrl', function ($scope, $ionicPlatform, $ionicModal) {
 
   $scope.closeAll();
 
+
+  //menu
   $scope.openLeftMenu = function () {
     $scope.leftMenu = true;
   }
@@ -21,12 +23,21 @@ myApp.controller('TableCtrl', function ($scope, $ionicPlatform, $ionicModal) {
     $scope.leftMenu = false;
   }
 
-  $scope.showCard=function(){
-    console.log("inside show card");
-    $('.main_player .cards img:nth-child(1)').attr("src", "img/card_front.png");
-    $('.main_player .cards img:nth-child(2)').attr("src", "img/card_front.png");
-    $('.main_player .cards img:nth-child(3)').attr("src", "img/card_front.png");
-    $(".main_player .see").css("display", "none");
+
+  // modal for table info
+  $ionicModal.fromTemplateUrl('templates/modal/table_info.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function (modal) {
+    $scope.tableInfoModal = modal;
+    $scope.tableInfoModal.show();
+  });
+
+  $scope.showTableInfoModal = function () {
+    $scope.tableInfoModal.show();
+  }
+  $scope.closeTableInfoModal = function () {
+    $scope.tableInfoModal.hide();
   }
 
 
@@ -46,10 +57,47 @@ myApp.controller('TableCtrl', function ($scope, $ionicPlatform, $ionicModal) {
     $scope.playerDetails.hide();
   }
 
+
+
+
+  //fn
+
+  //show card fn
+  $scope.showCard = function () {
+    console.log("inside show card");
+    $('.main_player .cards img:nth-child(1)').attr("src", "img/card_front.png");
+    $('.main_player .cards img:nth-child(2)').attr("src", "img/card_front.png");
+    $('.main_player .cards img:nth-child(3)').attr("src", "img/card_front.png");
+    $(".main_player .see").css("display", "none");
+  }
+
+
+  //chal fn
+  $scope.chalAmount = 1000;
+  $scope.increaseChal = function () {
+    $('.minus').removeClass('text_grey');
+    $scope.chalAmount = $scope.chalAmount + 500;
+  }
+
+  $scope.reduceChal = function () {
+    if ($scope.chalAmount > 500) {
+      $scope.chalAmount = $scope.chalAmount - 500;
+    }
+
+    if ($scope.chalAmount <= 500) {
+      $('.minus').addClass('text_grey');
+    }
+  }
+  // pack fn
+  $scope.pack = function () {
+    // $('.pack').addClass('text_grey');
+  }
+
   //destroy every modal
   $scope.$on('$destroy', function () {
     $scope.closeAll();
     $scope.playerDetails.remove();
+    $scope.tableInfoModal.remove();
   });
 
 

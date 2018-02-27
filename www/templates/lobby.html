@@ -1,8 +1,8 @@
-<div class="lobby">
+<div class="lobby" ng-click="closeAll()">
 
   <div class="top">
     <div class="left">
-      <div class="profile" ng-click="openLeftMenu()">
+      <div class="profile" ng-click="$event.stopPropagation();openLeftMenu()">
         <div class="pic">
           <img src="img/player_pic.png" alt="profile pic">
         </div>
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="right">
-      <div class="setting" ng-click="openRightMenu()">
+      <div class="setting" ng-click="$event.stopPropagation();openRightMenu()">
         <i class="ionic ion-gear-b text_glow"></i>
       </div>
     </div>
@@ -26,14 +26,14 @@
     </div>
     <div class="category play_type">
       <div class="row">
-        <div class="col play_now"  ng-click="playNow()">
+        <div class="col play_now" ng-click="playNow()">
           <img src="img/lobby/playnow.png">
         </div>
         <div class="col play_joker" ng-click="playJoker()">
           <img src="img/lobby/playjoker.png">
         </div>
         <div class="col variation">
-          <img src="img/lobby/variations.png" ng-click="toggleVariations()">
+          <img src="img/lobby/variations.png" ng-click="$event.stopPropagation();toggleVariations()">
         </div>
         <div class="col private_table" ng-click="playPrivate()">
           <img src="img/lobby/privatetable.png">
@@ -41,21 +41,18 @@
       </div>
     </div>
     <div class="category variation_type">
-        <div class="row">
-          <div class="col blue_block" ui-sref="table">
-            <img src="img/lobby/var_mufils.png">
-          </div>
-          <div class="col block2" ui-sref="table">
-            <img src="img/lobby/var_2card.png">
-          </div>
-          <div class="col block3" ui-sref="table">
-            <img src="img/lobby/var_4card.png">
-          </div>
+      <div class="row">
+        <div class="col blue_block" ng-click="openPriceRangeModal()">
+          <img src="img/lobby/var_mufils.png">
+        </div>
+        <div class="col block2" ng-click="openPriceRangeModal()">
+          <img src="img/lobby/var_2card.png">
+        </div>
+        <div class="col block3" ng-click="openPriceRangeModal()">
+          <img src="img/lobby/var_4card.png">
         </div>
       </div>
-
-
-
+    </div>
   </div>
 </div>
 
@@ -63,8 +60,8 @@
 
 
 <!-- left menu (profile) -->
-<div class="custom_menu profile_menu" ng-class="{'menu_open':leftMenu}">
-  <div class="menu_cont">
+<div class="custom_menu profile_menu" ng-class="{'menu_open':leftMenu}" ng-click="closeAll()">
+  <div class="menu_cont" ng-click="$event.stopPropagation()">
     <div class="close" ng-click="closeLeftMenu()">
       <i class="icon ion-close text_glow"></i>
     </div>
@@ -96,9 +93,9 @@
 
       </ion-item>
       <ion-item>
-          <div ui-sref="login">Logout</div>
-  
-        </ion-item>
+        <div ui-sref="login">Logout</div>
+
+      </ion-item>
     </ion-list>
 
   </div>
@@ -114,9 +111,9 @@
 
 
 <!-- right menu(setting) -->
-<div class="custom_menu custom_menu_right setting_menu" ng-class="{'menu_open': rightMenu}">
+<div class="custom_menu custom_menu_right setting_menu" ng-class="{'menu_open': rightMenu}" ng-click="closeAll()">
 
-  <div class="menu_cont">
+  <div class="menu_cont" ng-click="$event.stopPropagation()">
     <div class="heading">
 
       <span> setting </span>

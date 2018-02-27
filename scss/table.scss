@@ -20,7 +20,7 @@
       background: url("../img/table/table_bg.png");
       background-size: 100% 100%;
       margin: 5px;
-      td{
+      td {
         padding: 0px 5px;
       }
     }
@@ -81,7 +81,7 @@
       height: 70%;
     }
     .plyr {
-      width: 16%; // background: red;
+      width: 20%; // background: red;
       position: absolute;
       z-index: 1;
       .name {
@@ -96,13 +96,33 @@
         align-items: center;
         line-height: 0;
         .player_pic {
-          width: 50%;
+          width: 45%;
+          position: relative;
           img {
             width: 100%;
           }
+          .status {
+            position: absolute;
+            /* top: 15%; */
+            left: 5%;
+            /* transform: translate(-50%); */
+            width: 100%;
+            background: url(../img/table/see.png);
+            background-size: 100% 100%;
+            width: 100%;
+            height: 4vh;
+            text-align: center;
+            bottom: 0%;
+            font-size: 0.8em;
+            span {
+              position: absolute;
+              top: 50%;
+              left: 25%;
+            }
+          }
         }
         .cards {
-          width: 50%;
+          width: 55%;
           position: relative;
           margin-top: -20%;
           img {
@@ -119,6 +139,7 @@
             }
           }
         }
+       
       }
       .amt {
         width: 50%;
@@ -161,12 +182,12 @@
         transform: translate(-50%, -5%);
         width: 100%;
         left: 50%;
-        .see{
+        .see {
           position: absolute;
           top: 15%;
           left: 50%;
           transform: translate(-50%);
-          width:100%;
+          width: 100%;
           background: url('../img/table/see.png');
           background-size: 100% 100%;
         }
@@ -220,6 +241,9 @@
     .plus {
       font-size: 3em;
       padding: 1% 2.5%;
+    }
+    .chal{
+      width:20%;
     }
   } //player position
   .player1 {

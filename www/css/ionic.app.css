@@ -10226,7 +10226,7 @@ body {
       z-index: 1;
       height: 70%; }
     .table .table_field .plyr {
-      width: 16%;
+      width: 20%;
       position: absolute;
       z-index: 1; }
       .table .table_field .plyr .name {
@@ -10240,11 +10240,29 @@ body {
         align-items: center;
         line-height: 0; }
         .table .table_field .plyr .profile .player_pic {
-          width: 50%; }
+          width: 45%;
+          position: relative; }
           .table .table_field .plyr .profile .player_pic img {
             width: 100%; }
+          .table .table_field .plyr .profile .player_pic .status {
+            position: absolute;
+            /* top: 15%; */
+            left: 5%;
+            /* transform: translate(-50%); */
+            width: 100%;
+            background: url(../img/table/see.png);
+            background-size: 100% 100%;
+            width: 100%;
+            height: 4vh;
+            text-align: center;
+            bottom: 0%;
+            font-size: 0.8em; }
+            .table .table_field .plyr .profile .player_pic .status span {
+              position: absolute;
+              top: 50%;
+              left: 25%; }
         .table .table_field .plyr .profile .cards {
-          width: 50%;
+          width: 55%;
           position: relative;
           margin-top: -20%; }
           .table .table_field .plyr .profile .cards img {
@@ -10334,6 +10352,8 @@ body {
     .table .bottom .plus {
       font-size: 3em;
       padding: 1% 2.5%; }
+    .table .bottom .chal {
+      width: 20%; }
   .table .player1 {
     top: 30%;
     left: 5%; }
@@ -10638,6 +10658,88 @@ body {
       right: 15%;
       bottom: 2%;
       font-size: 0.7em; }
+
+.table_info_modal {
+  height: 60%;
+  width: 50%;
+  top: 20%;
+  left: 25%; }
+  .table_info_modal .heading {
+    font-size: 1.5em;
+    font-family: 'Cinzel-Bold';
+    border-image: linear-gradient(to right, rgba(254, 255, 255, 0) 5%, rgba(255, 255, 255, 0.671) 50%, rgba(160, 217, 239, 0) 95%);
+    border-image-slice: 2;
+    border-bottom: 1px solid;
+    padding-top: 2%;
+    padding-bottom: 4%; }
+  .table_info_modal table {
+    font-size: 1em;
+    font-family: 'Cinzel-Bold';
+    margin: 6% auto;
+    width: 70%; }
+    .table_info_modal table td {
+      padding: 2%; }
+  .table_info_modal button {
+    background: linear-gradient(to bottom, rgba(152, 56, 83, 0.48) 0%, #983853 100%);
+    background-size: 100% 100%;
+    color: white;
+    padding: 5px 25px;
+    border: 0px; }
+  .table_info_modal .ok {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 5%; }
+  .table_info_modal .scroll {
+    height: 100%; }
+
+.price_range_modal {
+  height: 50vh;
+  top: 30%;
+  background: url("../img/lobby/price_modal/bg.png");
+  background-size: 100% 100%; }
+  .price_range_modal ion-content {
+    padding: 0px; }
+  .price_range_modal .heading {
+    background: url("../img/lobby/price_modal/heading_bg.png");
+    background-size: 100% 100%;
+    padding: 2%; }
+  .price_range_modal .category {
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding: 8% 2%; }
+    .price_range_modal .category .type {
+      display: inline-block;
+      width: 30%;
+      margin: 0% 2%; }
+      .price_range_modal .category .type .right_img,
+      .price_range_modal .category .type .left_img {
+        display: inline-block;
+        height: 15vh; }
+        .price_range_modal .category .type .right_img img,
+        .price_range_modal .category .type .left_img img {
+          width: 100%;
+          height: 100%; }
+      .price_range_modal .category .type .left_img {
+        width: 45%;
+        position: relative;
+        z-index: 2; }
+      .price_range_modal .category .type .right_img {
+        width: 55%;
+        margin-left: -3%;
+        position: relative; }
+        .price_range_modal .category .type .right_img .price {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #020202;
+          font-family: 'Cinzel-Bold';
+          font-size: 0.8em; }
+          .price_range_modal .category .type .right_img .price .coin {
+            width: 1em;
+            vertical-align: middle; }
 
 .active .modal-backdrop-bg {
   background: rgba(0, 0, 0, 0.2); }

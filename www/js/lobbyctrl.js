@@ -29,7 +29,8 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $ionicMo
   $scope.playNow = function () {
     //if variation tab is not open then go to next page
     if (!$scope.activeVariation) {
-      $state.go('table');
+      // $state.go('table');
+      $scope.openPriceRangeModal();
     }
 
   }
@@ -37,14 +38,16 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $ionicMo
   $scope.playJoker = function () {
     //if variation tab is not open then go to next page
     if (!$scope.activeVariation) {
-      $state.go('table');
+      // $state.go('table');
+      $scope.openPriceRangeModal();
     }
   }
 
   $scope.playPrivate = function () {
     //if variation tab is not open then go to next page
     if (!$scope.activeVariation) {
-      $state.go('table');
+      // $state.go('table');
+      $scope.openPriceRangeModal();
     }
   }
 
@@ -114,12 +117,29 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $ionicMo
   }
 
 
+
+  //game price range 
+  $ionicModal.fromTemplateUrl('templates/modal/game_price_range.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function (modal) {
+    $scope.priceRangeModal = modal;
+
+  });
+  $scope.openPriceRangeModal = function () {
+    $scope.priceRangeModal.show();
+  }
+  $scope.closePriceRangeModal = function () {
+    $scope.priceRangeModal.hide();
+  }
+
   //destroy every modal
   $scope.$on('$destroy', function () {
     $scope.closeAll();
     $scope.PLStatementModal.remove();
     $scope.TransferStatementModal.remove();
     $scope.ACStatementModal.remove();
+    $scope.priceRangeModal.remove();
   });
 
 
