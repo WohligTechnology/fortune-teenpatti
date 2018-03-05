@@ -1,4 +1,4 @@
-myApp.controller('TableCtrl', function ($scope, $ionicPlatform, $ionicModal) {
+myApp.controller('TableCtrl', function ($scope, $ionicPlatform, $ionicModal, Service, $stateParams) {
   console.log('inside table ctrl');
   $ionicPlatform.ready(function () {
     screen.orientation.lock('landscape');
@@ -100,5 +100,18 @@ myApp.controller('TableCtrl', function ($scope, $ionicPlatform, $ionicModal) {
     $scope.tableInfoModal.remove();
   });
 
+
+  // for displaying table data
+  Service.getOneTable($stateParams.id, function (data) {
+    console.log("data", data);
+    $scope.tableData = data.data.data;
+    $scope.bootAmt = $scope.tableData.bootAmt;
+    $scope.chalLimit = $scope.tableData.chalLimit;
+    $scope.blindAmt = $scope.tableData.blindAmt;
+    $scope.chalAmt = $scope.tableData.chalAmt;
+    $scope.maxBlind = $scope.tableData.maxBlind;
+    $scope.tableShow = $scope.tableData.tableShow;
+    $scope.coin = $scope.blindAmt;
+  });
 
 });

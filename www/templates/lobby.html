@@ -4,11 +4,11 @@
     <div class="left">
       <div class="profile" ng-click="$event.stopPropagation();openLeftMenu()">
         <div class="pic">
-          <img src="img/player_pic.png" alt="profile pic">
+          <img ng-src="{{playerData.image | serverimage}}" alt="profile pic">
         </div>
         <div class="info">
-          <div> Lorem ipsum </div>
-          <div> 41,104 </div>
+          <div> {{playerData.username}} </div>
+          <div> {{playerData.credit}} </div>
         </div>
       </div>
     </div>
@@ -68,16 +68,16 @@
 
     <div class="profile">
       <div class="details">
-        <div class="name">Ernest rutherford</div>
+        <div class="name">{{playerData.username}}</div>
         <div class="amt">
-          <img class="coin img-responsive" src="img/coin.svg"> 3.07 L
+          <img class="coin img-responsive" src="img/coin.svg">{{playerData.credit}}
         </div>
         <div class="badges">
-          membership : premium
+          membership : {{playerData.userType}}
         </div>
       </div>
       <div class="profile_pic">
-        <img src="img/player_pic.png" class="pic img-responsive">
+        <img ng-src="{{playerData.image | serverimage}}" class="pic img-responsive">
       </div>
     </div>
     <ion-list class="menu_list custom-scroll">

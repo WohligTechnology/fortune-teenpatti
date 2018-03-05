@@ -1,0 +1,12 @@
+<div ng-if="gameType.name == 'Joker'">
+  <div class="padding-horizontal">
+    <h3 class="label-item">Joker Card</h3>
+  </div>
+  <!-- <div class = "text-center">Joker Card </div> -->
+  <div ng-if='gameType.jokerCard' class="text-center">
+    <card class='community-card' class="" card='{{gameType.jokerCard}}' ng-style="style"> </card>
+  </div>
+  <div ng-if='!gameType.jokerCard' class="text-center">
+    <card class="community-card" card='NONE' ng-style="style"> </card>
+  </div>
+</div>

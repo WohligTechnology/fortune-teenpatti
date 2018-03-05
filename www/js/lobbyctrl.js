@@ -1,4 +1,4 @@
-myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $ionicModal) {
+myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, Service, $ionicModal) {
   console.log('inside lobbyctrl');
   $ionicPlatform.ready(function () {
     screen.orientation.lock('landscape');
@@ -143,5 +143,26 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $ionicMo
   });
 
 
+
+  //get Jstorage
+  if ($.jStorage.get("player") != null) {
+    $scope.playerData = $.jStorage.get("player");
+    console.log(" $scope.playerData", $scope.playerData);
+  }
+
+
+  //Table Selection
+  Service.tableData(function (data) {
+    $scope.tableData = data.data.data.results;
+    console.log(" $scope.tableData ", $scope.tableData);
+  });
+
+  $scope.goToTable = function (table) {
+    console.log("table id", table._id);
+    $scope.tableId = table._id;
+    $state.go('table', {
+      'id': $scope.tableId
+    });
+  };
 
 });
