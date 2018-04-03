@@ -5,6 +5,12 @@
     "ionic": "ionic-team/ionic-bower#1.3.4"
   },
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jStorage": "jstorage#^0.4.12",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.5",
+    "angular-ui-select": "^0.19.8",
+    "compass-sass-mixins": "*",
+    "angular-promise-buttons": "^0.1.22",
+    "ngInfiniteScroll": "^1.3.0"
   }
 }
