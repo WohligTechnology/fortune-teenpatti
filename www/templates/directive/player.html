@@ -1,66 +1,20 @@
-<div>
+ <div class="plyr player{{pos}}" ng-click="openPlayerDetails()">
+      <div class="name">sarah boysen</div>
+      <div class="profile">
+        <div class="player_pic">
+          <img src="img/player_pic.png" alt="player_pic" class="pic">
+          <div class="status">
+            <span> seen</span>
+          </div>
+        </div>
+        <div class="cards">
+          <img src="img/card.png" alt="card">
+          <img src="img/card.png" alt="card">
+          <img src="img/card.png" alt="card">
 
-  <div class="status" ng-if="player.isBlind">
-    BLIND</div>
-  <div class="status" ng-if="player.isFold">
-    PACK</div>
-  <div class="status" ng-if="!player.isBlind">
-    SEEN</div>
-  <!-- <div class="status">
-    NOPLAYER</div> -->
-  <!-- <div class="status">RAISE</div> -->
-  <!-- <div class="status">CALL</div> -->
-  <div class="plyr_pic">
-    <div class="pic">
-      <div class="profile_pic_overlay">
-        <img ng-src="{{image1 | serverimage}}"> </div>
-    </div>
-    <!-- <div class="plyr_card">
-          <img src="img/card-back.png">
-          <img src="img/card-back.png">
-          <img src="img/card-back.png">
-        </div> -->
-    <div class="plyr_card">
-      <div class="`                                                                                                                                                                                                        custom-row" ng-if="player.cards.length==0">
-        <card card='NONE' class="low-opacity mr2" ng-style="style" width="23" height="33" class="low-opacity mr2"> </card>
-        <card card='NONE' class="low-opacity mr2" ng-style="style" width="23" height="33" class="low-opacity mr2"> </card>
-        <card card='NONE' class="low-opacity mr2" ng-style="style" width="23" height="33" class="low-opacity" ng-if="gameType.totalCards >= 3">
-        </card>
-        <card card='NONE' class="low-opacity mr2" ng-style="style" width="23" height="33" class="low-opacity" ng-if="gameType.totalCards >= 4">
-        </card>
-      </div>
-      <div class="row custom-row" ng-if="player.cards.length==1">
-        <card card='DONE' class="mr2" ng-style="style" width="23" height="33"> </card>
-        <card card='NONE' class="low-opacity mr2" ng-style="style" width="23" height="33"> </card>
-        <card card='NONE' class="low-opacity mr2" ng-style="style" width="23" height="33" ng-if="gameType.totalCards >= 3"> </card>
-        <card card='NONE' class="low-opacity mr2" ng-style="style" width="23" height="33" ng-if="gameType.totalCards >= 4"> </card>
-      </div>
-      <div class="row custom-row" ng-if="player.cards.length==2">
-        <card card='DONE' class="mr2" ng-style="style" width="23" height="33"> </card>
-        <card card='DONE' class="mr2" ng-style="style" width="23" height="33"> </card>
-        <card card='NONE' class="low-opacity mr2" ng-style="style" width="23" height="33" ng-if="gameType.totalCards >= 3"> </card>
-        <card card='NONE' class="low-opacity mr2" ng-style="style" width="23" height="33" ng-if="gameType.totalCards >= 4"> </card>
-      </div>
-      <div class=" custom-row" ng-if="player.cards.length==3">
-        <card card='DONE'> </card>
-        <card card='DONE'> </card>
-        <card card='DONE'> </card>
-        <card card='DONE' class="mr2" ng-style="style" width="23" height="33" ng-if="gameType.totalCards >= 3"> </card>
-        <card card='NONE' class="low-opacity mr2" ng-style="style" width="23" height="33" ng-if="gameType.totalCards >= 4"> </card>
-      </div>
-      <div class="row custom-row" ng-if="player.cards.length==4">
-        <card card='DONE' class="mr2" ng-style="style" width="23" height="33"> </card>
-        <card card='DONE' class="mr2" ng-style="style" width="23" height="33"> </card>
-        <card card='DONE' class="mr2" ng-style="style" width="23" height="33" ng-if="gameType.totalCards >= 3"> </card>
-        <card card='DONE' class="mr2" ng-style="style" width="23" height="33" ng-if="gameType.totalCards >= 4"> </card>
-      </div>
-    </div>
-  </div>
-  <!-- <pre>{{player}}</pre> -->
-  <div class="amt">
-    <img src="img/coin.png">{{player.totalAmount}}</div>
-  <div class="plyr_name" ng-click="openPlayerDetails(1)">
-    <span>{{player.name}}</span>
-  </div>
+        </div>
 
-</div>
+      </div>
+      <div class="amt">
+        <img src="img/coin.svg" class="coin">64000</div>
+    </div>

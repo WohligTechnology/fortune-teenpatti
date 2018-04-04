@@ -28,8 +28,8 @@ myApp.directive('card', function () {
       restrict: 'E',
       replace: false,
       scope: {
-        player: "=ngPlayer",
-        gameType: "=ngGameType"
+        pos: "=ngPos",
+        openPlayerDetails:"&"
       },
       templateUrl: 'templates/directive/player.html',
       link: function (scope, element, attr) {
@@ -58,13 +58,32 @@ myApp.directive('card', function () {
       }
     };
   })
-  .directive('gameHistory', function () {
+  // .directive('gameHistory', function () {
+  //   return {
+  //     restrict: 'E',
+  //     replace: false,
+  //     templateUrl: 'templates/directive/game-history.html',
+  //     link: function ($scope, element, attr) {
+  //       //console.log("Player Loaded");
+  //     }
+  //   };
+  // })
+  .directive('leftMenu', function () {
     return {
       restrict: 'E',
       replace: false,
-      templateUrl: 'templates/directive/game-history.html',
+      templateUrl: 'templates/directive/left-menu.html',
       link: function ($scope, element, attr) {
-        //console.log("Player Loaded");
       }
     };
-  });
+  })
+  .directive('tableInfo', function () {
+    return {
+      restrict: 'E',
+      replace: false,
+      templateUrl: 'templates/directive/table-info.html',
+      link: function ($scope, element, attr) {
+      }
+    };
+  })
+  ;
