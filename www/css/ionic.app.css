@@ -9683,9 +9683,7 @@ a.button {
     padding-right: calc(constant(safe-area-inset-right) + 54px); }
     .item-icon-right .icon {
       right: calc(constant(safe-area-inset-right) + 11px); }
-  .item-complex,
-  a.item.item-complex,
-  button.item.item-complex {
+  .item-complex, a.item.item-complex, button.item.item-complex {
     padding: 0; }
     .item-complex .item-content, a.item.item-complex .item-content, button.item.item-complex .item-content {
       padding: 16px calc(constant(safe-area-inset-right) + 49px) 16px calc(constant(safe-area-inset-left) + 16px); }
@@ -10211,7 +10209,7 @@ body {
       margin: 1% 3%; }
   .table .table_field {
     position: absolute;
-    bottom: 0;
+    bottom: calc(0px + 43px);
     width: 100%;
     left: 0;
     text-align: center; }
@@ -10254,7 +10252,7 @@ body {
             background: url(../img/table/see.png);
             background-size: 100% 100%;
             width: 100%;
-            height: 4vh;
+            padding: 8px;
             text-align: center;
             bottom: 0%;
             font-size: 0.8em; }
@@ -10286,7 +10284,7 @@ body {
     position: absolute;
     background: rgba(5, 2, 9, 0.7);
     width: 100%;
-    height: 13vh;
+    padding: 2px;
     bottom: 0px;
     z-index: 5;
     text-align: center;
@@ -10360,15 +10358,14 @@ body {
     left: 5%; }
   .table .player2 {
     left: 22%;
-    top: 0; }
+    top: -6%; }
   .table .player3 {
     right: 15%;
-    top: 0; }
+    top: -6%; }
   .table .player4 {
     top: 30%;
     right: 0; }
   .table .player5 {
-    transform: translateY(-90%);
     bottom: 0;
     right: 25%; }
 
