@@ -1,20 +1,24 @@
- <div class="plyr player{{pos}}" ng-click="openPlayerDetails()">
-      <div class="name">sarah boysen</div>
-      <div class="profile">
-        <div class="player_pic">
-          <img src="img/player_pic.png" alt="player_pic" class="pic">
-          <div class="status">
-            <span> seen</span>
-          </div>
-        </div>
-        <div class="cards">
-          <img src="img/card.png" alt="card">
-          <img src="img/card.png" alt="card">
-          <img src="img/card.png" alt="card">
-
-        </div>
-
+<div class="plyr player{{pos}}" ng-class="{
+   'no_player':!player && !sitHere,
+   'sit_here':sitHere && !player,
+   'card_shuffle_animation': player && player.cards.length>0 && startAnimation
+}" ng-click="openPlayerDetails()">
+  <div class="name">{{player.name}}</div>
+  <div class="profile">
+    <div class="player_pic">
+      <img src="img/player_pic.png" alt="player_pic" class="pic">
+      <div class="status">
+        <span> seen</span>
       </div>
-      <div class="amt">
-        <img src="img/coin.svg" class="coin">64000</div>
     </div>
+    <div class="cards">
+      <img src="img/card.png" alt="card">
+      <img src="img/card.png" alt="card">
+      <img src="img/card.png" alt="card">
+
+    </div>
+
+  </div>
+  <div class="amt">
+    <img src="img/coin.svg" class="coin">64000</div>
+</div>

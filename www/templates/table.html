@@ -6,7 +6,7 @@
       <div class="option" ng-click="$event.stopPropagation();openLeftMenu()">
         <i class="icon ion-navicon-round text_glow"></i>
       </div>
-      <div class="back button_bg" ui-sref="lobby">back to lobby</div>
+      <div class="back button_bg" ng-click="backToLobby()">back to lobby</div>
       <div class="mode button_bg">game mode : Normal</div>
     </div>
     <div class="right_side">
@@ -19,11 +19,33 @@
   <div class="table_field">
     <img src="img/doll.png" alt="doll" class="doll">
     <img src="img/table.png" alt="table" class="bg_table">
-    <players ng-pos="1" open-player-details=openPlayerDetails()> </players>
-    <players ng-pos="2" open-player-details=openPlayerDetails()> </players>
-    <players ng-pos="3" open-player-details=openPlayerDetails()> </players>
-    <players ng-pos="4" open-player-details=openPlayerDetails()> </players>
-    <players ng-pos="5" open-player-details=openPlayerDetails()> </players>
+
+
+    <pot-amount ng-amount="potAmount" ng-winner="winnerPlayerNo" ng-player="players"> </pot-amount>
+    <div class="card_shuffle">
+      <div class="cards">
+        <card card='NONE'> </card>
+        <card card='NONE'> </card>
+        <card card='NONE'> </card>
+      </div>
+    </div>
+
+
+    <players ng-pos="1" ng-click="sitHerefn(1)" ng-player="players[0]" ng-game-type="gameType" ng-remaining-player="remainingPlayerCount"
+      ng-sit-here="sitHere" ng-win="winnerPlayerNo" ng-animation="startAnimation" ng-winner-player="showWinnerPlayer">
+    </players>
+    <players ng-pos="2" ng-click="sitHerefn(2)" ng-player="players[1]" ng-game-type="gameType" ng-remaining-player="remainingPlayerCount"
+      ng-sit-here="sitHere" ng-win="winnerPlayerNo" ng-animation="startAnimation" ng-winner-player="showWinnerPlayer">
+    </players>
+    <players ng-pos="3" ng-click="sitHerefn(3)" ng-player="players[2]" ng-game-type="gameType" ng-remaining-player="remainingPlayerCount"
+      ng-sit-here="sitHere" ng-win="winnerPlayerNo" ng-animation="startAnimation" ng-winner-player="showWinnerPlayer">
+    </players>
+    <players ng-pos="4" ng-click="sitHerefn(4)" ng-player="players[3]" ng-game-type="gameType" ng-remaining-player="remainingPlayerCount"
+      ng-sit-here="sitHere" ng-win="winnerPlayerNo" ng-animation="startAnimation" ng-winner-player="showWinnerPlayer">
+    </players>
+    <players ng-pos="5" ng-click="sitHerefn(5)" ng-player="players[4]" ng-game-type="gameType" ng-remaining-player="remainingPlayerCount"
+      ng-sit-here="sitHere" ng-win="winnerPlayerNo" ng-animation="startAnimation" ng-winner-player="showWinnerPlayer">
+    </players>
     <!-- close of table field -->
   </div>
 

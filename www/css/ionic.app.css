@@ -10216,6 +10216,22 @@ body {
     width: 100%;
     left: 0;
     text-align: center; }
+    .table .table_field .card_shuffle {
+      width: 3vw;
+      position: absolute;
+      top: 24%;
+      left: 40%; }
+      .table .table_field .card_shuffle .cards {
+        position: relative; }
+        .table .table_field .card_shuffle .cards card {
+          position: absolute;
+          width: 100%; }
+          .table .table_field .card_shuffle .cards card:nth-child(1) {
+            left: 0; }
+          .table .table_field .card_shuffle .cards card:nth-child(2) {
+            left: 20%; }
+          .table .table_field .card_shuffle .cards card:nth-child(3) {
+            left: 40%; }
     .table .table_field .doll {
       width: 8%;
       position: absolute;
@@ -10252,7 +10268,7 @@ body {
             left: 5%;
             /* transform: translate(-50%); */
             width: 100%;
-            background: url(../img/table/see.png);
+            background: url("../img/table/see.png");
             background-size: 100% 100%;
             width: 100%;
             padding: 8px;
@@ -10283,6 +10299,61 @@ body {
         .table .table_field .plyr .amt .coin {
           width: 1em;
           vertical-align: middle; }
+    .table .table_field .sit_here {
+      background: rgba(255, 0, 0, 0.28);
+      background-size: 100% 100%;
+      border: 1px solid #301d46;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      width: 9%;
+      transform: translateY(30%); }
+      .table .table_field .sit_here > * {
+        display: none !important; }
+      .table .table_field .sit_here:after {
+        content: "Sit Here";
+        height: 100%;
+        width: 100%;
+        font-size: 1em;
+        font-family: 'Cinzel-Regular';
+        word-spacing: 10em;
+        line-height: 1.5; }
+      .table .table_field .sit_here.player3 {
+        right: 23%; }
+      .table .table_field .sit_here.player4 {
+        right: 5%; }
+      .table .table_field .sit_here.player5 {
+        bottom: 10%; }
+      .table .table_field .sit_here.main-player {
+        width: 10% !important;
+        bottom: 20%; }
+    .table .table_field .no_player {
+      background: rgba(255, 0, 0, 0.28);
+      background-size: 100% 100%;
+      border: 1px solid #301d46;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      width: 9%;
+      transform: translateY(30%);
+      opacity: 0.85; }
+      .table .table_field .no_player > * {
+        display: none !important; }
+      .table .table_field .no_player:after {
+        content: "No Player";
+        height: 100%;
+        width: 100%;
+        font-size: 1em;
+        font-family: 'Cinzel-Regular';
+        word-spacing: 10em;
+        line-height: 1.5; }
+      .table .table_field .no_player.player3 {
+        right: 23%; }
+      .table .table_field .no_player.player4 {
+        right: 5%; }
+      .table .table_field .no_player.player5 {
+        bottom: 10%; }
+      .table .table_field .no_player.main-player {
+        width: 10% !important;
+        bottom: 20%; }
   .table .bottom {
     position: absolute;
     background: rgba(5, 2, 9, 0.7);
@@ -10404,6 +10475,94 @@ body {
       background: transparent;
       color: white;
       padding: 0px; }
+
+.total_played_coin {
+  position: absolute;
+  width: 22%;
+  left: 58%;
+  top: 25%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: left;
+  color: white;
+  transition: none;
+  z-index: 4 !important; }
+  .total_played_coin .coin {
+    width: 1em;
+    vertical-align: middle;
+    margin-right: 5px; }
+  .total_played_coin.to_p1 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 65% !important;
+    left: 16% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0; }
+  .total_played_coin.to_p2 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 30% !important;
+    left: -1% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0; }
+  .total_played_coin.to_p3 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 0% !important;
+    left: 0% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0; }
+  .total_played_coin.to_p4 {
+    transform: none !important;
+    bottom: unset !important;
+    top: -5% !important;
+    left: 22% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0; }
+  .total_played_coin.to_p5 {
+    transform: none !important;
+    bottom: unset !important;
+    top: -5% !important;
+    left: 56% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0; }
+  .total_played_coin.to_p6 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 0% !important;
+    left: 75% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0; }
+  .total_played_coin.to_p7 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 35% !important;
+    left: 80% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0; }
+  .total_played_coin.to_p8 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 60% !important;
+    left: 62% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0; }
+  .total_played_coin.to_p9 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 70% !important;
+    left: 42% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0; }
 
 .login {
   background: url("../img/login/bg.png");

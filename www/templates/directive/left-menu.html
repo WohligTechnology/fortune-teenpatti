@@ -7,10 +7,10 @@
         <span> Menu </span>
       </div>
       <ion-list class="menu_list custom-scroll">
-        <ion-item ui-sref="lobby">
+        <ion-item ui-sref="lobby" ng-click="backToLobby()">
           <i class="icon ion-android-arrow-back text_glow"></i>Back to lobby
         </ion-item>
-        <ion-item>
+        <ion-item ng-click="standUp()">
           <i class="icon ion-person text_glow"> </i> standup
         </ion-item>
         <ion-item>

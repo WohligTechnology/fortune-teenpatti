@@ -14,7 +14,7 @@ myApp.directive('card', function () {
         //   width: $scope.width + "px",
         //   height: $scope.height + "px"
         // };
-        $scope.cardFile = "img/" + _.toUpper($scope.card) + ".png";
+        $scope.cardFile = "img/cards/" + _.toUpper($scope.card) + ".svg";
       }
       calc();
       $scope.$watch("card", function () {
@@ -23,25 +23,24 @@ myApp.directive('card', function () {
     }
   };
 })
-  .directive('players', function () {
-    return {
-      restrict: 'E',
-      replace: false,
-      scope: {
-        pos: "=ngPos",
-        openPlayerDetails:"&"
-      },
-      templateUrl: 'templates/directive/player.html',
-      link: function (scope, element, attr) {
-        //console.log("Player Loaded");
-        // console.log("directive scope", scope);
-        // console.log("player", );
-        // scope.$watch("player", function () {
-        //   console.log("change",scope.player);
-        // });
-      }
-    };
-  })
+.directive('players', function () {
+  return {
+    restrict: 'E',
+    replace: false,
+    scope: {
+      player: "=ngPlayer",
+      remainingPlayerCount: "=ngRemainingPlayer",
+      showWinnerPlayer: "=ngWinnerPlayer",
+      gameType: "=ngGameType",
+      pos: "=ngPos",
+      sitHere: "=ngSitHere",
+      winnerPlayerNo: "=ngWin",
+      startAnimation: "=ngAnimation"
+    },
+    templateUrl: 'templates/directive/player.html',
+    link: function (scope, element, attr) {}
+  };
+})
   .directive('joker', function () {
     return {
       restrict: 'E',
@@ -68,6 +67,19 @@ myApp.directive('card', function () {
   //     }
   //   };
   // })
+  .directive('potAmount', function () {
+    return {
+      restrict: 'E',
+      replace: false,
+      scope: {
+        amount: "=ngAmount",
+        winnerPlayerNo: "=ngWinner",
+        players: "=ngPlayer"
+      },
+      templateUrl: 'templates/directive/pot-amount.html',
+      link: function ($scope, element, attr) {}
+    };
+  })
   .directive('leftMenu', function () {
     return {
       restrict: 'E',

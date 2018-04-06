@@ -61,12 +61,33 @@
     }
   }
   .table_field {
-    position: absolute;
-    // bottom: 0;
+    position: absolute; // bottom: 0;
     bottom: calc(0px + 43px);
     width: 100%;
     left: 0;
     text-align: center;
+    .card_shuffle {
+      width: 3vw;
+      position: absolute;
+      top: 24%;
+      left: 40%;
+      .cards {
+        position: relative;
+        card {
+          position: absolute;
+          width: 100%;
+          &:nth-child(1) {
+            left: 0
+          }
+          &:nth-child(2) {
+            left: 20%;
+          }
+          &:nth-child(3) {
+            left: 40%;
+          }
+        }
+      }
+    }
     .doll {
       width: 8%;
       position: absolute;
@@ -107,11 +128,10 @@
             left: 5%;
             /* transform: translate(-50%); */
             width: 100%;
-            background: url(../img/table/see.png);
+            background: url("../img/table/see.png");
             background-size: 100% 100%;
-            width: 100%;
-            // height: 4vh;
-            padding:8px;
+            width: 100%; // height: 4vh;
+            padding: 8px;
             text-align: center;
             bottom: 0%;
             font-size: 0.8em;
@@ -151,13 +171,93 @@
         }
       }
     }
+    .sit_here {
+      // background: url('../img/sit_here.png');
+      background: rgba(255, 0, 0, 0.28);
+      background-size: 100% 100%;
+      border: 1px solid #301d46;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      width: 9%; // height:10vh;
+      transform: translateY(30%);
+      &>* {
+        display: none !important;
+      }
+      &:before {
+        // content: "";
+        // width: 20px;
+        // height: 30px;
+        // background: url("../img/arrow.gif");
+        // background-size: 100% 100%;
+        // position: absolute;
+        // top: -60%;
+      }
+      &:after {
+        content: "Sit Here";
+        height: 100%;
+        width: 100%;
+        font-size: 1em;
+        font-family: 'Cinzel-Regular';
+        word-spacing: 10em;
+        line-height: 1.5;
+      }
+      &.player3 {
+        right: 23%;
+      }
+      &.player4 {
+        right: 5%;
+      }
+      &.player5 {
+        bottom: 10%;
+      }
+      &.main-player {
+        width: 10% !important;
+        bottom: 20%;
+      }
+    }
+    .no_player {
+      background: rgba(255, 0, 0, 0.28);
+      background-size: 100% 100%;
+      border: 1px solid #301d46;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      width: 9%; // height:10vh;
+      transform: translateY(30%);
+      opacity: 0.85;
+      // width: 100% !important;
+      // transform: translateY(0%) !important;
+      &>* {
+        display: none !important;
+      }
+      &:after {
+        content: "No Player";
+        height: 100%;
+        width: 100%;
+        font-size: 1em;
+        font-family: 'Cinzel-Regular';
+        word-spacing: 10em;
+        line-height: 1.5;
+      }
+      &.player3 {
+        right: 23%;
+      }
+      &.player4 {
+        right: 5%;
+      }
+      &.player5 {
+        bottom: 10%;
+      }
+      &.main-player {
+        width: 10% !important;
+        bottom: 20%;
+      } 
+    }
   }
   .bottom {
     position: absolute;
     background: rgba(5, 2, 9, 0.7);
-    width: 100%;
-    // height: 13vh;
-    padding:2px;
+    width: 100%; // height: 13vh;
+    padding: 2px;
     bottom: 0px;
     z-index: 5;
     text-align: center;
@@ -313,5 +413,105 @@
         }
       }
     }
+  }
+}
+
+//all animation
+.total_played_coin {
+  position: absolute;
+  width: 22%;
+  left: 58%;
+  top: 25%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: left; // word-spacing: 5px;
+  color: white;
+  .coin {
+    width: 1em;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  transition: none;
+  z-index: 4 !important;
+  &.to_p1 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 65% !important;
+    left: 16% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0;
+  }
+  &.to_p2 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 30% !important;
+    left: -1% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0;
+  }
+  &.to_p3 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 0% !important;
+    left: 0% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0;
+  }
+  &.to_p4 {
+    transform: none !important;
+    bottom: unset !important;
+    top: -5% !important;
+    left: 22% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0;
+  }
+  &.to_p5 {
+    transform: none !important;
+    bottom: unset !important;
+    top: -5% !important;
+    left: 56% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0;
+  }
+  &.to_p6 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 0% !important;
+    left: 75% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0;
+  }
+  &.to_p7 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 35% !important;
+    left: 80% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0;
+  }
+  &.to_p8 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 60% !important;
+    left: 62% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0;
+  }
+  &.to_p9 {
+    transform: none !important;
+    bottom: unset !important;
+    top: 70% !important;
+    left: 42% !important;
+    font-size: 2em;
+    transition: all 5s !important;
+    opacity: 0;
   }
 }
