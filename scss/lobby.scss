@@ -126,6 +126,7 @@
           .coin {
             width: 1em;
             vertical-align: middle;
+            margin-right: 5px;
           }
         }
       }
@@ -135,7 +136,7 @@
       }
     }
     .menu_list {
-      .list{
+      .list {
         overflow: scroll;
         height: 65vh;
       }

@@ -26,7 +26,7 @@
     </div>
     <div class="category play_type">
       <div class="row">
-        <div class="col play_now" ng-click="playNow($event)">
+        <div class="col play_now" ng-click="playNow($event);resetFilter();">
           <img src="img/lobby/playnow.png">
         </div>
         <div class="col play_joker" ng-click="playJoker($event)">
@@ -72,9 +72,9 @@
         <div class="amt">
           <img class="coin img-responsive" src="img/coin.svg">{{balance|number:0}}
         </div>
-        <div class="badges">
+        <!-- <div class="badges">
           membership : {{userType}}
-        </div>
+        </div> -->
       </div>
       <div class="profile_pic">
         <img ng-src="{{image | serverimage}}" class="pic img-responsive">

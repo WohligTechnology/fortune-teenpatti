@@ -1,89 +1,88 @@
 <ion-modal-view class="custom-model statement-model price_range_modal">
-    <div class="custom-header">
-      <div class="close" ng-click="closePriceRangeModal()">
-        <img src="img/close.png">
-      </div>
-      <div class="heading">table</div>
-      <form name="filterTable">
-        <div class="top_field filter">
-          Filter with
-          <select ng-model="filterData.type" ng-options="x for x in filterType" placeholder="Blind Amt">
-            <option value="" disabled hidden selected>Type</option>
-          </select>
-          <input type="text" ng-model="filterData.blindAmt" placeholder="Blind Amt">
-          <input type="text" ng-model="filterData.chalAmt" placeholder="Chaal Amt">
-          <!-- <ui-select ng-model="tablesData.selected.name" theme="bootstrap" class="custom-filter">
-                    <ui-select-match placeholder="Enter Table Name">{{$select.selected.name}}</ui-select-match>
-                    <ui-select-choices repeat="item in tablesData | filter: $select.search">
-                      <div ng-bind-html="item.name | highlight: $select.search"></div>
-                    </ui-select-choices>
-                  </ui-select> -->
-          <input type="text" ng-model="filterData.name" placeholder="Table Name">
-          <div class="row">
-            <div class="col">
-              <button class="custom_button  btn_search" type='submit' ng-click="filterTables(filterData);resetpage();" promise-btn="filterTablePromise">
-                Search </button>
-            </div>
-            <div class="col">
-              <button class="custom_button  btn_search" type='submit' ng-click="resetFilter();resetpage();" promise-btn="filterTablePromise">
-                Reset </button>
-            </div>
+  <div class="custom-header">
+    <div class="close" ng-click="closePriceRangeModal()">
+      <i class="icon ion-close text_glow"></i>
+    </div>
+    <div class="heading">table</div>
+    <form name="filterTable">
+      <div class="top_field filter">
+        Filter with
+        <select ng-model="filterData.type" ng-options="x for x in filterType" placeholder="Blind Amt">
+          <option value="" disabled hidden selected>Type</option>
+        </select>
+        <input type="text" ng-model="filterData.blindAmt" placeholder="Blind Amt">
+        <input type="text" ng-model="filterData.chalAmt" placeholder="Chaal Amt">
+        <!-- <ui-select ng-model="tablesData.selected.name" theme="bootstrap" class="custom-filter">
+                  <ui-select-match placeholder="Enter Table Name">{{$select.selected.name}}</ui-select-match>
+                  <ui-select-choices repeat="item in tablesData | filter: $select.search">
+                    <div ng-bind-html="item.name | highlight: $select.search"></div>
+                  </ui-select-choices>
+                </ui-select> -->
+        <input type="text" ng-model="filterData.name" placeholder="Table Name">
+        <div class="row">
+          <div class="col">
+            <button class="custom_button  btn_search" type='submit' ng-click="filterTables(filterData);resetpage();" promise-btn="filterTablePromise">
+              Search </button>
+          </div>
+          <div class="col">
+            <button class="custom_button  btn_search" type='submit' ng-click="resetFilter();resetpage();" promise-btn="filterTablePromise">
+              Reset </button>
           </div>
         </div>
-      </form>
+      </div>
+    </form>
+  </div>
+  <ion-content>
+    <div class="custom-table custom-table-top" ng-if="tablesDataFilter">
+      <ion-list>
+        <ion-item class="item">
+          <div class="row">
+            <div class="col-30">
+              <div class="bold">Name</div>
+            </div>
+            <div class="col-15">
+              <div class="bold text-center">type</div>
+            </div>
+            <div class="col-20">
+              <div class="bold text-center">Stakes</div>
+            </div>
+            <div class="col-20">
+              <div class="bold text-center">Max Players</div>
+            </div>
+            <div class="col-20">
+              <div class="bold">Action</div>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item collection-repeat="dataFilter in tablesDataFilter" class="item">
+          <div class="row">
+            <div class="col-30">
+              <div class="bold">{{dataFilter.name}}</div>
+            </div>
+            <div class="col-15">
+              <div class="text-center bold">{{dataFilter.type}}</div>
+            </div>
+            <div class="col-20">
+              <div class="text-center bold">{{dataFilter.blindAmt}} - {{dataFilter.chalAmt}}</div>
+            </div>
+            <div class="col-20">
+              <div class="text-center bold">{{dataFilter.noOfPlayers}} / {{dataFilter.maximumNoOfPlayers}}</div>
+            </div>
+            <div class="col-20">
+              <button class="custom_button bold" ng-click="goToTable(dataFilter)" ng-if="dataFilter.type=='public'">PLAY</button>
+              <button class="custom_button bold" ng-click="goToPrivateTableLogIn(dataFilter)" ng-if="dataFilter.type=='private'">Log In</button>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
     </div>
-    <ion-content scroll="true">
-      <div class="custom-table custom-table-top" ng-if="tablesDataFilter">
-        <ion-list>
-          <ion-item class="item">
-            <div class="row">
-              <div class="col-30">
-                <div class="bold">Name</div>
-              </div>
-              <div class="col-15">
-                <div class="bold text-center">type</div>
-              </div>
-              <div class="col-20">
-                <div class="bold text-center">Stakes</div>
-              </div>
-              <div class="col-20">
-                <div class="bold text-center">Max Players</div>
-              </div>
-              <div class="col-20">
-                <div class="bold">Action</div>
-              </div>
-            </div>
-          </ion-item>
-          <ion-item collection-repeat="dataFilter in tablesDataFilter" class="item">
-            <div class="row">
-              <div class="col-30">
-                <div class="bold">{{dataFilter.name}}</div>
-              </div>
-              <div class="col-15">
-                <div class="text-center bold">{{dataFilter.type}}</div>
-              </div>
-              <div class="col-20">
-                <div class="text-center bold">{{dataFilter.blindAmt}} - {{dataFilter.chalAmt}}</div>
-              </div>
-              <div class="col-20">
-                <div class="text-center bold">{{dataFilter.noOfPlayers}} / {{dataFilter.maximumNoOfPlayers}}</div>
-              </div>
-              <div class="col-20">
-                <button class="custom_button bold" ng-click="goToTable(dataFilter)" ng-if="dataFilter.type=='public'">PLAY</button>
-                <button class="custom_button bold" ng-click="goToPrivateTableLogIn(dataFilter)" ng-if="dataFilter.type=='private'">Log In</button>
-              </div>
-            </div>
-          </ion-item>
-        </ion-list>
-      </div>
-      <!-- no Data found -->
-      <div class="loader bold" ng-if="noDataFound" ng-bind-html="displayMessage.main">
-      </div>
-      <!-- //loader -->
-      <div class="loader" ng-if="!tablesDataFilter">
-        Loading ..
-      </div>
-      <ion-infinite-scroll on-infinite="loadMoreFilterTable()" icon="ion-loading-c"></ion-infinite-scroll>
-    </ion-content>
-  </ion-modal-view>
-  
+    <!-- no Data found -->
+    <div class="loader bold" ng-if="noDataFound" ng-bind-html="displayMessage.main">
+    </div>
+    <!-- //loader -->
+    <div class="loader" ng-if="!tablesDataFilter">
+      Loading ..
+    </div>
+    <ion-infinite-scroll on-infinite="loadMoreFilterTable()" icon="ion-loading-c"></ion-infinite-scroll>
+  </ion-content>
+</ion-modal-view>
