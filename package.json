@@ -11,13 +11,19 @@
   "dependencies": {
     "cordova-android": "7.0.0",
     "cordova-plugin-device": "^2.0.1",
+    "cordova-plugin-insomnia": "git+https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin.git",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.1.16",
+    "cordova-plugin-nativeaudio": "^3.0.9",
+    "cordova-plugin-network-information": "git+https://github.com/apache/cordova-plugin-network-information.git",
     "cordova-plugin-screen-orientation": "^3.0.1",
     "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.1",
+    "cordova-plugin-vibration": "^3.0.1",
     "cordova-plugin-whitelist": "^1.3.3",
     "es6-promise-plugin": "^4.2.2",
-    "jstorage": "^0.4.8"
+    "jstorage": "^0.4.8",
+    "phonegap-plugin-mobile-accessibility": "^1.0.5"
   },
   "cordova": {
     "plugins": {
@@ -26,7 +32,12 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-screen-orientation": {}
+      "cordova-plugin-screen-orientation": {},
+      "cordova-plugin-statusbar": {},
+      "phonegap-plugin-mobile-accessibility": {},
+      "cordova-plugin-nativeaudio": {},
+      "cordova-plugin-vibration": {},
+      "cordova-plugin-insomnia": {}
     },
     "platforms": [
       "android"

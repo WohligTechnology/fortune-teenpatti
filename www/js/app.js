@@ -4,12 +4,16 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var myApp = angular.module('starter', ['ionic', 'starter.service', 'starter.controllers'])
+var myApp = angular.module('starter', ['ionic', 'starter.service', 'ui.select', 'ngSanitize', 'angularPromiseButtons'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
+      StatusBar.hide();
+      if (window.MobileAccessibility) {
+        window.MobileAccessibility.usePreferredTextZoom(false);
+      }
       if (window.cordova && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         cordova.plugins.Keyboard.disableScroll(true);
@@ -19,6 +23,26 @@ var myApp = angular.module('starter', ['ionic', 'starter.service', 'starter.cont
         // org.apache.cordova.statusbar required
         StatusBar.styleDefault();
       }
+
+     
+      window.plugins.insomnia.keepAwake();
+      // Preload audio resources
+      window.plugins.NativeAudio.preloadComplex('timer', 'audio/timer.mp3', 1, 1, 0, function (msg) {}, function (msg) {
+        console.log('error: ' + msg);
+      });
+      window.plugins.NativeAudio.preloadComplex('coin', 'audio/coin.mp3', 1, 1, 0, function (msg) {}, function (msg) {
+        console.log('error: ' + msg);
+      });
+      window.plugins.NativeAudio.preloadComplex('winner', 'audio/winner.wav', 1, 1, 0, function (msg) {}, function (msg) {
+        console.log('error: ' + msg);
+      });
+      window.plugins.NativeAudio.preloadComplex('shuffle', 'audio/shuffle.wav', 1, 1, 0, function (msg) {}, function (msg) {
+        console.log('error: ' + msg);
+      });
+      window.plugins.NativeAudio.preloadComplex('button', 'audio/button.mp3', 1, 1, 0, function (msg) {}, function (msg) {
+        console.log('error: ' + msg);
+      });
+
     });
   })
 
@@ -49,12 +73,34 @@ var myApp = angular.module('starter', ['ionic', 'starter.service', 'starter.cont
         controller: 'TableCtrl'
       })
 
-      ;
+    ;
     // if none of the above states are matche d, use this as the fallback
     $urlRouterProvider.otherwise('login');
   });
 
 
+
+myApp.filter('uploadpath', function () {
+  return function (input, width, height, style) {
+    var other = "";
+    if (width && width !== "") {
+      other += "&width=" + width;
+    }
+    if (height && height !== "") {
+      other += "&height=" + height;
+    }
+    if (style && style !== "") {
+      other += "&style=" + style;
+    }
+    if (input) {
+      if (input.indexOf('https://') == -1) {
+        return imgpath + "?file=" + input + other;
+      } else {
+        return input;
+      }
+    }
+  };
+});
 
 myApp.filter('serverimage', function () {
   return function (input, width, height, style) {
@@ -75,6 +121,18 @@ myApp.filter('serverimage', function () {
         }
         return image;
       }
+
+    } else {
+      //    return "img/logo.png";
+      return "img/not.png";
+    }
+  };
+});
+
+myApp.filter('cardimg', function () {
+  return function (input) {
+    if (input) {
+      return "img/cards/" + input + ".svg"
 
     } else {
       //    return "img/logo.png";

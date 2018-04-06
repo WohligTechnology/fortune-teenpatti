@@ -83,4 +83,9 @@
     <engine name="android" spec="~7.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />
+    <plugin name="cordova-plugin-statusbar" spec="^2.4.1" />
+    <plugin name="phonegap-plugin-mobile-accessibility" spec="^1.0.5" />
+    <plugin name="cordova-plugin-nativeaudio" spec="^3.0.9" />
+    <plugin name="cordova-plugin-vibration" spec="^3.0.1" />
+    <plugin name="cordova-plugin-insomnia" spec="https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin.git" />
 </widget>

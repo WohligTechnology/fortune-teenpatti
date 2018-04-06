@@ -4,11 +4,11 @@
     <div class="left">
       <div class="profile" ng-click="$event.stopPropagation();openLeftMenu()">
         <div class="pic">
-          <img ng-src="{{playerData.image | serverimage}}" alt="profile pic">
+          <img ng-src="{{image | serverimage}}" alt="profile pic">
         </div>
         <div class="info">
-          <div> {{playerData.username}} </div>
-          <div> {{playerData.credit}} </div>
+          <div> {{username}} </div>
+          <div> {{balance|number:0}} </div>
         </div>
       </div>
     </div>
@@ -26,10 +26,10 @@
     </div>
     <div class="category play_type">
       <div class="row">
-        <div class="col play_now" ng-click="playNow()">
+        <div class="col play_now" ng-click="playNow($event)">
           <img src="img/lobby/playnow.png">
         </div>
-        <div class="col play_joker" ng-click="playJoker()">
+        <div class="col play_joker" ng-click="playJoker($event)">
           <img src="img/lobby/playjoker.png">
         </div>
         <div class="col variation">
@@ -68,34 +68,42 @@
 
     <div class="profile">
       <div class="details">
-        <div class="name">{{playerData.username}}</div>
+        <div class="name">{{username}}</div>
         <div class="amt">
-          <img class="coin img-responsive" src="img/coin.svg">{{playerData.credit}}
+          <img class="coin img-responsive" src="img/coin.svg">{{balance|number:0}}
         </div>
         <div class="badges">
-          membership : {{playerData.userType}}
+          membership : {{userType}}
         </div>
       </div>
       <div class="profile_pic">
-        <img ng-src="{{playerData.image | serverimage}}" class="pic img-responsive">
+        <img ng-src="{{image | serverimage}}" class="pic img-responsive">
       </div>
     </div>
     <ion-list class="menu_list custom-scroll">
-      <ion-item>
-        <div ng-click="openPLStatementModal()">profit and loss</div>
+      <ion-item ng-click="openACStatementModal();accountStatement();">
+        account statement
       </ion-item>
-      <ion-item>
-        <div ng-click="openACStatementModal()">account statement </div>
+      <ion-item ng-click="openTransferStatementModal();transferStatement();">
+        transfer statement
+      </ion-item>
+      <ion-item ng-click="myPrivateTable();openMyPrivateTable($event);">
+        My Private Table
+      </ion-item>
+      <ion-item ng-click="createPrivateModal($event)">
+        Create Private Table
+      </ion-item>
+      <!-- <ion-item ng-click="openRulesModal($event)">
+        Rules
+      </ion-item> -->
+      <ion-item ng-click="openChangePasswordModal()">
+        change password
+      </ion-item>
+      <ion-item ng-click="logout()">
+        Logout
+      </ion-item>
 
-      </ion-item>
-      <ion-item>
-        <div ng-click="openTransferStatementModal()"> transfer statement</div>
 
-      </ion-item>
-      <ion-item>
-        <div ui-sref="login">Logout</div>
-
-      </ion-item>
     </ion-list>
 
   </div>

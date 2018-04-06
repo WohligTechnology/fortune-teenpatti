@@ -1,0 +1,25 @@
+<ion-modal-view class="custom-model statement-model change_password-model form-update private_table priate_table_login">
+  <ion-content>
+    <div class="close" ng-click="closePrivateLogInModal()">
+      <img src="img/close.png">
+    </div>
+    <div class="heading">Private Table Log In</div>
+    <div class="field ">
+      <div> Enter Your Password for Private Table
+        <b> {{privateDataForModal.name}} </b>
+      </div>
+      <form name="createTable">
+        <div class="rel">
+          <div class="login_button">
+            <input type="text" name="tablePassword" ng-model="data.password" placeholder="Table Password*" required>
+          </div>
+          <span class="valid" ng-show="createTable.tablePassword.$touched && createTable.tablePassword.$invalid">* Table Password is required.</span>
+          <span class="valid" ng-if="errorInPrivateLogIn && !(createTable.tablePassword.$touched && createTable.tablePassword.$invalid)">* Incorrect Table Password</span>
+        </div>
+
+        <button type="submit" ng-click="goToPrivateTable(privateDataForModal._id,data.password)" promise-btn="createPrivateTablePromise"
+          ng-disabled="createTable.$invalid">Log In</button>
+      </form>
+    </div>
+  </ion-content>
+</ion-modal-view>

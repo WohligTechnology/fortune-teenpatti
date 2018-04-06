@@ -1,0 +1,17 @@
+<ion-modal-view class="custom-model statement-model room_summary room_summary-potrate small-model side-show">
+
+  <ion-content>
+    <div class="heading">
+      {{message.heading}}
+    </div>
+    <div class="cont" ng-if="!message.error">
+      {{message.content}}
+    </div>
+    <div class="cont" ng-if="message.error">
+      <div ng-bind-html="message.content"></div>
+    </div>
+    <div class="side_show_btn">
+      <button ng-click=closeMessageModal()>Ok</button>
+    </div>
+  </ion-content>
+</ion-modal-view>

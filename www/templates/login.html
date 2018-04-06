@@ -10,7 +10,7 @@
         <div class="col col-20">
           <img src="img/login/username.png" class="icon">
         </div>
-        <input class="col" type="text" name="username" ng-model="formData.username" placeholder="USER NAME" required>
+        <input class="col" type="text" name="username" ng-model="data.username" placeholder="USER NAME" required>
       </div>
       <span class="valid" ng-show="login.username.$touched && login.username.$invalid">* username is required.</span>
 
@@ -18,7 +18,7 @@
         <div class="col col-20">
           <img src="img/login/password.png" class="icon">
         </div>
-        <input class="col" type="password" name="password" ng-model="formData.password" placeholder="PASSWORD" required>
+        <input class="col" type="password" name="password" ng-model="data.password" placeholder="PASSWORD" required>
       </div>
       <span class="valid" ng-show="login.password.$touched && login.password.$invalid">* password is required.</span>
 
@@ -26,7 +26,7 @@
 
 
       <div class="login_button_submit row">
-        <button class="button" type='submit' ng-click="playerLogin(formData,login);">LOGIN</button>
+        <button class="button" type='submit'  ng-disabled="login.$invalid" ng-click="playerLogin(data,login)" promise-btn="loginPromise">LOGIN</button>
         <!-- <button class="button" type='submit' ui-sref="lobby">LOGIN</button> -->
       </div>
 

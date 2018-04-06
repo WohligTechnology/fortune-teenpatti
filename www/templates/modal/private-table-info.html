@@ -1,0 +1,55 @@
+<ion-modal-view class="custom-model statement-model price_range_modal">
+    <ion-content>
+      <div class="close" ng-click="closeMyPrivateModal();ModalInfo.hide()">
+        <img src="img/close.png">
+      </div>
+      <div class="heading">My Private table</div>
+    
+      <div class="top_field"></div>
+      <div class="custom-table" ng-if="privateTableDatas">
+        <ion-list>
+          <ion-item class="item">
+            <div class="row">
+              <div class="col-33">
+                <span class="bold">Name</span>
+              </div>
+              <div class="col-20">
+                <div class="bold text-center">type</div>
+              </div>
+              <div class="col-20">
+                <div class="bold text-center">Stakes</div>
+              </div>
+              <div class="col-20">
+                <span class="bold">Password</span>
+              </div>
+            </div>
+          </ion-item>
+          <ion-item collection-repeat="data in privateTableDatas" class="item">
+            <div class="row">
+              <div class="col-33">
+                <span>{{data.name}}</span>
+              </div>
+              <div class="col-20">
+                <div class="text-center">{{data.type}}</div>
+              </div>
+              <div class="col-20">
+                <div class="text-center">{{data.blindAmt}} - {{data.chalAmt}}</div>
+              </div>
+              <div class="col-20">
+                <div class="text-center">{{data.password}}</div>
+              </div>
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+      <!-- no Data found -->
+      <div class="loader bold" ng-if="noDataFound" ng-bind-html="displayMessage.main">
+      </div>
+      <!-- //loader -->
+      <div class="loader" ng-if="!tablesDataFilter">
+        Loading ..
+      </div>
+      <ion-infinite-scroll on-infinite="loadMorePrivateTable()" icon="ion-loading-c"></ion-infinite-scroll>
+    </ion-content>
+  </ion-modal-view>
+  

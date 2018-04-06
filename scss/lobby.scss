@@ -135,6 +135,10 @@
       }
     }
     .menu_list {
+      .list{
+        overflow: scroll;
+        height: 65vh;
+      }
       .item {
         background: transparent;
         color: white;

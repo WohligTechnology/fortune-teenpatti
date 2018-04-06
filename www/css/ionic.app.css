@@ -10084,6 +10084,9 @@ body {
     .profile_menu .menu_cont .profile .profile_pic {
       flex: .25;
       align-self: center; }
+  .profile_menu .menu_cont .menu_list .list {
+    overflow: scroll;
+    height: 65vh; }
   .profile_menu .menu_cont .menu_list .item {
     background: transparent;
     color: white;
