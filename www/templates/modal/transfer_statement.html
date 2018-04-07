@@ -1,87 +1,94 @@
-<ion-modal-view class="custom-model statement-model" >
+<ion-modal-view class="custom-model statement-model">
 
-        <ion-content >
-            <div class="close" ng-click="closeTransferStatementModal()" > <i class="icon ion-close text_glow"></i></div>
-          <div class="heading">transfer statement</div>
-          <div class="top_field">
-            Date within
-            <select>
-              <option selected>1 Day</option>
-              <option>2 Day</option>
-              <option>3 Day</option>
-            </select>
-            of
-            <input type="text" ng-model="month">
+  <ion-content>
+    <div class="close" ng-click="closeTransferStatement()">
+      <i class="icon ion-close text_glow"></i>
+    </div>
+    <div class="heading">Transfer statement</div>
+    <div class="top_field">
+      <!-- Date within
+      <select>
+        <option selected>1 Day</option>
+        <option>2 Day</option>
+        <option>3 Day</option>
+      </select>
+      of
+      <input type="text" ng-model="month"> -->
+    </div>
+
+    <!-- <div class="statement_content ">
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Type</th>
+          <th>Amount</th>
+        </tr>
+
+        <tr class="border_btm" ng-repeat="data in transferStatementData" infinite-scroll="loadTransferMore()" infinite-scroll-distance="1"
+          infinite-scroll-disabled="loadingDisable">
+          <td> {{data.updatedAt | date:'d-MMM-yyyy h:mm a'}}</td>
+          <td> {{data.fromUser.username}} </td>
+          <td>{{data.toUser.username}}</td>
+          <td ng-if="data.fromUser._id==memberId"> Debit</td>
+          <td ng-if="data.toUser._id==memberId"> Credit</td>
+          <td> {{data.amount}}</td>
+        </tr>
+      </table>
+    </div> -->
+
+
+    <div class="custom-table" ng-if="transferStatementData">
+      <ion-list>
+        <ion-item class="item">
+          <div class="row">
+            <div class="col-20">
+              <div class="bold">Date</div>
+            </div>
+            <div class="col-20">
+              <div class="bold text-center">From</div>
+            </div>
+            <div class="col-20">
+              <div class="bold text-center">To</div>
+            </div>
+            <div class="col-20">
+              <div class="bold text-center">Type</div>
+            </div>
+            <div class="col-20">
+              <div class="bold text-center">Amount</div>
+            </div>
           </div>
-      
-          <div class="statement_content ">
-            <table>
-              <tr>
-                <th>gametype</th>
-                <th>time</th>
-                <th>commision</th>
-                <th>netwin</th>
-              </tr>
-      
-              <tr>
-                <td>
-                  20 jan 2018
-                  <br/> teenpatti
-                </td>
-                <td>7.30 pm</td>
-                <td>2950</td>
-                <td>1280</td>
-              </tr>
-              <tr>
-                <td>
-                  20 jan 2018
-                  <br/> teenpatti
-                </td>
-                <td>7.30 pm</td>
-                <td>2950</td>
-                <td>1280</td>
-              </tr>
-              <tr>
-                <td>
-                  20 jan 2018
-                  <br/> teenpatti
-                </td>
-                <td>7.30 pm</td>
-                <td>2950</td>
-                <td>1280</td>
-              </tr>
-              <tr>
-                <td>
-                  20 jan 2018
-                  <br/> teenpatti
-                </td>
-                <td>7.30 pm</td>
-                <td>2950</td>
-                <td>1280</td>
-              </tr>
-              <tr>
-                <td>
-                  20 jan 2018
-                  <br/> teenpatti
-                </td>
-                <td>7.30 pm</td>
-                <td>2950</td>
-                <td>1280</td>
-              </tr>
-              <tr>
-                <td>
-                  20 jan 2018
-                  <br/> teenpatti
-                </td>
-                <td>7.30 pm</td>
-                <td>2950</td>
-                <td>1280</td>
-              </tr>
-            </table>
-      
-      
+        </ion-item>
+        <ion-item collection-repeat="data in transferStatementData" class="item">
+          <div class="row">
+            <div class="col-20">
+              <div class="bold">{{data.updatedAt | date:'d-MMM-yyyy h:mm a'}}</div>
+            </div>
+            <div class="col-20">
+              <div class="text-center bold">{{data.fromUser.username}}</div>
+            </div>
+            <div class="col-20">
+              <div class="text-center bold">{{data.toUser.username}}</div>
+            </div>
+            <div class="col-20">
+              <div class="text-center bold" ng-if="data.fromUser._id==memberId"> Debit</div>
+              <div class="text-center bold" ng-if="data.toUser._id==memberId"> Credit</div>
+            </div>
+            <div class="col-20">
+              <div class="text-center bold">{{data.amount}}</div>
+            </div>
           </div>
-      
-        </ion-content>
-      </ion-modal-view>
-      
+        </ion-item>
+      </ion-list>
+    </div>
+    <!-- no Data found -->
+    <div class="loader bold" ng-if="noDataFound" ng-bind-html="displayMessage.main">
+    </div>
+    <!-- loader -->
+    <div class="loader" ng-if="!transferStatementData">
+      Loading ..
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" icon="ion-loading-c"></ion-infinite-scroll>
+  </ion-content>
+</ion-modal-view>
