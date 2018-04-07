@@ -805,13 +805,13 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
   };
 
   function reArragePlayers(playersData) {
-    var diff = 9 - myTableNo;
-    var players = _.times(9, function (n) {
+    var diff = 6 - myTableNo;
+    var players = _.times(6, function (n) {
       var playerReturn = _.find(playersData, function (singlePlayer) {
         if (singlePlayer) {
           var checkNo = (singlePlayer.playerNo + diff);
-          if (checkNo > 9) {
-            checkNo = checkNo - 9;
+          if (checkNo > 6) {
+            checkNo = checkNo - 6;
           }
 
           if ((n + 1) == checkNo) {
@@ -825,6 +825,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
       return _.cloneDeep(playerReturn);
     });
     $scope.players = players;
+    console.log("rearr",$scope.players);
   }
   //seat selection Player
   io.socket.on("removePlayer", function (data) {

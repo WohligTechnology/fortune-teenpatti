@@ -46,33 +46,30 @@
     <players ng-pos="5" ng-click="sitHerefn(5)" ng-player="players[4]" ng-game-type="gameType" ng-remaining-player="remainingPlayerCount"
       ng-sit-here="sitHere" ng-win="winnerPlayerNo" ng-animation="startAnimation" ng-winner-player="showWinnerPlayer">
     </players>
+    <players ng-pos="6" ng-click="sitHerefn(6)" ng-player="players[4]" ng-game-type="gameType" ng-remaining-player="remainingPlayerCount"
+      ng-sit-here="sitHere" ng-win="winnerPlayerNo" ng-animation="startAnimation" ng-winner-player="showWinnerPlayer" ng-if="sitHere">
+    </players>
     <!-- close of table field -->
   </div>
 
   <!-- bottom block -->
-  <div class="bottom">
-    <div class="pack shadow_glow text_glow" ng-click="pack()">
+  <div class="bottom" ng-if="!sitHere">
+    <div class="pack shadow_glow text_glow" ng-click="pack()" >
       Pack
     </div>
-    <div class="main_player ">
-      <img src="img/player_pic.png" alt="profile" class="main_player_pic">
-      <div class="cards">
+    <!-- main Player -->
+     <mainPlayer ng-click="sitHerefn(6)" ng-game-type="gameType" ng-remaining-player="remainingPlayerCount" ng-pos="0"
+      ng-main="main-player" ng-player="players[5]" ng-sit-here="sitHere" ng-win="winnerPlayerNo" ng-animation="startAnimation">
+    </mainPlayer>
 
-        <img src="img/card.png" alt="card">
-        <img src="img/card.png" alt="card">
-        <img src="img/card.png" alt="card">
-        <div class="see" ng-click="showCard()">see</div>
-      </div>
-      <div class="amt button_bg shadow_glow">
-        <img src="img/coin.svg">64,000
-      </div>
-    </div>
 
-    <div class="slideshow text_glow shadow_glow ">SlideShow</div>
-    <div class="minus shadow_glow text_glow  " ng-click="reduceChal()">-</div>
+    <div class="slideshow text_glow shadow_glow">SlideShow</div>
+    <div class="minus shadow_glow text_glow" ng-click="reduceChal()">-</div>
     <div class="chal shadow_glow text_glow">Chal {{chalAmount}}</div>
-    <div class="plus shadow_glow text_glow" ng-click="increaseChal()">+</div>
+    <div class="plus shadow_glow text_glow" ng-click="increaseChal()" > +</div>
   </div>
+
+
 
 </div>
 

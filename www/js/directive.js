@@ -41,6 +41,24 @@ myApp.directive('card', function () {
     link: function (scope, element, attr) {}
   };
 })
+.directive('mainplayer', function () {
+  return {
+    restrict: 'E',
+    replace: false,
+    scope: {
+      player: "=ngPlayer",
+      gameType: "=ngGameType",
+      pos: "=ngPos",
+      mainplayer: "@ngMain",
+      sitHere: "=ngSitHere",
+      winnerPlayerNo: "=ngWin",
+      startAnimation: "=ngAnimation",
+      remainingPlayerCount: "=ngRemainingPlayer"
+    },
+    templateUrl: 'templates/directive/main-player.html',
+    link: function (scope, element, attr) {}
+  };
+})
   .directive('joker', function () {
     return {
       restrict: 'E',
