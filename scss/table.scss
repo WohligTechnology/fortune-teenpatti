@@ -146,6 +146,7 @@
           width: 55%;
           position: relative;
           margin-top: -20%;
+          transition: transform 1s;
           card {
             display: inline-block;
             max-width: 30%;
@@ -156,18 +157,19 @@
               transition-delay: none;
             }
             &:nth-child(2) {
-              left: 15%;
+              left: 17%;
               transition: transform 1s;
               transition-delay: 500ms;
             }
             &:nth-child(3) {
-              left: 35%;
+              left: 30%;
               transition: transform 1s;
               transition-delay: 1000ms;
             }
           }
           &.cards_open {
-            transform: scale(2.5);
+            transform: scale(1.7) translate(0%,-5px);
+
           }
         }
       }
@@ -422,7 +424,7 @@
     .profile {
       flex-direction: row-reverse !important;
       .cards {
-        right: -18%;
+        right: -12%;
       }
     }
     .amt {

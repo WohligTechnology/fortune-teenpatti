@@ -10299,7 +10299,8 @@ body {
         .table .table_field .plyr .profile .cards {
           width: 55%;
           position: relative;
-          margin-top: -20%; }
+          margin-top: -20%;
+          transition: transform 1s; }
           .table .table_field .plyr .profile .cards card {
             display: inline-block;
             max-width: 30%;
@@ -10309,15 +10310,15 @@ body {
               transition: transform 500ms;
               transition-delay: none; }
             .table .table_field .plyr .profile .cards card:nth-child(2) {
-              left: 15%;
+              left: 17%;
               transition: transform 1s;
               transition-delay: 500ms; }
             .table .table_field .plyr .profile .cards card:nth-child(3) {
-              left: 35%;
+              left: 30%;
               transition: transform 1s;
               transition-delay: 1000ms; }
           .table .table_field .plyr .profile .cards.cards_open {
-            transform: scale(2.5); }
+            transform: scale(1.7) translate(0%, -5px); }
       .table .table_field .plyr .amt {
         width: 50%;
         text-align: center;
@@ -10507,7 +10508,7 @@ body {
     .table .player4 .profile {
       flex-direction: row-reverse !important; }
       .table .player4 .profile .cards {
-        right: -18%; }
+        right: -12%; }
     .table .player4 .amt {
       width: 140% !important; }
     .table .player4 .name {
