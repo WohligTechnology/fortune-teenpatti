@@ -377,6 +377,7 @@
       padding: 1.5% 2.5%;
       margin: 0% 0.5%;
       font-size: 1.2em;
+      border: 0;
     }
     .pack {
       margin-right: 20%;
@@ -384,7 +385,8 @@
     .minus,
     .plus {
       font-size: 3em;
-      padding: 1% 2.5%;
+      padding: 0% 2.5% 0.7%;
+      line-height: 1;
     }
     .chal {
       width: 20%;
