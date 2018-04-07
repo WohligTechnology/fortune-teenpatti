@@ -63,10 +63,10 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
   });
 
   $scope.openPlayerDetails = function () {
-    if(!$scope.sitHere){
+    if (!$scope.sitHere) {
       $scope.playerDetails.show();
     }
-   
+
   }
 
   $scope.closePlayerDetails = function () {
@@ -777,6 +777,8 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
     }
   }
 
+  // $scope.showSideShowModal();
+
   //sideShow Maker
   $scope.doSideShow = function () {
     $scope.sideShowDataFrom = 0;
@@ -825,7 +827,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
       return _.cloneDeep(playerReturn);
     });
     $scope.players = players;
-    console.log("rearr",$scope.players);
+    console.log("rearr", $scope.players);
   }
   //seat selection Player
   io.socket.on("removePlayer", function (data) {
@@ -865,7 +867,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
   }
 
 
- 
+
   //chal fn
   $scope.chalAmount = 1000;
   $scope.increaseChal = function () {
