@@ -9985,6 +9985,29 @@ body {
   .menu_open .menu_cont {
     margin-left: 0px; }
 
+.table_loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1.5em;
+  z-index: 20; }
+  .table_loader .center {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    text-align: center; }
+  .table_loader img {
+    width: 5%; }
+  .table_loader .loader-logo {
+    width: 30%;
+    margin: 6%; }
+
 .lobby {
   background: url("../img/lobby/background.png");
   background-size: 100% 100%;
@@ -10166,8 +10189,6 @@ body {
   height: 100vh;
   position: relative; }
   .table .top {
-    background: rgba(59, 30, 67, 0.54);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
     width: 100vw;
     position: absolute;
     top: 0;
@@ -10380,7 +10401,10 @@ body {
     align-items: center;
     justify-content: center; }
     .table .bottom mainplayer {
-      width: 18%; }
+      width: 18%;
+      position: absolute;
+      left: 19%;
+      bottom: 10%; }
     .table .bottom .main_player {
       width: 100%;
       position: relative;
@@ -10390,20 +10414,25 @@ body {
         background: #ff000000;
         z-index: 1;
         width: 100%;
-        top: -380%; }
+        top: -340%; }
       .table .bottom .main_player .main_player_pic {
-        width: 100%;
-        padding: 10%;
+        width: 75%;
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: 12%;
         bottom: 40%; }
+        .table .bottom .main_player .main_player_pic img {
+          width: 100%; }
+        .table .bottom .main_player .main_player_pic .pie_loader {
+          top: 0;
+          left: 0; }
       .table .bottom .main_player .cards {
         position: absolute;
         bottom: 5%;
         transform: translate(-50%, -5%);
         width: 100%;
-        left: 50%; }
+        left: 50%;
+        z-index: 1; }
         .table .bottom .main_player .cards card {
           width: 30%;
           display: inline-block; }
@@ -10435,7 +10464,8 @@ body {
         margin: 2%;
         padding: 3%;
         padding-top: 3%;
-        -webkit-text-stroke: 0; }
+        -webkit-text-stroke: 0;
+        z-index: 1; }
         .table .bottom .main_player .amt img {
           width: 1em;
           vertical-align: middle; }
@@ -10448,13 +10478,20 @@ body {
       background-size: 100% 100%;
       padding: 1.5% 2.5%;
       margin: 0% 0.5%;
-      font-size: 1.2em; }
+      font-size: 1.2em;
+      border: 0;
+      font-family: inherit; }
+    .table .bottom .pack {
+      margin-right: 20%; }
     .table .bottom .minus,
     .table .bottom .plus {
       font-size: 3em;
-      padding: 1% 2.5%; }
+      padding: 0% 2.5% 0.7%;
+      line-height: 1; }
     .table .bottom .chal {
       width: 20%; }
+    .table .bottom .slideshow {
+      min-width: 16%; }
   .table .player1 {
     top: 30%;
     left: 5%; }
@@ -10473,6 +10510,8 @@ body {
         right: -18%; }
     .table .player4 .amt {
       width: 140% !important; }
+    .table .player4 .name {
+      transform: translate(25%) !important; }
   .table .player5 {
     bottom: 0;
     right: 25%; }
@@ -10697,6 +10736,32 @@ body {
   transform: translate(70%, -350%) scale(0.55) !important;
   left: 50% !important;
   transition: none !important; }
+
+.new_game_timer {
+  position: fixed;
+  /* position: absolute; */
+  top: 3%;
+  /* width: 100%; */
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 5;
+  width: 55%;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5em; }
+
+.table_message {
+  position: fixed;
+  /* position: absolute; */
+  top: 3%;
+  /* width: 100%; */
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 5;
+  width: 55%;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5em; }
 
 .login {
   background: url("../img/login/bg.png");

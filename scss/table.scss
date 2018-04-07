@@ -288,8 +288,8 @@
     mainplayer {
       width: 18%;
       position: absolute;
-      left: 14%;
-      bottom: 0;
+      left: 19%;
+      bottom: 10%;
     }
     .main_player {
       width: 100%;
@@ -300,15 +300,21 @@
         background: #ff000000;
         z-index: 1;
         width: 100%;
-        top: -395%;
+        top: -340%;
       }
       .main_player_pic {
-        width: 100%;
-        padding: 10%;
+        width: 75%; // padding: 10%;
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: 12%;
         bottom: 40%;
+        img {
+          width: 100%
+        }
+        .pie_loader {
+          top: 0;
+          left: 0;
+        }
       }
       .cards {
         position: absolute;
@@ -316,6 +322,7 @@
         transform: translate(-50%, -5%);
         width: 100%;
         left: 50%;
+        z-index: 1;
         card {
           width: 30%;
           display: inline-block;
@@ -361,6 +368,7 @@
         padding: 3%;
         padding-top: 3%;
         -webkit-text-stroke: 0;
+        z-index: 1;
         img {
           width: 1em;
           vertical-align: middle
@@ -378,6 +386,7 @@
       margin: 0% 0.5%;
       font-size: 1.2em;
       border: 0;
+      font-family: inherit;
     }
     .pack {
       margin-right: 20%;
@@ -390,6 +399,9 @@
     }
     .chal {
       width: 20%;
+    }
+    .slideshow {
+      min-width: 16%;
     }
   } //player position
   .player1 {
@@ -415,6 +427,10 @@
     }
     .amt {
       width: 140% !important;
+    }
+    .name{
+      transform: translate(25%) !important;
+
     }
   }
   .player5 {

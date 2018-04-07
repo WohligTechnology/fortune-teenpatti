@@ -3,9 +3,25 @@
    'sit_here':sitHere && !player,
    'card_shuffle_animation': player && player.cards.length>0 && startAnimation
 }" ng-click="openPlayerDetails()">
+
+
+
+
+
   <div class="name">{{player.name}}</div>
   <div class="profile">
     <div class="player_pic">
+
+
+
+      <div class="pie_loader" ng-if="player.isTurn && !sitHere">
+        <div class="animation_wrapper">
+          <div class="pie spinner"></div>
+          <div class="pie filler"></div>
+          <div class="mask"></div>
+        </div>
+      </div>
+
       <img src="{{player.image | serverimage}}" alt="player_pic" class="pic">
       <div class="status" ng-if="player.isBlind && !player.isFold && player.isActive && remainingPlayerCount>1">
         <span> BLIND</span>
@@ -26,7 +42,7 @@
       <card card='DONE'></card>
 
     </div>
-  
+
     <div class="cards cards_open" ng-if="!player.isFold && winnerPlayerNo > 0 && showWinnerPlayer.length>1 && player.cards.length<4">
       <card card='{{player.cards[0]}}'> </card>
       <card card='{{player.cards[1]}}'> </card>
