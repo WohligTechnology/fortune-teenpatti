@@ -5,8 +5,8 @@
   height: 100vh;
   position: relative;
   .top {
-    background: rgba(59, 30, 67, 0.54);
-    border-bottom: 2px solid rgba(0, 0, 0, .3); // height: 10vh;
+    // background: rgba(59, 30, 67, 0.54);
+    // border-bottom: 2px solid rgba(0, 0, 0, .3); // height: 10vh;
     width: 100vw;
     position: absolute;
     top: 0;
@@ -146,7 +146,6 @@
           width: 55%;
           position: relative;
           margin-top: -20%;
-          
           card {
             display: inline-block;
             max-width: 30%;
@@ -167,8 +166,7 @@
               transition-delay: 1000ms;
             }
           }
-
-          &.cards_open{
+          &.cards_open {
             transform: scale(2.5);
           }
         }
@@ -195,7 +193,7 @@
       &>* {
         display: none !important;
       }
-      *{
+      * {
         display: none;
       }
       &:before {
@@ -227,7 +225,7 @@
       }
       &.player6 {
         bottom: 10%;
-       left:30%;
+        left: 30%;
       }
       &.main-player {
         width: 10% !important;
@@ -242,8 +240,7 @@
       padding-bottom: 1%;
       width: 9%; // height:10vh;
       transform: translateY(30%);
-      opacity: 0.85;
-      // width: 100% !important;
+      opacity: 0.85; // width: 100% !important;
       // transform: translateY(0%) !important;
       &>* {
         display: none !important;
@@ -268,12 +265,12 @@
       }
       &.player6 {
         bottom: 10%;
-       left:30%;
+        left: 30%;
       }
       &.main-player {
         width: 10% !important;
         bottom: 20%;
-      } 
+      }
     }
   }
   .bottom {
@@ -288,14 +285,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    mainplayer{
+    mainplayer {
       width: 18%;
     }
     .main_player {
       width: 100%;
       position: relative; // transform: translateY(-41%);
       bottom: 0;
-      .status{
+      .status {
         position: absolute;
         background: #ff000000;
         z-index: 1;
@@ -316,7 +313,6 @@
         transform: translate(-50%, -5%);
         width: 100%;
         left: 50%;
-        
         card {
           width: 30%;
           display: inline-block;
@@ -556,8 +552,6 @@
   }
 }
 
-
-
 .card_shuffle_animation {
   &.player1 {
     card {
@@ -659,9 +653,6 @@
       }
     }
   }
-  
-  
-
 }
 
 .main_card_anime {
