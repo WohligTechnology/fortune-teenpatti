@@ -10390,7 +10390,7 @@ body {
         bottom: 20%; }
     .table .table_field .winner {
       transform: translate(-5%);
-      width: 6em;
+      width: 9em;
       height: 3em; }
       .table .table_field .winner img {
         width: 100%; }
@@ -10419,9 +10419,9 @@ body {
         position: absolute;
         background: #ff000000;
         z-index: 1;
-        width: 70%;
+        width: 100%;
         top: -475%;
-        left: 15%; }
+        left: 0; }
         .table .bottom .main_player .main_winner img {
           width: 100%; }
       .table .bottom .main_player .status {
@@ -11236,6 +11236,44 @@ ion-item.item {
 span.valid {
   display: block;
   margin-top: -8px; }
+
+.private_table .private_data {
+  font-size: 2em;
+  text-align: center;
+  margin: 20px;
+  line-height: 1.5; }
+
+.room_summary {
+  height: 50%;
+  width: 50%;
+  top: 25%;
+  left: 25%; }
+  .room_summary.room_summary-potrate {
+    width: 80%;
+    top: 25%;
+    left: 10%;
+    bottom: 40%;
+    height: auto;
+    min-height: 240px; }
+  .room_summary .heading {
+    font-family: 'Cinzel-Bold';
+    border-image-slice: 2;
+    border-bottom: 1px solid; }
+  .room_summary .ok {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 2%; }
+  .room_summary button {
+    padding: 5px 25px;
+    border: 0px; }
+  .room_summary .cont {
+    text-align: center;
+    padding: 13% 5%;
+    font-family: 'Cinzel-Bold'; }
+  .room_summary .scroll {
+    height: 100%; }
 
 .pie_loader {
   position: absolute;
