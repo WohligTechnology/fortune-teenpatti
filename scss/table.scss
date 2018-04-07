@@ -310,6 +310,7 @@
         left: 0;
         bottom: 40%;
       }
+
       .cards {
         position: absolute;
         bottom: 5%;
@@ -323,14 +324,19 @@
           &:nth-child(1) {
             position: relative;
             transform: rotate(-10deg) translate(40%);
+            transition: transform 1s;
           }
           &:nth-child(2) {
             position: relative;
             transform: rotate(0deg) translate(0%) scale(1.1);
+            transition: transform 1s;
+            transition-delay: 500ms;
           }
           &:nth-child(3) {
             position: relative;
             transform: rotate(10deg) translate(-40%, 10%);
+            transition: transform 1s;
+            transition-delay: 1000ms;
           }
         }
       }
@@ -397,7 +403,17 @@
   }
   .player4 {
     top: 30%;
-    right: 0;
+    right: 5%;
+    .profile{
+      flex-direction: row-reverse !important;
+      .cards{
+        right: -18%;
+      }
+    
+    }
+    .amt{
+      width: 140% !important;
+    }
   }
   .player5 {
     // transform: translateY(-90%);
@@ -602,19 +618,19 @@
   &.player3 {
     card {
       &:nth-child(1) {
-        transform: scale(1.6) translate(764%, 188%) !important;
+    transform: scale(.9) translate(-1114%, 236%) !important;
         transition: none !important;
       }
       &:nth-child(2) {
-        transform: scale(1.6) translate(718%, 188%) !important;
+        transform: scale(.9) translate(-1155%, 236%) !important;
         transition: none !important;
       }
       &:nth-child(3) {
-        transform: scale(1.6) translate(672%, 188%) !important;
+        transform: scale(.9) translate(-1228%, 236%) !important;
         transition: none !important;
       }
       &:nth-child(4) {
-        transform: scale(1.6) translate(672%, 188%) !important;
+        transform: scale(1.6) translate(-1328%,236%) !important;
         transition: none !important;
       }
     }
@@ -622,19 +638,19 @@
   &.player4 {
     card {
       &:nth-child(1) {
-        transform: scale(1.5) translate(120%, 273%) !important;
+        transform: scale(.9) translate(-1284%, -125%) !important;
         transition: none !important;
       }
       &:nth-child(2) {
-        transform: scale(1.5) translate(70%, 273%) !important;
+        transform: scale(.9) translate(-1312%, -125%) !important;
         transition: none !important;
       }
       &:nth-child(3) {
-        transform: scale(1.5) translate(20%, 273%) !important;
+        transform: scale(.9) translate(-1392%, -125%) !important;
         transition: none !important;
       }
       &:nth-child(4) {
-        transform: scale(1.5) translate(20%, 273%) !important;
+        transform: scale(.9) translate(-1492%, -125%) !important;
         transition: none !important;
       }
     }
@@ -642,19 +658,19 @@
   &.player5 {
     card {
       &:nth-child(1) {
-        transform: scale(1.5) translate(-1080%, 273%) !important;
+        transform: scale(.9) translate(-796%, -534%) !important;
         transition: none !important;
       }
       &:nth-child(2) {
-        transform: scale(1.5) translate(-1118%, 274%) !important;
+        transform: scale(.9) translate(-830%, -534%) !important;
         transition: none !important;
       }
       &:nth-child(3) {
-        transform: scale(1.5) translate(-1174%, 272%) !important;
+        transform: scale(.9) translate(-900%, -534%) !important;
         transition: none !important;
       }
       &:nth-child(4) {
-        transform: scale(1.5) translate(-1174%, 272%) !important;
+        transform: scale(1.5) translate(-1000%, -534%) !important;
         transition: none !important;
       }
     }
@@ -665,32 +681,22 @@
 }
 
 .main_card_anime {
-  // card {
-  //   &:nth-child(1) {
-  //     transform: translate(-85%, -154%) scale(.3) !important;
-  //   }
-  //   &:nth-child(2) {
-  //     transform: translate(-125%, -154%) scale(.3) !important;
-  //   }
-  //   &:nth-child(3) {
-  //     transform: translate(-150%, -153%) scale(.3) !important;
-  //   }
-  // }
+  
   card {
     &:nth-child(1) {
-      transform: translate(-85%, -154%) scale(.3) !important;
+      transform: translate(390%, -350%) scale(.55) !important;
       transition: none !important;
     }
     &:nth-child(2) {
-      transform: translate(-125%, -154%) scale(.3) !important;
+      transform: translate(276%, -350%) scale(.55) !important;
       transition: none !important; // transition: transform 2s;
     }
     &:nth-child(3) {
-      transform: translate(-150%, -153%) scale(.3) !important;
+      transform: translate(170%, -350%) scale(.55) !important;
       transition: none !important; // transition: transform 3s;
     }
     &:nth-child(4) {
-      transform: translate(-150%, -153%) scale(.3) !important;
+      transform: translate(70%, -350%) scale(.55) !important;
       left: 50% !important;
       transition: none !important; // transition: transform 3s;
     }

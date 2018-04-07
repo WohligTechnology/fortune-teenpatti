@@ -1,4 +1,4 @@
-<div class="plyr player{{pos}} card_shuffle_animation" ng-class="{
+<div class="plyr player{{pos}}" ng-class="{
    'no_player':!player && !sitHere,
    'sit_here':sitHere && !player,
    'card_shuffle_animation': player && player.cards.length>0 && startAnimation
@@ -20,18 +20,13 @@
         <span> Waiting...</span>
       </div>
     </div>
-    <!-- <div class="cards" ng-if=" (player.cards.length > 0 || showWinnerPlayer.length == 1) && player.cards.length<4">
-      <card card='DONE'></card>
-      <card card='DONE'></card>
-      <card card='DONE'></card>
-
-    </div> -->
-    <div class="cards" >
+    <div class="cards" ng-if=" (player.cards.length > 0 || showWinnerPlayer.length == 1) && player.cards.length<4">
       <card card='DONE'></card>
       <card card='DONE'></card>
       <card card='DONE'></card>
 
     </div>
+  
     <div class="cards cards_open" ng-if="!player.isFold && winnerPlayerNo > 0 && showWinnerPlayer.length>1 && player.cards.length<4">
       <card card='{{player.cards[0]}}'> </card>
       <card card='{{player.cards[1]}}'> </card>
