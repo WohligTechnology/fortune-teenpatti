@@ -1,4 +1,4 @@
-myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, Service, $ionicModal) {
+myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state,$timeout, Service, $ionicModal) {
 
   //ionic cordova 
   $ionicPlatform.ready(function () {
