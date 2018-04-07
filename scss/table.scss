@@ -146,7 +146,7 @@
           width: 55%;
           position: relative;
           margin-top: -20%;
-          transition: transform 1s;
+          // transition: transform 1s;
           card {
             display: inline-block;
             max-width: 30%;
@@ -276,7 +276,7 @@
     }
     .winner{
       transform: translate(-5%);
-      width: 6em;
+      width: 9em;
       height: 3em;
       img{
         width: 100%;
@@ -310,9 +310,9 @@
         position: absolute;
         background: #ff000000;
         z-index: 1;
-        width: 70%;
+        width: 100%;
         top: -475%;
-        left: 15%;
+        left: 0;
         img{
           width: 100%;
         }

@@ -196,6 +196,9 @@ body {
 @import "table";
 @import "login";
 @import "modal";
+@import "timer";
+
+
 @media (min-aspect-ratio: 18/9) {
   .table .table_field {
     width: 85%;
