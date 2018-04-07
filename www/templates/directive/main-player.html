@@ -1,6 +1,8 @@
 <div class="main_player player{{pos}} {{mainplayer}}" ng-class="{'sit_here':sitHere && !player,'no_player':!sitHere && player==0 }">
 
-
+  <div class="main_winner" ng-if="player.playerNo==winnerPlayerNo">
+    <img src="img/winner.png">
+  </div>
   <div class="status" ng-if="player.isBlind && !player.isFold && player.isActive && remainingPlayerCount>1">
     BLIND </div>
   <div class="status" ng-if="player.isFold && player.isActive  && remainingPlayerCount>1">
@@ -9,40 +11,38 @@
     SEEN </div>
   <div class="status" ng-if="!player.isActive || remainingPlayerCount==1">
     Waiting... </div>
-    <div class="main_player_pic"> 
-        <img ng-src="{{player.image | serverimage}}" alt="profile" >
-
-
-        <div class="pie_loader"  ng-if="player.isTurn  && !sitHere">
-            <div class="animation_wrapper">
-              <div class="pie spinner"></div>
-              <div class="pie filler"></div>
-              <div class="mask"></div>
-            </div>
-          </div>
+  <div class="main_player_pic">
+    <img ng-src="{{player.image | serverimage}}" alt="profile">
+    <div class="pie_loader" ng-if="player.isTurn  && !sitHere">
+      <div class="animation_wrapper">
+        <div class="pie spinner"></div>
+        <div class="pie filler"></div>
+        <div class="mask"></div>
       </div>
-  
-<div class="cards_container" ng-if="!sitHere && (player.cards.length > 0) " ng-class="{'main_card_anime':player.cards.length>0 && startAnimation}">
-  <div class="cards"  ng-if="( (player && player.isBlind && !player.isFold && remainingPlayerCount>1) || ( winnerPlayerNo == -1 && remainingPlayerCount == 1) ) && player.cards.length<4">
-
-    <card card='NONE'> </card>
-    <card card='NONE'> </card>
-    <card card='NONE'> </card>
-   
+    </div>
   </div>
- 
-  <div class="cards"  ng-if="( (!player.isBlind && !player.isFold) || (!player.isFold && winnerPlayerNo > 0 && remainingPlayerCount > 1) ) && player.cards.length<4">
-    <!-- <img src="img/card.png" alt="card">
+
+  <div class="cards_container" ng-if="!sitHere && (player.cards.length > 0) " ng-class="{'main_card_anime':player.cards.length>0 && startAnimation}">
+    <div class="cards" ng-if="( (player && player.isBlind && !player.isFold && remainingPlayerCount>1) || ( winnerPlayerNo == -1 && remainingPlayerCount == 1) ) && player.cards.length<4">
+
+      <card card='NONE'> </card>
+      <card card='NONE'> </card>
+      <card card='NONE'> </card>
+
+    </div>
+
+    <div class="cards" ng-if="( (!player.isBlind && !player.isFold) || (!player.isFold && winnerPlayerNo > 0 && remainingPlayerCount > 1) ) && player.cards.length<4">
+      <!-- <img src="img/card.png" alt="card">
           <img src="img/card.png" alt="card">
           <img src="img/card.png" alt="card"> -->
-          <card card='{{player.cards[0]}}'> </card>
-          <card card='{{player.cards[1]}}'> </card>
-          <card card='{{player.cards[2]}}'> </card>
-   
+      <card card='{{player.cards[0]}}'> </card>
+      <card card='{{player.cards[1]}}'> </card>
+      <card card='{{player.cards[2]}}'> </card>
+
+    </div>
+
   </div>
 
-</div>
-  
   <div class="see" ng-click="showCard()" ng-if="player.isBlind && !startAnimation && !player.isFold && (player.cards.length > 0) && (remainingPlayerCount > 1 && winnerPlayerNo == -1)">see</div>
   <div class="amt button_bg shadow_glow">
     <img src="img/coin.svg">{{player.balance}}
