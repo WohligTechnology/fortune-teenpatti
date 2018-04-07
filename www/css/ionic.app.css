@@ -10389,6 +10389,12 @@ body {
       .table .table_field .no_player.main-player {
         width: 10% !important;
         bottom: 20%; }
+    .table .table_field .winner {
+      transform: translate(-5%);
+      width: 6em;
+      height: 3em; }
+      .table .table_field .winner img {
+        width: 100%; }
   .table .bottom {
     position: absolute;
     background: rgba(5, 2, 9, 0.7);
@@ -10410,6 +10416,15 @@ body {
       width: 100%;
       position: relative;
       bottom: 0; }
+      .table .bottom .main_player .main_winner {
+        position: absolute;
+        background: #ff000000;
+        z-index: 1;
+        width: 70%;
+        top: -475%;
+        left: 15%; }
+        .table .bottom .main_player .main_winner img {
+          width: 100%; }
       .table .bottom .main_player .status {
         position: absolute;
         background: #ff000000;
@@ -11135,3 +11150,98 @@ ion-item.item {
 
 .side_show_btn {
   text-align: center; }
+
+.change_password-model .field {
+  text-align: center;
+  padding: 5%;
+  padding-top: 2%;
+  height: calc(80vh - 17vh);
+  overflow-y: scroll; }
+  .change_password-model .field form {
+    width: 70%;
+    margin: 0 auto; }
+    .change_password-model .field form .login_button {
+      background: url("../img/login/input_bg.png");
+      background-size: 100% 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 3%;
+      padding: 7px 15px 11px; }
+      .change_password-model .field form .login_button .icon {
+        width: 25%;
+        transform: translateY(30%); }
+      .change_password-model .field form .login_button input {
+        transform: translateY(15%);
+        height: 100%;
+        width: 100%;
+        font-weight: bold;
+        font-weight: bold;
+        font-size: 1em;
+        color: white;
+        background: transparent; }
+        .change_password-model .field form .login_button input::-webkit-input-placeholder {
+          /* WebKit, Blink, Edge */
+          background: -webkit-linear-gradient(right, #bababa 40%, #ffffff 40%, #565151 100%);
+          background: linear-gradient(right, #bababa 40%, #ffffff 40%, #565151 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent; }
+        .change_password-model .field form .login_button input:-moz-placeholder {
+          /* Mozilla Firefox 4 to 18 */
+          background: -webkit-linear-gradient(right, #bababa 40%, #ffffff 40%, #565151 100%);
+          background: linear-gradient(right, #bababa 40%, #ffffff 40%, #565151 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent; }
+        .change_password-model .field form .login_button input::-moz-placeholder {
+          /* Mozilla Firefox 19+ */
+          background: -webkit-linear-gradient(right, #bababa 40%, #ffffff 40%, #565151 100%);
+          background: linear-gradient(right, #bababa 40%, #ffffff 40%, #565151 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent; }
+        .change_password-model .field form .login_button input:-ms-input-placeholder {
+          background: -webkit-linear-gradient(right, #bababa 40%, #ffffff 40%, #565151 100%);
+          background: linear-gradient(right, #bababa 40%, #ffffff 40%, #565151 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent; }
+        .change_password-model .field form .login_button input::-ms-input-placeholder {
+          /* Microsoft Edge */
+          background: -webkit-linear-gradient(right, #bababa 40%, #ffffff 40%, #565151 100%);
+          background: linear-gradient(right, #bababa 40%, #ffffff 40%, #565151 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent; }
+        .change_password-model .field form .login_button input::placeholder {
+          /* Most modern browsers support this now. */
+          background: -webkit-linear-gradient(right, #fffbfb 40%, #ffffff 40%, #989696 100%);
+          background: linear-gradient(right, #fff4f4 40%, #ffffff 40%, #dfdcdc 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: bold;
+          font-family: 'Cinzel-Bold';
+          font-weight: bold;
+          font-size: 1em; }
+    .change_password-model .field form table {
+      width: 90%;
+      margin: 0 auto; }
+      .change_password-model .field form table td {
+        padding: 3%;
+        font-size: 1.1em; }
+    .change_password-model .field form button {
+      padding: 8px 25px; }
+
+span.valid {
+  display: block;
+  margin-top: -8px; }
+
+@media (min-aspect-ratio: 18 / 9) {
+  .table .table_field {
+    width: 85%;
+    left: 50%;
+    transform: translate(-50%); }
+  .table .bottom .main_player .status {
+    top: -380%; } }

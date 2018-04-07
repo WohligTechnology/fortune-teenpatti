@@ -274,6 +274,15 @@
         bottom: 20%;
       }
     }
+    .winner{
+      transform: translate(-5%);
+      width: 6em;
+      height: 3em;
+      img{
+        width: 100%;
+      }
+    }
+   
   }
   .bottom {
     position: absolute;
@@ -297,6 +306,17 @@
       width: 100%;
       position: relative; // transform: translateY(-41%);
       bottom: 0;
+      .main_winner{
+        position: absolute;
+        background: #ff000000;
+        z-index: 1;
+        width: 70%;
+        top: -475%;
+        left: 15%;
+        img{
+          width: 100%;
+        }
+      }
       .status {
         position: absolute;
         background: #ff000000;
