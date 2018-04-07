@@ -1,58 +1,57 @@
 <ion-modal-view class="custom-model statement-model change_password-model form-update private_table">
-    <ion-content>
-      <div class="close" ng-click="closePrivateTable()">
-        <img src="img/close.png">
-      </div>
-      <div class="heading">Create Private Table</div>
-      <div class="field vertical_scroll" ng-if="!privateTableData">
-        <form name="createTable">
-          <div class="rel">
-            <div class="login_button">
-              <input type="text" name="tablename" ng-model="data.name" placeholder="Table Name*" required>
-            </div>
-            <span class="valid" ng-show="createTable.tablename.$touched && createTable.tablename.$invalid">* Table Name is required.</span>
+  <ion-content>
+    <div class="close" ng-click="closePrivateTable()">
+      <i class="icon ion-close text_glow"></i>
+    </div>
+    <div class="heading">Create Private Table</div>
+    <div class="field vertical_scroll" ng-if="!privateTableData">
+      <form name="createTable">
+        <div class="rel">
+          <div class="login_button">
+            <input type="text" name="tablename" ng-model="data.name" placeholder="Table Name*" required>
           </div>
-  
-          <!-- <div class="rel">
+          <span class="valid" ng-show="createTable.tablename.$touched && createTable.tablename.$invalid">* Table Name is required.</span>
+        </div>
+
+        <!-- <div class="rel">
             <div class="login_button">
               <input type="number" name="bootAmount" ng-model="data.bootAmt" placeholder="Boot Amount*" required>
             </div>
             <span class="valid" ng-show="createTable.bootAmount.$touched && createTable.bootAmount.$invalid">* Boot Amount is required.</span>
           </div> -->
-          <div class="rel">
-            <div class="login_button">
-              <input type="number" name="blindLimit" ng-model="data.blindAmt" placeholder="Blind Amount*" required>
-            </div>
-            <span class="valid" ng-show="createTable.blindLimit.$touched && createTable.blindLimit.$invalid">* Blind Amount is required.</span>
+        <div class="rel">
+          <div class="login_button">
+            <input type="number" name="blindLimit" ng-model="data.blindAmt" placeholder="Blind Amount*" required>
           </div>
-          <div class="rel">
-            <div class="login_button">
-              <input type="number" name="chalLimit" ng-model="data.chalAmt" placeholder="Chaal Amount*" required>
-            </div>
-            <span class="valid" ng-show="createTable.chalLimit.$touched && createTable.chalLimit.$invalid">* Chaal Amount is required.</span>
+          <span class="valid" ng-show="createTable.blindLimit.$touched && createTable.blindLimit.$invalid">* Blind Amount is required.</span>
+        </div>
+        <div class="rel">
+          <div class="login_button">
+            <input type="number" name="chalLimit" ng-model="data.chalAmt" placeholder="Chaal Amount*" required>
           </div>
-          <div class="rel">
-            <div class="login_button">
-              <input type="number" name="tableShow" ng-model="data.tableShow" placeholder="Table show*" required>
-            </div>
-            <span class="valid" ng-show="createTable.tableShow.$touched && createTable.tableShow.$invalid">*Table show is required.</span>
+          <span class="valid" ng-show="createTable.chalLimit.$touched && createTable.chalLimit.$invalid">* Chaal Amount is required.</span>
+        </div>
+        <div class="rel">
+          <div class="login_button">
+            <input type="number" name="tableShow" ng-model="data.tableShow" placeholder="Table show*" required>
           </div>
-          <!-- <div class="rel">
+          <span class="valid" ng-show="createTable.tableShow.$touched && createTable.tableShow.$invalid">*Table show is required.</span>
+        </div>
+        <!-- <div class="rel">
             <div class="login_button">
               <input type="number" name="maxBlind" ng-model="data.blindAmt" placeholder="Max Blind*" required>
             </div>
             <span class="valid" ng-show="createTable.maxBlind.$touched && createTable.maxBlind.$invalid">*Max Blind is required.</span>
           </div> -->
-  
-          <button type="submit" ng-click="createPrivateTable(data)" promise-btn="createPrivateTablePromise" ng-disabled="createTable.$invalid">Create</button>
-        </form>
+
+        <button type="submit" ng-click="createPrivateTable(data)" promise-btn="createPrivateTablePromise" ng-disabled="createTable.$invalid">Create</button>
+      </form>
+    </div>
+    <div ng-if="privateTableData">
+      <div class="private_data">
+        <p>Your Password for Private Table {{privateTableData.name}} is {{privateTableData.password}}</p>
+        <p>Please share this password to your friends !!</p>
       </div>
-      <div ng-if="privateTableData">
-        <div class="private_data">
-          <p>Your Password for Private Table {{privateTableData.name}} is {{privateTableData.password}}</p>
-          <p>Please share this password to your friends !!</p>
-        </div>
-      </div>
-    </ion-content>
-  </ion-modal-view>
-  
+    </div>
+  </ion-content>
+</ion-modal-view>
