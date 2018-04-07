@@ -1,4 +1,4 @@
-myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state,$timeout, Service, $ionicModal) {
+myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout, Service, $ionicModal) {
 
   //ionic cordova 
   $ionicPlatform.ready(function () {
@@ -95,7 +95,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state,$timeout,
     $scope.loadingDisable = false;
     $scope.TransferStatementModal.show();
   }
-  $scope.closeTransferStatementModal = function () {
+  $scope.closeTransferStatement = function () {
     $scope.TransferStatementModal.hide();
   }
   //Transfer Statement
@@ -150,7 +150,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state,$timeout,
     };
     $scope.ACStatementModal.show();
   }
-  $scope.closeACStatementModal = function () {
+  $scope.closeACStatement = function () {
     $scope.ACStatementModal.hide();
   }
 
@@ -277,67 +277,67 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state,$timeout,
   };
 
 
- //private Table
+  //private Table
 
- $ionicModal.fromTemplateUrl('templates/modal/create-private-table.html', {
-  scope: $scope,
-  animation: 'slide-in-up'
-}).then(function (modal) {
-  $scope.ModalCreate = modal;
-});
-
-$scope.createPrivateModal = function ($event) {
-  $scope.ModalCreate.show();
-  $event.stopPropagation();
-}
-$scope.closePrivateTable = function () {
-  $scope.ModalCreate.hide();
-};
-
- //Rules
-
- $ionicModal.fromTemplateUrl('templates/modal/rules.html', {
-  scope: $scope,
-  animation: 'slide-in-up'
-}).then(function (modal) {
-  $scope.rulesModal = modal;
-});
-
-$scope.openRulesModal = function ($event) {
-  $scope.rulesModal.show();
-  $event.stopPropagation();
-}
-$scope.closeRulesModal = function () {
-  $scope.rulesModal.hide();
-};
-
- //private table info modal
-
- $ionicModal.fromTemplateUrl('templates/modal/private-table-info.html', {
-  scope: $scope,
-  animation: 'slide-in-up'
-}).then(function (modal) {
-  $scope.ModalInfo = modal;
-});
-
-$scope.openMyPrivateTable = function () {
-  $scope.privateTableDatas = [];
-  $scope.ModalInfo.show();
-
-}
-
-
- //privatetable call
- $scope.createPrivateTable = function (formData) {
-  Service.createTable(formData, function (data) {
-    if (data.value) {
-      $scope.privateTableData = data.data;
-      $timeout(function () {
-        $scope.privateTableData = false;
-      }, 10000);
-    } else {}
+  $ionicModal.fromTemplateUrl('templates/modal/create-private-table.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function (modal) {
+    $scope.ModalCreate = modal;
   });
-};
+
+  $scope.createPrivateModal = function ($event) {
+    $scope.ModalCreate.show();
+    $event.stopPropagation();
+  }
+  $scope.closePrivateTable = function () {
+    $scope.ModalCreate.hide();
+  };
+
+  //Rules
+
+  $ionicModal.fromTemplateUrl('templates/modal/rules.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function (modal) {
+    $scope.rulesModal = modal;
+  });
+
+  $scope.openRulesModal = function ($event) {
+    $scope.rulesModal.show();
+    $event.stopPropagation();
+  }
+  $scope.closeRulesModal = function () {
+    $scope.rulesModal.hide();
+  };
+
+  //private table info modal
+
+  $ionicModal.fromTemplateUrl('templates/modal/private-table-info.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function (modal) {
+    $scope.ModalInfo = modal;
+  });
+
+  $scope.openMyPrivateTable = function () {
+    $scope.privateTableDatas = [];
+    $scope.ModalInfo.show();
+
+  }
+
+
+  //privatetable call
+  $scope.createPrivateTable = function (formData) {
+    Service.createTable(formData, function (data) {
+      if (data.value) {
+        $scope.privateTableData = data.data;
+        $timeout(function () {
+          $scope.privateTableData = false;
+        }, 10000);
+      } else {}
+    });
+  };
 
   //private table  login in 
   $ionicModal.fromTemplateUrl('templates/modal/private-table-login.html', {
@@ -497,7 +497,7 @@ $scope.openMyPrivateTable = function () {
   //   console.log(" $scope.tableData ", $scope.tableData);
   // });
 
- 
+
   $scope.goToTable = function (table) {
     $scope.tableId = table._id;
     $scope.closePriceRangeModal();
@@ -562,7 +562,7 @@ $scope.openMyPrivateTable = function () {
     $scope.ACStatementModal.remove();
     $scope.priceRangeModal.remove();
 
-    $scope.PLModal.remove();
+    // $scope.PLModal.remove();
     $scope.changePasswordModal.remove();
     $scope.privateLogInModal.remove();
     $scope.rulesModal.remove();
