@@ -17,9 +17,14 @@
   </div>
 
   <div class="table_field">
+    <div class="new_game_timer" ng-if="showNewGameTime && !(remainingPlayerCount>1) && !tableMessageShow">
+      <span> New Game will start in 15s </span>
+    </div>
+    <div class="table_message opt-tan" ng-if="tableMessageShow">
+      <span>{{tableMessage}} </span>
+    </div>
     <img src="img/doll.png" alt="doll" class="doll">
     <img src="img/table.png" alt="table" class="bg_table">
-
 
     <pot-amount ng-amount="potAmount" ng-winner="winnerPlayerNo" ng-player="players"> </pot-amount>
     <div class="card_shuffle">

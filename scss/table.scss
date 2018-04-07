@@ -307,7 +307,6 @@
         left: 0;
         bottom: 40%;
       }
-
       .cards {
         position: absolute;
         bottom: 5%;
@@ -400,14 +399,13 @@
   .player4 {
     top: 30%;
     right: 5%;
-    .profile{
+    .profile {
       flex-direction: row-reverse !important;
-      .cards{
+      .cards {
         right: -18%;
       }
-    
     }
-    .amt{
+    .amt {
       width: 140% !important;
     }
   }
@@ -612,7 +610,7 @@
   &.player3 {
     card {
       &:nth-child(1) {
-    transform: scale(.9) translate(-1114%, 236%) !important;
+        transform: scale(.9) translate(-1114%, 236%) !important;
         transition: none !important;
       }
       &:nth-child(2) {
@@ -624,7 +622,7 @@
         transition: none !important;
       }
       &:nth-child(4) {
-        transform: scale(1.6) translate(-1328%,236%) !important;
+        transform: scale(1.6) translate(-1328%, 236%) !important;
         transition: none !important;
       }
     }
@@ -672,7 +670,6 @@
 }
 
 .main_card_anime {
-  
   card {
     &:nth-child(1) {
       transform: translate(390%, -350%) scale(.55) !important;
@@ -692,4 +689,33 @@
       transition: none !important; // transition: transform 3s;
     }
   }
+}
+
+// message
+.new_game_timer {
+  position: fixed;
+  /* position: absolute; */
+  top: 3%;
+  /* width: 100%; */
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 5;
+  width: 55%;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.table_message {
+  position: fixed;
+  /* position: absolute; */
+  top: 3%;
+  /* width: 100%; */
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 5;
+  width: 55%;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5em;
 }
