@@ -882,10 +882,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
       $('.minus').addClass('text_grey');
     }
   }
-  // pack fn
-  $scope.pack = function () {
-    // $('.pack').addClass('text_grey');
-  }
+ 
 
 
 

@@ -38,7 +38,7 @@
         <span> Waiting...</span>
       </div>
     </div>
-    <div class="cards" ng-if=" (player.cards.length > 0 || showWinnerPlayer.length == 1) && player.cards.length<4">
+    <div class="cards" ng-if=" (player.cards.length > 0 || showWinnerPlayer.length == 1) && !(winnerPlayerNo > 0) && player.cards.length<4 ">
       <card card='DONE'></card>
       <card card='DONE'></card>
       <card card='DONE'></card>
