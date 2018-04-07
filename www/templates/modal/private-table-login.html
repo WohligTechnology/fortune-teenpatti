@@ -17,7 +17,7 @@
           <span class="valid" ng-if="errorInPrivateLogIn && !(createTable.tablePassword.$touched && createTable.tablePassword.$invalid)">* Incorrect Table Password</span>
         </div>
 
-        <button type="submit" ng-click="goToPrivateTable(privateDataForModal._id,data.password)" promise-btn="createPrivateTablePromise"
+        <button type="submit" class="custom_button" ng-click="goToPrivateTable(privateDataForModal._id,data.password)" promise-btn="createPrivateTablePromise"
           ng-disabled="createTable.$invalid">Log In</button>
       </form>
     </div>
