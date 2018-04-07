@@ -44,7 +44,7 @@
             <span class="valid" ng-show="createTable.maxBlind.$touched && createTable.maxBlind.$invalid">*Max Blind is required.</span>
           </div> -->
 
-        <button type="submit" ng-click="createPrivateTable(data)" promise-btn="createPrivateTablePromise" ng-disabled="createTable.$invalid">Create</button>
+        <button type="submit" class="custom_button" ng-click="createPrivateTable(data)" promise-btn="createPrivateTablePromise" ng-disabled="createTable.$invalid">Create</button>
       </form>
     </div>
     <div ng-if="privateTableData">

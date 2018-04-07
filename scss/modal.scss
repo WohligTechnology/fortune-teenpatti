@@ -423,7 +423,8 @@ ion-item.item {
         display: flex;
         flex-direction: row;
         align-items: center; // margin: 10px;
-        margin: 6% 3%;
+        margin: 3%;
+        padding: 7px 15px 11px;
         .icon {
           width: 25%;
           transform: translateY(30%);
@@ -503,4 +504,9 @@ ion-item.item {
       }
     }
   }
+}
+
+span.valid {
+  display: block;
+  margin-top: -8px;
 }

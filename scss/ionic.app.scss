@@ -196,3 +196,13 @@ body {
 @import "table";
 @import "login";
 @import "modal";
+@media (min-aspect-ratio: 18/9) {
+  .table .table_field {
+    width: 85%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .table .bottom .main_player .status {
+    top: -380%;
+  }
+}
