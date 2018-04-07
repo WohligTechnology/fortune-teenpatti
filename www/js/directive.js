@@ -53,7 +53,8 @@ myApp.directive('card', function () {
       sitHere: "=ngSitHere",
       winnerPlayerNo: "=ngWin",
       startAnimation: "=ngAnimation",
-      remainingPlayerCount: "=ngRemainingPlayer"
+      remainingPlayerCount: "=ngRemainingPlayer",
+      showCard: "&"
     },
     templateUrl: 'templates/directive/main-player.html',
     link: function (scope, element, attr) {}

@@ -865,18 +865,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
   }
 
 
-  //fn
-
-  //show card fn
-  $scope.showCard = function () {
-    console.log("inside show card");
-    $('.main_player .cards img:nth-child(1)').attr("src", "img/card_front.png");
-    $('.main_player .cards img:nth-child(2)').attr("src", "img/card_front.png");
-    $('.main_player .cards img:nth-child(3)').attr("src", "img/card_front.png");
-    $(".main_player .see").css("display", "none");
-  }
-
-
+ 
   //chal fn
   $scope.chalAmount = 1000;
   $scope.increaseChal = function () {

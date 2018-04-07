@@ -125,7 +125,7 @@
           .status {
             position: absolute;
             /* top: 15%; */
-            left: 5%;
+            // left: 5%;
             /* transform: translate(-50%); */
             width: 100%;
             background: url("../img/table/see.png");
@@ -136,9 +136,9 @@
             bottom: 0%;
             font-size: 0.8em;
             span {
-              position: absolute;
-              top: 50%;
-              left: 25%;
+              // position: absolute;
+              // top: 50%;
+              // left: 25%;
             }
           }
         }
@@ -146,18 +146,30 @@
           width: 55%;
           position: relative;
           margin-top: -20%;
-          img {
+          
+          card {
+            display: inline-block;
             max-width: 30%;
             position: absolute;
             &:nth-child(1) {
               left: 5%;
+              transition: transform 500ms;
+              transition-delay: none;
             }
             &:nth-child(2) {
               left: 15%;
+              transition: transform 1s;
+              transition-delay: 500ms;
             }
             &:nth-child(3) {
               left: 35%;
+              transition: transform 1s;
+              transition-delay: 1000ms;
             }
+          }
+
+          &.cards_open{
+            transform: scale(2.5);
           }
         }
       }
@@ -253,6 +265,10 @@
       }
       &.player5 {
         bottom: 10%;
+      }
+      &.player6 {
+        bottom: 10%;
+       left:30%;
       }
       &.main-player {
         width: 10% !important;
@@ -387,6 +403,10 @@
     // transform: translateY(-90%);
     bottom: 0;
     right: 25%;
+  }
+  .player6 {
+    bottom: 0%;
+    left: 22%;
   }
 }
 
@@ -533,5 +553,146 @@
     font-size: 2em;
     transition: all 5s !important;
     opacity: 0;
+  }
+}
+
+
+
+.card_shuffle_animation {
+  &.player1 {
+    card {
+      &:nth-child(1) {
+        transition: none !important;
+        transform: scale(.9) translate(900%, -200%) !important;
+      }
+      &:nth-child(2) {
+        transition: none !important;
+        transform: scale(.9) translate(860%, -200%) !important;
+      }
+      &:nth-child(3) {
+        transition: none !important;
+        transform: scale(.9) translate(790%, -200%) !important;
+      }
+      &:nth-child(4) {
+        transition: none !important;
+        transform: scale(.9) translate(790%, -200%) !important;
+      }
+    }
+  }
+  &.player2 {
+    card {
+      &:nth-child(1) {
+        transform: scale(0.9) translate(320%, 238%) !important;
+        transition: none !important;
+      }
+      &:nth-child(2) {
+        transform: scale(0.9) translate(280%, 238%) !important;
+        transition: none !important;
+      }
+      &:nth-child(3) {
+        transform: scale(0.9) translate(210%, 238%) !important;
+        transition: none !important;
+      }
+      &:nth-child(4) {
+        transform: scale(.9) translate(190%, 238%) !important;
+        transition: none !important;
+      }
+    }
+  }
+  &.player3 {
+    card {
+      &:nth-child(1) {
+        transform: scale(1.6) translate(764%, 188%) !important;
+        transition: none !important;
+      }
+      &:nth-child(2) {
+        transform: scale(1.6) translate(718%, 188%) !important;
+        transition: none !important;
+      }
+      &:nth-child(3) {
+        transform: scale(1.6) translate(672%, 188%) !important;
+        transition: none !important;
+      }
+      &:nth-child(4) {
+        transform: scale(1.6) translate(672%, 188%) !important;
+        transition: none !important;
+      }
+    }
+  }
+  &.player4 {
+    card {
+      &:nth-child(1) {
+        transform: scale(1.5) translate(120%, 273%) !important;
+        transition: none !important;
+      }
+      &:nth-child(2) {
+        transform: scale(1.5) translate(70%, 273%) !important;
+        transition: none !important;
+      }
+      &:nth-child(3) {
+        transform: scale(1.5) translate(20%, 273%) !important;
+        transition: none !important;
+      }
+      &:nth-child(4) {
+        transform: scale(1.5) translate(20%, 273%) !important;
+        transition: none !important;
+      }
+    }
+  }
+  &.player5 {
+    card {
+      &:nth-child(1) {
+        transform: scale(1.5) translate(-1080%, 273%) !important;
+        transition: none !important;
+      }
+      &:nth-child(2) {
+        transform: scale(1.5) translate(-1118%, 274%) !important;
+        transition: none !important;
+      }
+      &:nth-child(3) {
+        transform: scale(1.5) translate(-1174%, 272%) !important;
+        transition: none !important;
+      }
+      &:nth-child(4) {
+        transform: scale(1.5) translate(-1174%, 272%) !important;
+        transition: none !important;
+      }
+    }
+  }
+  
+  
+
+}
+
+.main_card_anime {
+  // card {
+  //   &:nth-child(1) {
+  //     transform: translate(-85%, -154%) scale(.3) !important;
+  //   }
+  //   &:nth-child(2) {
+  //     transform: translate(-125%, -154%) scale(.3) !important;
+  //   }
+  //   &:nth-child(3) {
+  //     transform: translate(-150%, -153%) scale(.3) !important;
+  //   }
+  // }
+  card {
+    &:nth-child(1) {
+      transform: translate(-85%, -154%) scale(.3) !important;
+      transition: none !important;
+    }
+    &:nth-child(2) {
+      transform: translate(-125%, -154%) scale(.3) !important;
+      transition: none !important; // transition: transform 2s;
+    }
+    &:nth-child(3) {
+      transform: translate(-150%, -153%) scale(.3) !important;
+      transition: none !important; // transition: transform 3s;
+    }
+    &:nth-child(4) {
+      transform: translate(-150%, -153%) scale(.3) !important;
+      left: 50% !important;
+      transition: none !important; // transition: transform 3s;
+    }
   }
 }

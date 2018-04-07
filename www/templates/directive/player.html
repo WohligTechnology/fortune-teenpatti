@@ -1,4 +1,4 @@
-<div class="plyr player{{pos}}" ng-class="{
+<div class="plyr player{{pos}} card_shuffle_animation" ng-class="{
    'no_player':!player && !sitHere,
    'sit_here':sitHere && !player,
    'card_shuffle_animation': player && player.cards.length>0 && startAnimation
@@ -6,15 +6,36 @@
   <div class="name">{{player.name}}</div>
   <div class="profile">
     <div class="player_pic">
-      <img src="img/player_pic.png" alt="player_pic" class="pic">
-      <div class="status">
-        <span> seen</span>
+      <img src="{{player.image | serverimage}}" alt="player_pic" class="pic">
+      <div class="status" ng-if="player.isBlind && !player.isFold && player.isActive && remainingPlayerCount>1">
+        <span> BLIND</span>
+      </div>
+      <div class="status" ng-if="player.isFold && player.isActive && remainingPlayerCount>1">
+        <span> PACK</span>
+      </div>
+      <div class="status" ng-if="!player.isBlind && !player.isFold && player.isActive && remainingPlayerCount>1">
+        <span> SEEN</span>
+      </div>
+      <div class="status" ng-if="!player.isActive || remainingPlayerCount==1">
+        <span> Waiting...</span>
       </div>
     </div>
-    <div class="cards">
-      <img src="img/card.png" alt="card">
-      <img src="img/card.png" alt="card">
-      <img src="img/card.png" alt="card">
+    <!-- <div class="cards" ng-if=" (player.cards.length > 0 || showWinnerPlayer.length == 1) && player.cards.length<4">
+      <card card='DONE'></card>
+      <card card='DONE'></card>
+      <card card='DONE'></card>
+
+    </div> -->
+    <div class="cards" >
+      <card card='DONE'></card>
+      <card card='DONE'></card>
+      <card card='DONE'></card>
+
+    </div>
+    <div class="cards cards_open" ng-if="!player.isFold && winnerPlayerNo > 0 && showWinnerPlayer.length>1 && player.cards.length<4">
+      <card card='{{player.cards[0]}}'> </card>
+      <card card='{{player.cards[1]}}'> </card>
+      <card card='{{player.cards[2]}}'> </card>
 
     </div>
 

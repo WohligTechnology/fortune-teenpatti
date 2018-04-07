@@ -10266,7 +10266,6 @@ body {
           .table .table_field .plyr .profile .player_pic .status {
             position: absolute;
             /* top: 15%; */
-            left: 5%;
             /* transform: translate(-50%); */
             width: 100%;
             background: url("../img/table/see.png");
@@ -10276,23 +10275,28 @@ body {
             text-align: center;
             bottom: 0%;
             font-size: 0.8em; }
-            .table .table_field .plyr .profile .player_pic .status span {
-              position: absolute;
-              top: 50%;
-              left: 25%; }
         .table .table_field .plyr .profile .cards {
           width: 55%;
           position: relative;
           margin-top: -20%; }
-          .table .table_field .plyr .profile .cards img {
+          .table .table_field .plyr .profile .cards card {
+            display: inline-block;
             max-width: 30%;
             position: absolute; }
-            .table .table_field .plyr .profile .cards img:nth-child(1) {
-              left: 5%; }
-            .table .table_field .plyr .profile .cards img:nth-child(2) {
-              left: 15%; }
-            .table .table_field .plyr .profile .cards img:nth-child(3) {
-              left: 35%; }
+            .table .table_field .plyr .profile .cards card:nth-child(1) {
+              left: 5%;
+              transition: transform 500ms;
+              transition-delay: none; }
+            .table .table_field .plyr .profile .cards card:nth-child(2) {
+              left: 15%;
+              transition: transform 1s;
+              transition-delay: 500ms; }
+            .table .table_field .plyr .profile .cards card:nth-child(3) {
+              left: 35%;
+              transition: transform 1s;
+              transition-delay: 1000ms; }
+          .table .table_field .plyr .profile .cards.cards_open {
+            transform: scale(2.5); }
       .table .table_field .plyr .amt {
         width: 50%;
         text-align: center;
@@ -10357,6 +10361,9 @@ body {
         right: 5%; }
       .table .table_field .no_player.player5 {
         bottom: 10%; }
+      .table .table_field .no_player.player6 {
+        bottom: 10%;
+        left: 30%; }
       .table .table_field .no_player.main-player {
         width: 10% !important;
         bottom: 20%; }
@@ -10458,6 +10465,9 @@ body {
   .table .player5 {
     bottom: 0;
     right: 25%; }
+  .table .player6 {
+    bottom: 0%;
+    left: 22%; }
 
 .option_menu .menu_cont {
   width: 40%;
@@ -10579,6 +10589,103 @@ body {
     font-size: 2em;
     transition: all 5s !important;
     opacity: 0; }
+
+.card_shuffle_animation.player1 card:nth-child(1) {
+  transition: none !important;
+  transform: scale(0.9) translate(900%, -200%) !important; }
+
+.card_shuffle_animation.player1 card:nth-child(2) {
+  transition: none !important;
+  transform: scale(0.9) translate(860%, -200%) !important; }
+
+.card_shuffle_animation.player1 card:nth-child(3) {
+  transition: none !important;
+  transform: scale(0.9) translate(790%, -200%) !important; }
+
+.card_shuffle_animation.player1 card:nth-child(4) {
+  transition: none !important;
+  transform: scale(0.9) translate(790%, -200%) !important; }
+
+.card_shuffle_animation.player2 card:nth-child(1) {
+  transform: scale(0.9) translate(320%, 238%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player2 card:nth-child(2) {
+  transform: scale(0.9) translate(280%, 238%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player2 card:nth-child(3) {
+  transform: scale(0.9) translate(210%, 238%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player2 card:nth-child(4) {
+  transform: scale(0.9) translate(190%, 238%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player3 card:nth-child(1) {
+  transform: scale(1.6) translate(764%, 188%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player3 card:nth-child(2) {
+  transform: scale(1.6) translate(718%, 188%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player3 card:nth-child(3) {
+  transform: scale(1.6) translate(672%, 188%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player3 card:nth-child(4) {
+  transform: scale(1.6) translate(672%, 188%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player4 card:nth-child(1) {
+  transform: scale(1.5) translate(120%, 273%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player4 card:nth-child(2) {
+  transform: scale(1.5) translate(70%, 273%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player4 card:nth-child(3) {
+  transform: scale(1.5) translate(20%, 273%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player4 card:nth-child(4) {
+  transform: scale(1.5) translate(20%, 273%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player5 card:nth-child(1) {
+  transform: scale(1.5) translate(-1080%, 273%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player5 card:nth-child(2) {
+  transform: scale(1.5) translate(-1118%, 274%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player5 card:nth-child(3) {
+  transform: scale(1.5) translate(-1174%, 272%) !important;
+  transition: none !important; }
+
+.card_shuffle_animation.player5 card:nth-child(4) {
+  transform: scale(1.5) translate(-1174%, 272%) !important;
+  transition: none !important; }
+
+.main_card_anime card:nth-child(1) {
+  transform: translate(-85%, -154%) scale(0.3) !important;
+  transition: none !important; }
+
+.main_card_anime card:nth-child(2) {
+  transform: translate(-125%, -154%) scale(0.3) !important;
+  transition: none !important; }
+
+.main_card_anime card:nth-child(3) {
+  transform: translate(-150%, -153%) scale(0.3) !important;
+  transition: none !important; }
+
+.main_card_anime card:nth-child(4) {
+  transform: translate(-150%, -153%) scale(0.3) !important;
+  left: 50% !important;
+  transition: none !important; }
 
 .login {
   background: url("../img/login/bg.png");
