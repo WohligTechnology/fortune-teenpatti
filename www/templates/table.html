@@ -108,7 +108,7 @@
       <span ng-if="!players[5].isBlind"> chaal</span> {{betamount}}
     </button>
     <button class="plus no-click-effect shadow_glow text_glow" ng-click="addCoin()" ng-disabled="sideShowDataFrom == 1" ng-if="players[5].isTurn && betamount<maxAmt && !players[5].isFold">+</button>
-    <button class="plus no-click-effect no-click-effect shadow_glow text_glow opacity-05" ng-disabled="sideShowDataFrom == 1"
+    <button class="plus no-click-effect no-click-effect shadow_glow opacity-05" ng-disabled="sideShowDataFrom == 1"
       ng-if="players[5].isTurn && betamount>=maxAmt && !players[5].isFold">+</button>
   </div>
   <!-- left menu (option) -->

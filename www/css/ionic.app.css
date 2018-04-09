@@ -10008,6 +10008,9 @@ body {
     width: 30%;
     margin: 6%; }
 
+.opacity-05 {
+  opacity: .5; }
+
 .lobby {
   background: url("../img/lobby/background.png");
   background-size: 100% 100%;
