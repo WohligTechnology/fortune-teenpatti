@@ -96,5 +96,5 @@
     <plugin name="cordova-plugin-nativeaudio" spec="^3.0.9" />
     <plugin name="cordova-plugin-vibration" spec="^3.0.1" />
     <plugin name="cordova-plugin-insomnia" spec="https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin.git" />
-    <engine name="android" spec="~6.2.0" />
+    <engine name="android" spec="~6.1.2" />
 </widget>

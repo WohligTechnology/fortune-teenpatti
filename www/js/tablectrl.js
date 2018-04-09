@@ -520,7 +520,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
     }).length;
 
 
-    if ($scope.players && $scope.players[8] && ($scope.players[8].balance) < (data.table.chalAmt * 2 * 3)) {
+    if ($scope.players && $scope.players[5] && ($scope.players[5].balance) < (data.table.chalAmt * 2 * 3)) {
       $scope.insufficientFunds = true;
       // $scope.showInsufficientFundsModal();
     } else {
@@ -530,7 +530,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
 
     //for vibration on turn
 
-    if ($scope.players[8] && $scope.players[8].isTurn) {
+    if ($scope.players[5] && $scope.players[5].isTurn) {
 
       // $scope.timerAudio.play();
       $ionicPlatform.ready(function () {
@@ -541,12 +541,10 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
 
       if ($scope.runVibratorFlag) {
         //to vibrate only one time on socket update
-        $scope.runVibratorFlag = false;
         navigator.vibrate(500);
+        $scope.runVibratorFlag = false;
+       
       }
-
-
-
     } else {
       // console.log("turn false");
       $scope.runVibratorFlag = true;
@@ -845,8 +843,8 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
   });
 
   $scope.getRemaining = function () {
-    if ($scope.players[8]) {
-      return _.floor(($scope.players[8].balance / $scope.betamount));
+    if ($scope.players[5]) {
+      return _.floor(($scope.players[5].balance / $scope.betamount));
     } else {
       return;
     }
