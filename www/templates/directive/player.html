@@ -1,7 +1,7 @@
 <div class="plyr player{{pos}}" ng-class="{
    'no_player':!player && !sitHere,
    'sit_here':sitHere && !player,
-   'opacity-05':!player.isActive || player.isFold ,
+    'opacity-05':!player.isActive && !sitHere || player.isFold && !sitHere,
    'card_shuffle_animation': player && player.cards.length>0 && startAnimation
 }" ng-click="openPlayerDetails()">
 

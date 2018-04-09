@@ -10542,6 +10542,8 @@ body {
       width: 140% !important; }
     .table .player4 .name {
       transform: translate(25%) !important; }
+    .table .player4 .winner {
+      transform: translate(45%); }
   .table .player5 {
     bottom: 0;
     right: 25%; }
