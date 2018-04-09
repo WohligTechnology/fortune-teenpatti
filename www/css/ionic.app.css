@@ -10261,6 +10261,18 @@ body {
       transform: translateX(-50%);
       top: -12%;
       z-index: 2; }
+    .table .table_field .tip {
+      position: absolute;
+      background: url("../img/table/see.png");
+      background-size: 100% 100%;
+      padding: 3px 2% 0px;
+      letter-spacing: 1px;
+      font-size: 0.8em;
+      left: 50%;
+      top: 5%;
+      transform: translateX(-50%);
+      color: white;
+      z-index: 3; }
     .table .table_field .bg_table {
       position: relative;
       width: 85%;
@@ -10389,7 +10401,7 @@ body {
         width: 10% !important;
         bottom: 20%; }
     .table .table_field .winner {
-      transform: translate(-5%);
+      transform: translate(-15%);
       width: 9em;
       height: 3em; }
       .table .table_field .winner img {
@@ -10566,6 +10578,32 @@ body {
       background: transparent;
       color: white;
       padding: 0px; }
+
+.new_game_timer {
+  position: fixed;
+  /* position: absolute; */
+  top: 3%;
+  /* width: 100%; */
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 5;
+  width: 55%;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5em; }
+
+.table_message {
+  position: fixed;
+  /* position: absolute; */
+  top: 3%;
+  /* width: 100%; */
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 5;
+  width: 55%;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5em; }
 
 .total_played_coin {
   position: absolute;
@@ -10752,31 +10790,71 @@ body {
   left: 50% !important;
   transition: none !important; }
 
-.new_game_timer {
-  position: fixed;
-  /* position: absolute; */
-  top: 3%;
-  /* width: 100%; */
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 5;
-  width: 55%;
-  text-align: center;
-  color: #fff;
-  font-size: 1.5em; }
+.bootAnimate {
+  position: absolute;
+  z-index: 6;
+  color: white;
+  opacity: 0;
+  white-space: nowrap;
+  animation-duration: 1s; }
+  .bootAnimate .coin {
+    width: 1em;
+    vertical-align: middle;
+    margin-right: 10%; }
+  .bootAnimate.p1 {
+    bottom: 35% !important;
+    left: unset !important;
+    right: 80% !important;
+    animation-name: movefrombottom;
+    transform: translateY(-100%); }
+  .bootAnimate.p2 {
+    bottom: 70% !important;
+    top: unset !important;
+    left: unset !important;
+    right: 63% !important;
+    animation-name: movefrombottom;
+    transform: translateY(-100%); }
+  .bootAnimate.p3 {
+    top: 10% !important;
+    right: 16% !important;
+    animation-name: movefromright; }
+  .bootAnimate.p4 {
+    top: 52% !important;
+    right: 0% !important;
+    animation-name: movefromright; }
+  .bootAnimate.p5 {
+    top: 85% !important;
+    right: 16% !important;
+    animation-name: movefromright; }
+  .bootAnimate.p6 {
+    bottom: -8% !important;
+    left: unset !important;
+    right: 60% !important;
+    animation-name: movefrombottom; }
 
-.table_message {
-  position: fixed;
-  /* position: absolute; */
-  top: 3%;
-  /* width: 100%; */
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 5;
-  width: 55%;
-  text-align: center;
-  color: #fff;
-  font-size: 1.5em; }
+@keyframes movefrombottom {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    right: 40%;
+    bottom: 65%;
+    opacity: 0; } }
+
+@keyframes movefromright {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    right: 38%;
+    top: 29%;
+    opacity: 0; } }
 
 .login {
   background: url("../img/login/bg.png");
@@ -11274,6 +11352,15 @@ span.valid {
     font-family: 'Cinzel-Bold'; }
   .room_summary .scroll {
     height: 100%; }
+
+.side-show {
+  height: 35%; }
+  .side-show ion-content {
+    padding: 5%; }
+  .side-show .heading {
+    padding-bottom: 3%; }
+  .side-show .row {
+    margin-top: 5%; }
 
 .pie_loader {
   position: absolute;

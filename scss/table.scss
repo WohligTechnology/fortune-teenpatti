@@ -96,6 +96,19 @@
       top: -12%;
       z-index: 2;
     }
+    .tip {
+      position: absolute;
+      background: url('../img/table/see.png');
+      background-size: 100% 100%;
+      padding: 3px 2% 0px;
+      letter-spacing: 1px;
+      font-size: 0.8em;
+      left: 50%;
+      top: 5%;
+      transform: translateX(-50%);
+      color: white;
+      z-index: 3;
+    }
     .bg_table {
       position: relative;
       width: 85%;
@@ -145,8 +158,7 @@
         .cards {
           width: 55%;
           position: relative;
-          margin-top: -20%;
-          // transition: transform 1s;
+          margin-top: -20%; // transition: transform 1s;
           card {
             display: inline-block;
             max-width: 30%;
@@ -168,8 +180,7 @@
             }
           }
           &.cards_open {
-            transform: scale(1.7) translate(0%,-5px);
-
+            transform: scale(1.7) translate(0%, -5px);
           }
         }
       }
@@ -274,15 +285,14 @@
         bottom: 20%;
       }
     }
-    .winner{
-      transform: translate(-5%);
+    .winner {
+      transform: translate(-15%);
       width: 9em;
       height: 3em;
-      img{
+      img {
         width: 100%;
       }
     }
-   
   }
   .bottom {
     position: absolute;
@@ -306,14 +316,14 @@
       width: 100%;
       position: relative; // transform: translateY(-41%);
       bottom: 0;
-      .main_winner{
+      .main_winner {
         position: absolute;
         background: #ff000000;
         z-index: 1;
         width: 100%;
         top: -475%;
         left: 0;
-        img{
+        img {
           width: 100%;
         }
       }
@@ -450,9 +460,8 @@
     .amt {
       width: 140% !important;
     }
-    .name{
+    .name {
       transform: translate(25%) !important;
-
     }
   }
   .player5 {
@@ -510,6 +519,35 @@
       }
     }
   }
+}
+
+// message
+.new_game_timer {
+  position: fixed;
+  /* position: absolute; */
+  top: 3%;
+  /* width: 100%; */
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 5;
+  width: 55%;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.table_message {
+  position: fixed;
+  /* position: absolute; */
+  top: 3%;
+  /* width: 100%; */
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 5;
+  width: 55%;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5em;
 }
 
 //all animation
@@ -737,31 +775,86 @@
   }
 }
 
-// message
-.new_game_timer {
-  position: fixed;
-  /* position: absolute; */
-  top: 3%;
-  /* width: 100%; */
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 5;
-  width: 55%;
-  text-align: center;
-  color: #fff;
-  font-size: 1.5em;
+.bootAnimate {
+  position: absolute;
+  z-index: 6;
+  color: white;
+  opacity: 0;
+  white-space: nowrap;
+  animation-duration: 1s;
+  .coin {
+    width: 1em;
+    vertical-align: middle;
+    margin-right: 10%;
+  }
+  &.p1 {
+    bottom: 35% !important;
+    left: unset !important;
+    right: 80% !important;
+    animation-name: movefrombottom;
+    transform: translateY(-100%);
+  }
+  &.p2 {
+    bottom: 70% !important;
+    top: unset !important;
+    left: unset !important;
+    right: 63% !important;
+    animation-name: movefrombottom;
+    transform: translateY(-100%);
+  }
+  &.p3 {
+    top: 10% !important;
+    right: 16% !important;
+    animation-name: movefromright;
+  }
+  &.p4 {
+    top: 52% !important;
+    right: 0% !important;
+    animation-name: movefromright;
+  }
+  &.p5 {
+    top: 85% !important;
+    right: 16% !important;
+    animation-name: movefromright;
+  }
+  &.p6 {
+    bottom: -8% !important;
+    left: unset !important;
+    right: 60% !important;
+    animation-name: movefrombottom;
+  }
 }
 
-.table_message {
-  position: fixed;
-  /* position: absolute; */
-  top: 3%;
-  /* width: 100%; */
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 5;
-  width: 55%;
-  text-align: center;
-  color: #fff;
-  font-size: 1.5em;
+@keyframes movefrombottom {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    right: 40%;
+    bottom: 65%;
+    opacity: 0;
+  }
+}
+
+@keyframes movefromright {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    right: 38%;
+    top: 29%;
+    opacity: 0;
+  }
 }

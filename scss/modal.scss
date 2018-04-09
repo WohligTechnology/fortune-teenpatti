@@ -565,3 +565,16 @@ span.valid {
     height: 100%;
   }
 }
+
+.side-show{
+  height:35%;
+  ion-content{
+    padding:5%;
+  }
+  .heading{
+    padding-bottom: 3%;
+  }
+  .row{
+    margin-top:5%;
+  }
+}

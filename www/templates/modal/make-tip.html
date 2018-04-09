@@ -1,0 +1,21 @@
+<ion-modal-view class="custom-model statement-model room_summary small-model side-show">
+    <ion-content>
+      <div class="close text_glow" ng-click="closeMakeTipModal()">
+        X
+      </div>
+      <div class="heading">Select Tip</div>
+      <div class="row">
+        <div class="col">
+          <div class="text-center">
+            <button class="custom_button" ng-click="makeTip(50);closeMakeTipModal();">50</button>
+          </div>
+        </div>
+        <div class="col text-centers">
+          <div class="text-center">
+            <button class="custom_button" ng-click="makeTip(100);closeMakeTipModal();">100</button>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+  
