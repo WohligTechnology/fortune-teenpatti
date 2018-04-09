@@ -893,6 +893,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
   Service.getOneTable($stateParams.id, function (data) {
     console.log("data", data);
     $scope.tableData = data.data.data;
+    console.log($scope.tableData,"table data");
     $scope.bootAmt = $scope.tableData.bootAmt;
     $scope.chalLimit = $scope.tableData.chalLimit;
     $scope.blindAmt = $scope.tableData.blindAmt;
