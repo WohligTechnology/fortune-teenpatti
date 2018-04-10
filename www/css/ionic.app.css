@@ -10421,6 +10421,11 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center; }
+    .table .bottom button[disabled] {
+      color: #636160;
+      text-shadow: none !important;
+      -webkit-text-stroke: 0 !important;
+      text-stroke: 0; }
     .table .bottom mainplayer {
       width: 18%;
       position: absolute;

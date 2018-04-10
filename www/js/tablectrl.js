@@ -303,7 +303,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
           }
         }).length;
 
-        $scope.changeTimer(data.data.data.table.autoFoldDelay);
+        // $scope.changeTimer(data.data.data.table.autoFoldDelay);
       });
     }
   };
@@ -506,7 +506,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
       reArragePlayers(data.players);
     }
 
-    $scope.changeTimer(data.table.autoFoldDelay);
+    // $scope.changeTimer(data.table.autoFoldDelay);
 
     $scope.remainingPlayerCount = _.filter($scope.players, function (player) {
       if (player && player.isActive && !player.isFold) {
@@ -543,7 +543,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
         //to vibrate only one time on socket update
         navigator.vibrate(500);
         $scope.runVibratorFlag = false;
-       
+
       }
     } else {
       // console.log("turn false");
@@ -717,6 +717,12 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
 
     if (!_.isEmpty($scope.tableId)) {
       $scope.sideShowPromise = Service.sideShow($scope.tableId, function (data) {
+        console.log("side show service",data);
+        $timeout(function(){
+          $scope.sideShowDataFrom = 1;
+        },50)
+        $scope.sideShowDataFrom = 1;
+        // $scope.$apply();
         if (data.data) {
           $scope.sideShowDataFrom = 1;
         }
@@ -858,11 +864,17 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
     $scope.showMessageModal();
   });
 
-  $scope.changeTimer = function (duration) {
-    $(".animation_wrapper .spinner").css("animation-duration", duration + "s");
-    $(".animation_wrapper .filler").css("animation-duration", duration + "  s");
-    $(".animation_wrapper .mask").css("animation-duration", duration + "s");
-  }
+  // $scope.changeTimer = function (duration) {
+  //   console.log("change time", duration);
+  //   $(".animation_wrapper .spinner").css("animation-duration", duration + "s");
+  //   $(".animation_wrapper .spinner").css("-webkit-animation-duration", duration + "s");
+  //   $(".animation_wrapper .filler").css("animation-duration", duration + "s");
+  //   $(".animation_wrapper .filler").css("-webkit-animation-duration", duration + "s");
+  //   $(".animation_wrapper .mask").css("animation-duration", duration + "s");
+  //   $(".animation_wrapper .mask").css("-webkit-animation-duration", duration + "s");
+  // }
+
+
 
 
 
@@ -882,7 +894,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
       $('.minus').addClass('text_grey');
     }
   }
- 
+
 
 
 
@@ -891,7 +903,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
   Service.getOneTable($stateParams.id, function (data) {
     console.log("data", data);
     $scope.tableData = data.data.data;
-    console.log($scope.tableData,"table data");
+    console.log($scope.tableData, "table data");
     $scope.bootAmt = $scope.tableData.bootAmt;
     $scope.chalLimit = $scope.tableData.chalLimit;
     $scope.blindAmt = $scope.tableData.blindAmt;

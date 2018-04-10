@@ -306,6 +306,15 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+
+
+    button[disabled] {
+      color: #636160;
+      text-shadow: none !important;
+       -webkit-text-stroke: 0 !important;
+      text-stroke: 0;
+  }
     mainplayer {
       width: 18%;
       position: absolute;

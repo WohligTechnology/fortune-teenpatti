@@ -93,7 +93,7 @@
 
 
     <button class="slideshow text_glow shadow_glow" ng-click="sideShow()" ng-if="(players[5].isTurn)&& (remainingPlayerCount > 2) && !players[5].isFold"
-      ng-disabled="blindPlayerCount > 0 || players[5].balance < betamount || sideShowDataFrom == 1" promise-btn="sideShowPromise">SlideShow</button>
+      ng-disabled="blindPlayerCount > 0 || players[5].balance < betamount || sideShowDataFrom == 1" promise-btn="sideShowPromise">SideShow</button>
 
     <button class="slideshow text_glow shadow_glow" ng-click="showWinner()" promise-btn="showWinnerPromise" ng-if="(players[5].isTurn) && (remainingPlayerCount == 2) && !players[5].isFold"
       ng-disabled="players[5].balance < betamount || sideShowDataFrom == 1">Show</button>
