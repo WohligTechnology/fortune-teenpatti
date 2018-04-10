@@ -10060,7 +10060,8 @@ body {
         height: 30vh;
         margin: 10px; }
         .lobby .main .category .col img {
-          max-width: 100%; }
+          max-width: 100%;
+          max-height: 100%; }
     .lobby .main .variation_type {
       width: 75%;
       opacity: 0;
