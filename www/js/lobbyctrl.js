@@ -15,7 +15,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
   $ionicPlatform.registerBackButtonAction(function (event) {
     event.preventDefault();
   }, 100);
-
+  screen.orientation.lock('landscape');
   //end of ionic cordova
 
 
