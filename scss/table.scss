@@ -758,6 +758,7 @@
   opacity: 0;
   white-space: nowrap;
   animation-duration: 1s;
+  -webkit-animation-duration: 1s;
   .coin {
     width: 1em;
     vertical-align: middle;
@@ -768,6 +769,7 @@
     left: unset !important;
     right: 90% !important;
     animation-name: movefrombottom;
+    -webkit-animation-name: movefrombottom;
     transform: translateY(-100%);
   }
   &.p2 {
@@ -776,32 +778,54 @@
     left: unset !important;
     right: 73% !important;
     animation-name: movefrombottom;
+    -webkit-animation-name: movefrombottom;
     transform: translateY(-100%);
   }
   &.p3 {
     top: 10% !important;
     right: 26% !important;
     animation-name: movefromright;
+    -webkit-animation-name:  movefromright;
   }
   &.p4 {
     top: 52% !important;
     right: 10% !important;
     animation-name: movefromright;
+    -webkit-animation-name: movefromright;
   }
   &.p5 {
     top: 85% !important;
     right: 26% !important;
     animation-name: movefromright;
+    -webkit-animation-name:  movefromright;
   }
   &.p6 {
     bottom: -8% !important;
     left: unset !important;
     right: 70% !important;
     animation-name: movefrombottom;
+    -webkit-animation-name: movefrombottom;
   }
 }
 
 @keyframes movefrombottom {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    right: 50%;
+    bottom: 65%;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes movefrombottom {
   0% {
     opacity: 1;
   }
@@ -834,7 +858,22 @@
     opacity: 0;
   }
 }
-
+@-webkit-keyframes movefromright {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    right: 48%;
+    top: 29%;
+    opacity: 0;
+  }
+}
 
 .tip_animate {
   position: absolute;
@@ -843,6 +882,7 @@
   opacity: 0;
   white-space: nowrap;
   animation-duration: 1s;
+  -webkit-animation-duration: 1s;
   .coin {
     width: 1em;
     vertical-align: middle;
@@ -853,6 +893,7 @@
     left: unset !important;
     right: 90% !important;
     animation-name: tipmovefrombottom;
+    -webkit-animation-name: tipmovefrombottom;
     transform: translateY(-100%);
   }
   &.p2 {
@@ -861,28 +902,33 @@
     left: unset !important;
     right: 73% !important;
     animation-name: tipmovefrombottom;
+    -webkit-animation-name: tipmovefrombottom;
     transform: translateY(-100%);
   }
   &.p3 {
     top: 10% !important;
     right: 26% !important;
     animation-name: tipmovefromright;
+    -webkit-animation-name: tipmovefromright;
   }
   &.p4 {
     top: 52% !important;
     right: 10% !important;
     animation-name: tipmovefromright;
+    -webkit-animation-name: tipmovefromright;
   }
   &.p5 {
     top: 85% !important;
     right: 26% !important;
     animation-name: tipmovefromright;
+    -webkit-animation-name: tipmovefromright;
   }
   &.p6 {
     bottom: -8% !important;
     left: unset !important;
     right: 70% !important;
     animation-name: tipmovefrombottom;
+    -webkit-animation-name:  tipmovefrombottom;
   }
 }
 
@@ -902,8 +948,40 @@
     opacity: 0;
   }
 }
+@-webkit-keyframes tipmovefrombottom {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    right: 50%;
+    bottom: 85%;
+    opacity: 0;
+  }
+}
 
 @keyframes tipmovefromright {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    right: 48%;
+    top: 9%;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes tipmovefromright {
   0% {
     opacity: 1;
   }
