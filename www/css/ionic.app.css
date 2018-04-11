@@ -10333,7 +10333,7 @@ body {
               transition: transform 1s;
               transition-delay: 1000ms; }
           .table .table_field .plyr .profile .cards.cards_open {
-            transform: scale(1.7) translate(0%, -5px); }
+            transform: scale(2) translate(0%, -5px); }
       .table .table_field .plyr .amt {
         width: 50%;
         text-align: center;
@@ -10431,7 +10431,7 @@ body {
       width: 18%;
       position: absolute;
       left: 19%;
-      bottom: 10%; }
+      bottom: 0%; }
     .table .bottom .main_player {
       width: 100%;
       position: relative;
@@ -10465,7 +10465,7 @@ body {
       .table .bottom .main_player .cards {
         position: absolute;
         bottom: 5%;
-        transform: translate(-50%, -5%);
+        transform: translate(-50%, -5%) scale(1.2);
         width: 100%;
         left: 50%;
         z-index: 1; }
@@ -11039,7 +11039,7 @@ body {
         height: 100%;
         font-weight: bold;
         font-weight: bold;
-        font-size: 1em;
+        font-size: 2.5em;
         color: white; }
     .login .login_block .valid {
       color: white;
@@ -11049,6 +11049,27 @@ body {
       line-height: 2; }
     .login .login_block .invailduser {
       width: 100%; }
+
+@media (orientation: landscape) {
+  .login .logo {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: -4%; }
+  .login .login_block {
+    padding: 3%;
+    width: 40%;
+    margin-top: -10%; }
+    .login .login_block .valid {
+      margin-top: -10%;
+      margin-bottom: 5px; }
+  .login .login_button {
+    height: 2.5em !important; }
+    .login .login_button input {
+      font-size: 1.5em !important; }
+    .login .login_button .icon {
+      width: 30% !important; }
+  .login .login_button_submit button {
+    margin-bottom: 4% !important; } }
 
 .custom-model {
   top: 10%;

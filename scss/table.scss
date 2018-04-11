@@ -180,7 +180,7 @@
             }
           }
           &.cards_open {
-            transform: scale(1.7) translate(0%, -5px);
+            transform: scale(2) translate(0%, -5px);
           }
         }
       }
@@ -319,7 +319,7 @@
       width: 18%;
       position: absolute;
       left: 19%;
-      bottom: 10%;
+      bottom: 0%;
     }
     .main_player {
       width: 100%;
@@ -360,7 +360,7 @@
       .cards {
         position: absolute;
         bottom: 5%;
-        transform: translate(-50%, -5%);
+           transform: translate(-50%, -5%) scale(1.2);;
         width: 100%;
         left: 50%;
         z-index: 1;

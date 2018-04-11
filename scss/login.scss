@@ -2,8 +2,7 @@
 .login {
   // background: black;
   background: url('../img/login/bg.png');
-  background-size: cover;
-  // background-position: 50%;
+  background-size: cover; // background-position: 50%;
   .logo {
     width: 100%;
     text-align: center;
@@ -15,12 +14,11 @@
   .login_block {
     // position: absolute;
     padding: 7%;
-    width: 75%;
-    // top: 52%;
+    width: 75%; // top: 52%;
     // left: 50%;
     // transform: translate(-50%, -50%);
     text-align: center;
-    margin:0 auto;
+    margin: 0 auto;
     margin-top: -15%;
     background: url('../img/login/login_bg.png');
     background-size: 100% 100%;
@@ -33,7 +31,6 @@
       // -moz-box-shadow: inset 0px -1px 3px 3px rgba(71, 71, 71, 1);
       // box-shadow: inset 0px -1px 3px 3px rgba(71, 71, 71, 1);
     }
-
     .login_button_submit {
       // background: url('../img/login/submit_background.png');
       // background-size: 100% 100%;
@@ -92,14 +89,12 @@
       input {
         transform: translateY(15%);
         height: 100%;
+        font-weight: bold; // font-family: 'Cinzel-Bold';
         font-weight: bold;
-        // font-family: 'Cinzel-Bold';
-        font-weight: bold;
-        font-size: 1em;
+        font-size: 2.5em;
         color: white;
       }
     }
-   
     .valid {
       color: white;
       float: left;
@@ -111,4 +106,39 @@
       width: 100%;
     }
   }
+}
+
+@media (orientation: landscape) {
+  .login {
+    .logo {
+      width: 40%;
+      margin: 0 auto;
+      margin-top: -4%;
+    }
+    .login_block {
+      padding: 3%;
+      width: 40%;
+      margin-top:-10%;
+
+      .valid{
+        margin-top: -10%;
+        margin-bottom: 5px;
+      }
+    }
+    .login_button {
+      height:2.5em !important;
+      input{
+        font-size:1.5em !important;
+      }
+      .icon{
+        width: 30% !important;
+      }
+    }
+    .login_button_submit {
+      button{
+        margin-bottom: 4% !important;
+      }
+    }
+  }
+
 }
