@@ -304,7 +304,12 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
         }).length;
 
         // $scope.changeTimer(data.data.data.table.autoFoldDelay);
+        if ($scope.startAnimation) {
+          $scope.startAnimation = false;
+        }
       });
+
+     
     }
   };
 
