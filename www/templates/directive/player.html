@@ -7,9 +7,9 @@
 
 
 
-<div class="winner" ng-if="player.playerNo==winnerPlayerNo">
-  <img src="img/winner.png">
-</div>
+  <div class="winner" ng-if="player.playerNo==winnerPlayerNo">
+    <img src="img/winner.png">
+  </div>
 
   <div class="name">{{player.name}}</div>
   <div class="profile">
@@ -39,20 +39,42 @@
         <span> Waiting...</span>
       </div>
     </div>
-    <div class="cards" ng-if=" (player.cards.length > 0 || showWinnerPlayer.length == 1) && !(winnerPlayerNo > 0) && player.cards.length<4 ">
+    <!-- two cards -->
+    <div class="cards" ng-if=" (player.cards.length > 0 || showWinnerPlayer.length == 1) && !(winnerPlayerNo > 0) && player.cards.length==2">
       <card card='DONE'></card>
       <card card='DONE'></card>
-      <card card='DONE'></card>
-
     </div>
-
-    <div class="cards cards_open" ng-if="!player.isFold && winnerPlayerNo > 0 && showWinnerPlayer.length>1 && player.cards.length<4">
+    <div class="cards cards_open" ng-if="!player.isFold && winnerPlayerNo > 0 && showWinnerPlayer.length>1 && player.cards.length==2">
+      <card card='{{player.cards[0]}}'> </card>
+      <card card='{{player.cards[1]}}'> </card>
+    </div>
+    <!-- two cards end -->
+    <!-- three cards -->
+    <div class="cards" ng-if=" (player.cards.length > 0 || showWinnerPlayer.length == 1) && !(winnerPlayerNo > 0) && player.cards.length==3">
+      <card card='DONE'></card>
+      <card card='DONE'></card>
+      <card card='DONE'></card>
+    </div>
+    <div class="cards cards_open" ng-if="!player.isFold && winnerPlayerNo > 0 && showWinnerPlayer.length>1 && player.cards.length==3">
       <card card='{{player.cards[0]}}'> </card>
       <card card='{{player.cards[1]}}'> </card>
       <card card='{{player.cards[2]}}'> </card>
-
     </div>
-
+    <!-- three cards end -->
+    <!-- four cards -->
+    <div class="cards" ng-if=" (player.cards.length > 0 || showWinnerPlayer.length == 1) && !(winnerPlayerNo > 0) && player.cards.length==4 ">
+      <card card='DONE'></card>
+      <card card='DONE'></card>
+      <card card='DONE'></card>
+      <card card='DONE'></card>
+    </div>
+    <div class="cards cards_open" ng-if="!player.isFold && winnerPlayerNo > 0 && showWinnerPlayer.length>1 && player.cards.length==4">
+      <card card='{{player.cards[0]}}'> </card>
+      <card card='{{player.cards[1]}}'> </card>
+      <card card='{{player.cards[2]}}'> </card>
+      <card card='{{player.cards[3]}}'> </card>
+    </div>
+    <!-- four cards end -->
   </div>
   <div class="amt">
     <img src="img/coin.svg" class="coin">{{player.balance}}</div>

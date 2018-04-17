@@ -29,26 +29,26 @@
         <div class="col play_now" ng-click="playNow($event);resetFilter();">
           <img src="img/lobby/playnow.png">
         </div>
-        <div class="col play_joker" ng-click="playJoker($event)">
+        <div class="col play_joker" ng-click="playJoker($event);resetFilter()">
           <img src="img/lobby/playjoker.png">
         </div>
         <div class="col variation">
           <img src="img/lobby/variations.png" ng-click="$event.stopPropagation();toggleVariations()">
         </div>
-        <div class="col private_table" ng-click="playPrivate()">
+        <div class="col private_table" ng-click="playPrivate();resetFilter()">
           <img src="img/lobby/privatetable.png">
         </div>
       </div>
     </div>
     <div class="category variation_type">
       <div class="row">
-        <div class="col blue_block" ng-click="openPriceRangeModal()">
+        <div class="col blue_block" ng-click="openPriceRangeModal(null,'Mufils');resetFilter()">
           <img src="img/lobby/var_mufils.png">
         </div>
-        <div class="col block2" ng-click="openPriceRangeModal()">
+        <div class="col block2" ng-click="openPriceRangeModal(null,'2 Cards');resetFilter()">
           <img src="img/lobby/var_2card.png">
         </div>
-        <div class="col block3" ng-click="openPriceRangeModal()">
+        <div class="col block3" ng-click="openPriceRangeModal(null,'4 Cards');resetFilter()">
           <img src="img/lobby/var_4card.png">
         </div>
       </div>

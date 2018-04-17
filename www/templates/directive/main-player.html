@@ -21,7 +21,24 @@
       </div>
     </div>
   </div>
+  <div class="cards_container" ng-if="!sitHere && (player.cards.length > 0) " ng-class="{'main_card_anime':player.cards.length>0 && startAnimation}">
+    <div class="cards" ng-if="( (player && player.isBlind && !player.isFold && remainingPlayerCount>1) || ( winnerPlayerNo == -1 && remainingPlayerCount == 1) ) && player.cards.length==2">
 
+      <card card='NONE'> </card>
+      <card card='NONE'> </card>
+
+    </div>
+
+    <div class="cards" ng-if="( (!player.isBlind && !player.isFold) || (!player.isFold && winnerPlayerNo > 0 && remainingPlayerCount > 1) ) && player.cards.length==2">
+      <!-- <img src="img/card.png" alt="card">
+            <img src="img/card.png" alt="card">
+            <img src="img/card.png" alt="card"> -->
+      <card card='{{player.cards[0]}}'> </card>
+      <card card='{{player.cards[1]}}'> </card>
+
+    </div>
+
+  </div>
   <div class="cards_container" ng-if="!sitHere && (player.cards.length > 0) " ng-class="{'main_card_anime':player.cards.length>0 && startAnimation}">
     <div class="cards" ng-if="( (player && player.isBlind && !player.isFold && remainingPlayerCount>1) || ( winnerPlayerNo == -1 && remainingPlayerCount == 1) ) && player.cards.length<4">
 
@@ -38,6 +55,28 @@
       <card card='{{player.cards[0]}}'> </card>
       <card card='{{player.cards[1]}}'> </card>
       <card card='{{player.cards[2]}}'> </card>
+
+    </div>
+
+  </div>
+  <div class="cards_container" ng-if="!sitHere && (player.cards.length > 0) " ng-class="{'main_card_anime':player.cards.length>0 && startAnimation}">
+    <div class="cards" ng-if="( (player && player.isBlind && !player.isFold && remainingPlayerCount>1) || ( winnerPlayerNo == -1 && remainingPlayerCount == 1) ) && player.cards.length==4">
+
+      <card card='NONE'> </card>
+      <card card='NONE'> </card>
+      <card card='NONE'> </card>
+      <card card='NONE'> </card>
+
+    </div>
+
+    <div class="cards" ng-if="( (!player.isBlind && !player.isFold) || (!player.isFold && winnerPlayerNo > 0 && remainingPlayerCount > 1) ) && player.cards.length==4">
+      <!-- <img src="img/card.png" alt="card">
+            <img src="img/card.png" alt="card">
+            <img src="img/card.png" alt="card"> -->
+      <card card='{{player.cards[0]}}'> </card>
+      <card card='{{player.cards[1]}}'> </card>
+      <card card='{{player.cards[2]}}'> </card>
+      <card card='{{player.cards[3]}}'> </card>
 
     </div>
 

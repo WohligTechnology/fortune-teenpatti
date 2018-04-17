@@ -55,6 +55,9 @@
         padding: 2px 3%;
       }
     }
+    .game-type {
+      padding: 2px 2% !important;
+    }
     input {
       display: inline-block;
       padding: 2%;
@@ -490,6 +493,25 @@ ion-item.item {
             font-size: 1em;
           }
         }
+        select {
+          transform: translateY(15%);
+          height: 100%;
+          width: 100%;
+          font-weight: bold; // font-family: 'Cinzel-Bold';
+          font-weight: bold;
+          font-size: 1em;
+          color: white;
+          background: transparent;
+          border: none;
+          option {
+            font-family: 'Cinzel-Regular';
+            font-size: 1em;
+            background-color: #3f474f; // background: url('../img/model/input_bg.png');
+            // background-size: 100% 100%;
+            color: white;
+            padding: 2px 3%;
+          }
+        }
       }
       table {
         width: 90%;
@@ -534,8 +556,7 @@ span.valid {
     min-height: 240px;
   }
   .heading {
-    font-family: 'Cinzel-Bold';
-    // border-image: $border-color;
+    font-family: 'Cinzel-Bold'; // border-image: $border-color;
     border-image-slice: 2;
     border-bottom: 1px solid;
   }
@@ -566,15 +587,21 @@ span.valid {
   }
 }
 
-.side-show{
-  height:35%;
-  ion-content{
-    padding:5%;
+.side-show {
+  height: 35%;
+  ion-content {
+    padding: 5%;
   }
-  .heading{
+  .heading {
     padding-bottom: 3%;
   }
-  .row{
-    margin-top:5%;
+  .row {
+    margin-top: 5%;
   }
+}
+
+.align-input {
+  text-align: center;
+  display: block;
+  margin: 10px 0;
 }

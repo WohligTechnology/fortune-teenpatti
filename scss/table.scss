@@ -88,6 +88,19 @@
         }
       }
     }
+    .card-joker {
+      width: 3vw;
+      position: absolute;
+      top: 24%;
+      right: 40%;
+      .cards {
+        position: relative;
+        card {
+          position: absolute;
+          width: 100%;
+        }
+      }
+    }
     .doll {
       width: 8%;
       position: absolute;
@@ -306,15 +319,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
-
-
     button[disabled] {
       color: #636160;
       text-shadow: none !important;
-       -webkit-text-stroke: 0 !important;
+      -webkit-text-stroke: 0 !important;
       text-stroke: 0;
-  }
+    }
     mainplayer {
       width: 18%;
       position: absolute;
@@ -360,7 +370,8 @@
       .cards {
         position: absolute;
         bottom: 5%;
-           transform: translate(-50%, -5%) scale(1.2);;
+        transform: translate(-50%, -5%) scale(1.2);
+        ;
         width: 100%;
         left: 50%;
         z-index: 1;
@@ -472,7 +483,7 @@
     .name {
       transform: translate(25%) !important;
     }
-    .winner{
+    .winner {
       transform: translate(45%);
     }
   }
@@ -794,7 +805,7 @@
     top: 10% !important;
     right: 26% !important;
     animation-name: movefromright;
-    -webkit-animation-name:  movefromright;
+    -webkit-animation-name: movefromright;
   }
   &.p4 {
     top: 52% !important;
@@ -806,7 +817,7 @@
     top: 85% !important;
     right: 26% !important;
     animation-name: movefromright;
-    -webkit-animation-name:  movefromright;
+    -webkit-animation-name: movefromright;
   }
   &.p6 {
     bottom: -8% !important;
@@ -867,6 +878,7 @@
     opacity: 0;
   }
 }
+
 @-webkit-keyframes movefromright {
   0% {
     opacity: 1;
@@ -937,7 +949,7 @@
     left: unset !important;
     right: 70% !important;
     animation-name: tipmovefrombottom;
-    -webkit-animation-name:  tipmovefrombottom;
+    -webkit-animation-name: tipmovefrombottom;
   }
 }
 
@@ -957,6 +969,7 @@
     opacity: 0;
   }
 }
+
 @-webkit-keyframes tipmovefrombottom {
   0% {
     opacity: 1;
@@ -990,6 +1003,7 @@
     opacity: 0;
   }
 }
+
 @-webkit-keyframes tipmovefromright {
   0% {
     opacity: 1;
