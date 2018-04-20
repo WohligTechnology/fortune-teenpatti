@@ -9683,7 +9683,9 @@ a.button {
     padding-right: calc(constant(safe-area-inset-right) + 54px); }
     .item-icon-right .icon {
       right: calc(constant(safe-area-inset-right) + 11px); }
-  .item-complex, a.item.item-complex, button.item.item-complex {
+  .item-complex,
+  a.item.item-complex,
+  button.item.item-complex {
     padding: 0; }
     .item-complex .item-content, a.item.item-complex .item-content, button.item.item-complex .item-content {
       padding: 16px calc(constant(safe-area-inset-right) + 49px) 16px calc(constant(safe-area-inset-left) + 16px); }
@@ -11050,6 +11052,10 @@ body {
     .login .login_block .invailduser {
       width: 100%; }
 
+.platform-ios .login .login_block .login_button input {
+  padding: 0px !important;
+  margin-bottom: 5px !important; }
+
 @media (orientation: landscape) {
   .login .logo {
     width: 40%;
@@ -11305,6 +11311,9 @@ body {
   background: transparent;
   color: #fff;
   font-size: 1em; }
+
+.platform-ios .custom-table {
+  z-index: -1; }
 
 .col-15 {
   -webkit-box-flex: 0;

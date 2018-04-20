@@ -5,7 +5,9 @@ var myTableNo = 0;
 
 myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $state, Service, $stateParams, $timeout, $interval) {
 
-
+  $ionicPlatform.ready(function () {
+    screen.orientation.lock('landscape');
+  });
   //Basic ui login
 
 
@@ -331,6 +333,21 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
 
   //player sitting
   $scope.sitHerefn = function (sitNum) {
+    // window.plugins.NativeAudio.preloadComplex('timer', 'audio/timer.mp3', 1, 1, 0, function (msg) {}, function (msg) {
+    //   console.log('error: ' + msg);
+    // });
+    // window.plugins.NativeAudio.preloadComplex('coin', 'audio/coin.mp3', 1, 1, 0, function (msg) {}, function (msg) {
+    //   console.log('error: ' + msg);
+    // });
+    // window.plugins.NativeAudio.preloadComplex('winner', 'audio/winner.mp3', 1, 1, 0, function (msg) {}, function (msg) {
+    //   console.log('error: ' + msg);
+    // });
+    // window.plugins.NativeAudio.preloadComplex('shuffle', 'audio/shuffle.mp3', 1, 1, 0, function (msg) {}, function (msg) {
+    //   console.log('error: ' + msg);
+    // });
+    // window.plugins.NativeAudio.preloadComplex('button', 'audio/button.mp3', 1, 1, 0, function (msg) {}, function (msg) {
+    //   console.log('error: ' + msg);
+    // });
     if (!$scope.sitHere) {
       return;
     }

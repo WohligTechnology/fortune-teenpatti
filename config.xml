@@ -89,7 +89,6 @@
     <plugin name="cordova-plugin-device" spec="^2.0.1" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
-    <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.1" />
     <plugin name="phonegap-plugin-mobile-accessibility" spec="^1.0.5" />
@@ -101,4 +100,5 @@
     <allow-navigation href="http://*/*" />
     <allow-navigation href="https://*/*" />
     <allow-navigation href="data:*" />
+    <plugin name="cordova-plugin-ionic-keyboard" spec="~2.0.5" />
 </widget>

@@ -336,6 +336,9 @@
   color: #fff;
   font-size: 1em;
 }
+.platform-ios .custom-table{
+  z-index: -1;
+}
 
 .col-15 {
   -webkit-box-flex: 0;
