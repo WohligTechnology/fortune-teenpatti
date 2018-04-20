@@ -132,27 +132,25 @@
     .login_block {
       padding: 3%;
       width: 40%;
-      margin-top:-10%;
-
-      .valid{
+      margin-top: -10%;
+      .valid {
         margin-top: -10%;
         margin-bottom: 5px;
       }
     }
     .login_button {
-      height:2.5em !important;
-      input{
-        font-size:1.5em !important;
+      height: 2.5em !important;
+      input {
+        font-size: 1.5em !important;
       }
-      .icon{
+      .icon {
         width: 30% !important;
       }
     }
     .login_button_submit {
-      button{
+      button {
         margin-bottom: 4% !important;
       }
     }
   }
-
 }

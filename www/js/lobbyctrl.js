@@ -199,7 +199,9 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
     $scope.priceRangeModal = modal;
 
   });
-  $scope.openPriceRangeModal = function () {
+  $scope.openPriceRangeModal = function (type, gameType) {
+    $scope.type = type;
+    $scope.gameType = gameType;
     $scope.priceRangeModal.show();
   }
   $scope.closePriceRangeModal = function () {
@@ -437,7 +439,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
 
   $scope.playNow = function ($event) {
     if (!$scope.activeVariation) {
-      $scope.openPriceRangeModal();
+      $scope.openPriceRangeModal(null, 'Normal');
       $event.stopPropagation();
     }
   }
@@ -478,6 +480,11 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
   //resetFilter
   $scope.resetFilter = function () {
     $scope.filterData = {};
+    if ($scope.type || $scope.gameType) {
+      $scope.type ? $scope.filterData.type = $scope.type : '';
+      $scope.gameType ? $scope.filterData.gameType = $scope.gameType : '';
+    }
+    $scope.tablesDataFilter = [];
     $scope.filterTables();
   };
 
@@ -485,7 +492,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
   $scope.playJoker = function ($event) {
 
     if (!$scope.activeVariation) {
-      $scope.openPriceRangeModal();
+      $scope.openPriceRangeModal(null, 'Joker');
       $event.stopPropagation();
 
     }
@@ -496,7 +503,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
     //if variation tab is not open then go to next page
     if (!$scope.activeVariation) {
       // $state.go('table');
-      $scope.openPriceRangeModal();
+      $scope.openPriceRangeModal('private', null);
     }
   }
 

@@ -38,13 +38,18 @@
         <card card='NONE'> </card>
       </div>
     </div>
-
+    <div class="card-joker" ng-if="tableData.jokerCardValue">
+      <div class="cards">
+        <card card='NONE' class="front"></card>
+        <card card='{{tableData.jokerCardValue}}' class="back"></card>
+      </div>
+    </div>
     <players ng-pos="1" ng-click="sitHerefn(1)" ng-player="players[0]" ng-game-type="gameType" ng-remaining-player="remainingPlayerCount"
       ng-sit-here="sitHere" ng-win="winnerPlayerNo" ng-animation="startAnimation" ng-winner-player="showWinnerPlayer">
     </players>
 
     <div class="p1 bootAnimate" ng-if="(players[0].isChaal==true && !players[0].isFold && remainingPlayerCount>1) || (players[0] && startCoinAnime && remainingPlayerCount>1)">
-      <img src="img/coin.svg" class="coin">{{ chaalAmt}} 
+      <img src="img/coin.svg" class="coin">{{ chaalAmt}}
     </div>
 
     <players ng-pos="2" ng-click="sitHerefn(2)" ng-player="players[1]" ng-game-type="gameType" ng-remaining-player="remainingPlayerCount"
@@ -62,7 +67,7 @@
     <players ng-pos="4" ng-click="sitHerefn(4)" ng-player="players[3]" ng-game-type="gameType" ng-remaining-player="remainingPlayerCount"
       ng-sit-here="sitHere" ng-win="winnerPlayerNo" ng-animation="startAnimation" ng-winner-player="showWinnerPlayer">
     </players>
-    <div class="p4 bootAnimate"  ng-if="(players[3].isChaal==true && !players[3].isFold && remainingPlayerCount>1) ||  (players[3] && startCoinAnime && remainingPlayerCount>1)">
+    <div class="p4 bootAnimate" ng-if="(players[3].isChaal==true && !players[3].isFold && remainingPlayerCount>1) ||  (players[3] && startCoinAnime && remainingPlayerCount>1)">
       <img src="img/coin.svg" class="coin">{{ chaalAmt}}
     </div>
     <players ng-pos="5" ng-click="sitHerefn(5)" ng-player="players[4]" ng-game-type="gameType" ng-remaining-player="remainingPlayerCount"
@@ -75,7 +80,7 @@
       ng-sit-here="sitHere" ng-win="winnerPlayerNo" ng-animation="startAnimation" ng-winner-player="showWinnerPlayer" ng-if="sitHere">
     </players>
     <!-- close of table field -->
-    <div class="p6 bootAnimate"  ng-if="(players[5].isChaal==true && !players[5].isFold && remainingPlayerCount>1)  || (players[5] && startCoinAnime && remainingPlayerCount>1)">
+    <div class="p6 bootAnimate" ng-if="(players[5].isChaal==true && !players[5].isFold && remainingPlayerCount>1)  || (players[5] && startCoinAnime && remainingPlayerCount>1)">
       <img src="img/coin.svg" class="coin">{{ chaalAmt}}
     </div>
   </div>
@@ -99,7 +104,7 @@
 
     <!-- for inactive show button -->
     <button class="slideshow text_glow shadow_glow" ng-click="sideShow()" ng-if="(players[5].isTurn)&& (remainingPlayerCount > 2) && !players[5].isFold"
-        ng-disabled="true" promise-btn="sideShowPromise">Show</button>
+      ng-disabled="true" promise-btn="sideShowPromise">Show</button>
 
 
     <button class="slideshow text_glow shadow_glow" ng-click="showWinner()" promise-btn="showWinnerPromise" ng-if="(players[5].isTurn) && (remainingPlayerCount == 2) && !players[5].isFold"
@@ -115,8 +120,7 @@
       <span ng-if="!players[5].isBlind"> chaal</span> {{betamount}}
     </button>
     <button class="plus no-click-effect shadow_glow text_glow" ng-click="addCoin()" ng-disabled="sideShowDataFrom == 1" ng-if="players[5].isTurn && betamount<maxAmt && !players[5].isFold">+</button>
-    <button class="plus no-click-effect no-click-effect shadow_glow opacity-05" ng-disabled="sideShowDataFrom == 1"
-      ng-if="players[5].isTurn && betamount>=maxAmt && !players[5].isFold">+</button>
+    <button class="plus no-click-effect no-click-effect shadow_glow opacity-05" ng-disabled="sideShowDataFrom == 1" ng-if="players[5].isTurn && betamount>=maxAmt && !players[5].isFold">+</button>
   </div>
   <!-- left menu (option) -->
   <left-menu></left-menu>

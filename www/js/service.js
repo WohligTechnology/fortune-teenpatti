@@ -123,15 +123,23 @@ myApp.factory('Service', function ($http, $ionicLoading, $ionicActionSheet, $tim
         pageNo = 1;
       }
       var filter = data;
-      $http.post(url + 'Table/filterTables', {
+      var reqData = {
         filter: {
           blindAmt: filter.blindAmt,
           chalAmt: filter.chalAmt,
           name: filter.name,
           type: filter.type,
+          gameType: filter.gameType
         },
         page: pageNo
-      }).then(function (data) {
+      };
+      if (filter.gameType) {
+        if (filter.gameType == 'Muflis') {
+          filter.gameType = ['Muflis', 'Lowest'];
+        }
+        reqData.filter.gameType = filter.gameType;
+      }
+      $http.post(url + 'Table/filterTables', reqData).then(function (data) {
         if (data.data) {
           var totalCount = data.data.data.total;
           data.data.data.options.maxPage = _.ceil(data.data.data.total / data.data.data.options.count);

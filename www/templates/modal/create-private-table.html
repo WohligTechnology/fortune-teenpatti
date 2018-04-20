@@ -21,6 +21,19 @@
           </div> -->
         <div class="rel">
           <div class="login_button">
+            <select ng-model="filterData.gameType" name="gameType" id="gameType" required>
+              <option value="" disabled hidden selected>Game Type</option>
+              <option value="Normal">Normal</option>
+              <option value="2 Cards">2 Cards</option>
+              <option value="4 Cards">4 Cards</option>
+              <option value="Joker">Joker</option>
+              <option value="Muflis">Muflis</option>
+            </select>
+          </div>
+          <spanclass="valid" ng-show="createTable.gameType.$touched && createTable.gameType.$invalid">*Game Type is required.</span>
+        </div>
+        <div class="rel">
+          <div class="login_button">
             <input type="number" name="blindLimit" ng-model="data.blindAmt" placeholder="Blind Amount*" required>
           </div>
           <span class="valid" ng-show="createTable.blindLimit.$touched && createTable.blindLimit.$invalid">* Blind Amount is required.</span>
