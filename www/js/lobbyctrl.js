@@ -1,4 +1,4 @@
-myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout, Service, $ionicModal) {
+myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $state, $timeout, Service, $ionicModal) {
 
   //ionic cordova 
   $ionicPlatform.ready(function () {
@@ -240,12 +240,6 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
     animation: 'slide-in-up'
   }).then(function (modal) {
     $scope.myPrivateModal = modal;
-    $scope.privateTableDatas = [];
-    $scope.paging = {
-      maxPage: 1
-    };
-    $scope.pageNo = 1;
-    $scope.loadingDisable = false;
   });
   $scope.openMyPrivateModal = function () {
     $scope.privateTableDatas = [];
@@ -401,6 +395,28 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
     })
 
   };
+  $scope.deletePrivateTable = function (data) {
+    console.log(data);
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Delete Private Table',
+      template: 'Are you sure you want to delete private table <b>"' + data.name + '"</b> ?',
+      cssClass: 'delete-popup'
+    });
+    confirmPopup.then(function (res) {
+      if (res) {
+        console.log('You are sure');
+        Service.deletePrivateTable(data._id, function (data) {
+          console.log(data)
+          if (data.value) {
+            $scope.myPrivateTable();
+            $scope.openMyPrivateTable();
+          }
+        })
+
+      }
+    });
+
+  }
 
   //end of modal initialize
 
@@ -584,16 +600,16 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
 
   //destroy every modal
   $scope.$on('$destroy', function () {
-    $scope.closeAll();
     $scope.PLStatementModal.remove();
     $scope.TransferStatementModal.remove();
     $scope.ACStatementModal.remove();
     $scope.priceRangeModal.remove();
-
     // $scope.PLModal.remove();
     $scope.changePasswordModal.remove();
     $scope.privateLogInModal.remove();
     $scope.rulesModal.remove();
+    $scope.myPrivateModal.remove();
+    $scope.closeAll();
   });
 
 });

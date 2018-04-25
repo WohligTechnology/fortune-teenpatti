@@ -192,7 +192,7 @@ body {
   }
 }
 
-.opacity-05{
+.opacity-05 {
   opacity: .5;
 }
 
@@ -201,8 +201,6 @@ body {
 @import "login";
 @import "modal";
 @import "timer";
-
-
 @media (min-aspect-ratio: 18/9) {
   .table .table_field {
     width: 85%;
@@ -211,5 +209,41 @@ body {
   }
   .table .bottom .main_player .status {
     top: -380%;
+  }
+}
+
+.delete_icon {
+  font-size: 1.5em;
+  float: right;
+  margin-right: 8%;
+}
+
+.delete-popup {
+  .popup {
+    background: url('../img/modal_bg.png');
+    background-size: 100% 100%;
+    color: white;
+    .popup-head {
+      h3 {
+        color: white;
+      }
+    }
+    .popup-body {
+      font-family: 'Cinzel-Regular';
+    }
+    button {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      font-size: 1em;
+      padding: 5px 15%; // flex: .8;
+      min-height: 35px;
+      &.button-positive {
+        background-color: transparent;
+      }
+    }
+    .popup-buttons {
+      min-height: 50px;
+    }
   }
 }

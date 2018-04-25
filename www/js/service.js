@@ -410,7 +410,13 @@ myApp.factory('Service', function ($http, $ionicLoading, $filter, $ionicActionSh
         });
       }
     },
-
+    deletePrivateTable: function (data, callback) {
+      $http.post(url + "Table/delete", {
+        '_id': data
+      }).then(function (data) {
+        callback(data.data);
+      });
+    },
     addAmountToPot: function (data, callback) {
       $http.post(url + 'Pot/addAmountToPot', {
         data: data
