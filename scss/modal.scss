@@ -288,7 +288,7 @@
     padding: 4%;
     margin: 0%;
     margin-bottom: 5%;
-    font-size:.9em;
+    font-size: .9em;
   }
   .close {
     position: absolute;
@@ -637,4 +637,10 @@ span.valid {
     color: red;
     font-weight: bold;
   }
+}
+
+.create-button {
+  position: absolute;
+  right: 9%;
+  top: 2%;
 }

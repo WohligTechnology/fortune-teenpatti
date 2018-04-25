@@ -3,8 +3,12 @@
     <div class="close" ng-click="closeMyPrivateModal();ModalInfo.hide()">
       <i class="icon ion-close text_glow"></i>
     </div>
-    <div class="heading">My Private table</div>
-
+    <div class="heading">
+      My Private table
+    </div>
+    <div class=" create-button">
+      <button class="custom_button" ng-click="createPrivateModal($event)">Create Table</button>
+    </div>
     <div class="top_field"></div>
     <div class="custom-table" ng-if="privateTableDatas">
       <ion-list>
