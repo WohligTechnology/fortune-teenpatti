@@ -600,7 +600,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
 
     // $scope.winnerAudio.play();
     $scope.showWinnerPlayer = data.data.players;
-    console.log(data.data.players);
+    // console.log(data.data.players);
     $scope.showNewGameTime = true;
     $scope.winner = _.find($scope.showWinnerPlayer, {
       'winRank': 1,
@@ -623,7 +623,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
     if ($scope.winner && $scope.winner.playerNo) {
       $scope.winnerPlayerNo = $scope.winner.playerNo;
     }
-    console.log($scope.winner);
+    // console.log($scope.winner);
     $scope.changeTableMessage($scope.winner.name + " won the game");
   }
 
@@ -853,7 +853,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
       return _.cloneDeep(playerReturn);
     });
     $scope.players = players;
-    console.log("rearr", $scope.players);
+    // console.log("rearr", $scope.players);
   }
   //seat selection Player
   io.socket.on("removePlayer", function (data) {
