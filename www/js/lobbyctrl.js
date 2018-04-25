@@ -75,7 +75,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   }
   $scope.closePLStatementModal = function () {
     $scope.PLStatementModal.hide();
-    $scope.pageNo = "";
+    $scope.pageNo = 1;
   }
 
   $ionicModal.fromTemplateUrl('templates/modal/transfer_statement.html', {
@@ -102,7 +102,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   }
   $scope.closeTransferStatement = function () {
     $scope.TransferStatementModal.hide();
-    $scope.pageNo = "";
+    $scope.pageNo = 1;
   }
   //Transfer Statement
   $scope.loadTransferMore = function () {
@@ -116,6 +116,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   };
 
   $scope.transferStatement = function () {
+    $scope.transferStatementData=[];
     Service.searchPlayerTransaction($scope.memberId, $scope.pageNo, function (data) {
       if (data) {
         if (data.data.data.total === 0) {
@@ -160,7 +161,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   }
   $scope.closeACStatement = function () {
     $scope.ACStatementModal.hide();
-    $scope.pageNo = "";
+    $scope.pageNo = 1;
   }
 
   //Account Statement
@@ -175,6 +176,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   };
 
   $scope.accountStatement = function () {
+    $scope.pageNo == 1 ? $scope.results =[]:'';
     Service.getTransaction($scope.accountFilterData, $scope.pageNo, function (data) {
       var transactionData = data.data.data;
       if (data) {
@@ -210,7 +212,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   }
   $scope.closePriceRangeModal = function () {
     $scope.priceRangeModal.hide();
-    $scope.pageNo = "";
+    $scope.pageNo = 1;
   }
 
 
@@ -231,7 +233,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   }
   $scope.closeChangePasswordModal = function () {
     $scope.changePasswordModal.hide();
-    $scope.pageNo = "";
+    $scope.pageNo = 1;
   }
 
   //my private Table Info 
@@ -304,7 +306,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   }
   $scope.closePrivateTable = function () {
     $scope.ModalCreate.hide();
-    $scope.pageNo = "";
+    $scope.pageNo = 1;
   };
 
   //Rules
@@ -322,7 +324,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   }
   $scope.closeRulesModal = function () {
     $scope.rulesModal.hide();
-    $scope.pageNo = "";
+    $scope.pageNo = 1;
   };
 
   //private table info modal
@@ -369,7 +371,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   }
   $scope.closePrivateLogInModal = function () {
     $scope.privateLogInModal.hide();
-    $scope.pageNo = "";
+    $scope.pageNo = 1;
   };
 
   $scope.goToPrivateTableLogIn = function (data) {
