@@ -194,7 +194,7 @@
             &:nth-child(4) {
               left: 45%;
               transition: transform 1s;
-              transition-delay: 1000ms;
+              transition-delay: 1500ms;
             }
           }
           &.cards_open {
@@ -408,31 +408,31 @@
         }
       }
       .cards4 {
-        transform: translate(-50%, -40%) scale(1.5);
+        transform: translate(-44%, -25%) scale(1.5);
         card {
           width: 20%;
           &:nth-child(1) {
             position: relative;
-            transform: rotate(-10deg) translate(40%);
+            transform: rotate(-10deg) translate(70%);
             transition: transform 1s;
           }
           &:nth-child(2) {
             position: relative;
-            transform: rotate(0deg) translate(0%) scale(1.1);
+            transform: rotate(-1deg) translate(5%,-7%) scale(1.1);
             transition: transform 1s;
             transition-delay: 500ms;
           }
           &:nth-child(3) {
             position: relative;
-            transform: rotate(10deg) translate(-40%, 10%);
+            transform: rotate(10deg) translate(-57%, -2%);
             transition: transform 1s;
             transition-delay: 1000ms;
           }
           &:nth-child(4) {
             position: relative;
-            transform: rotate(10deg) translate(-60%, 10%);
+            transform: rotate(17deg) translate(-105%, 21%);
             transition: transform 1s;
-            transition-delay: 1000ms;
+            transition-delay: 1500ms;
           }
         }
       }

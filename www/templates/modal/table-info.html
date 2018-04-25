@@ -46,38 +46,44 @@
       <ion-list>
         <ion-item class="item">
           <div class="row">
-            <div class="col-30">
+            <div class="col-25">
               <div class="bold">Name</div>
             </div>
             <div class="col-15">
               <div class="bold text-center">type</div>
             </div>
-            <div class="col-20">
+            <div class="col-15">
+              <div class="bold text-center">Game Type</div>
+            </div>
+            <div class="col-15">
               <div class="bold text-center">Stakes</div>
             </div>
             <div class="col-20">
               <div class="bold text-center">Max Players</div>
             </div>
-            <div class="col-20">
+            <div class="col-10">
               <div class="bold">Action</div>
             </div>
           </div>
         </ion-item>
         <ion-item collection-repeat="dataFilter in tablesDataFilter" class="item">
           <div class="row">
-            <div class="col-30">
-              <div class="bold">{{dataFilter.name}}</div>
+            <div class="col-25">
+              <div class="bold text-overflow">{{dataFilter.name}}</div>
             </div>
             <div class="col-15">
               <div class="text-center bold">{{dataFilter.type}}</div>
             </div>
-            <div class="col-20">
-              <div class="text-center bold">{{dataFilter.blindAmt}} - {{dataFilter.chalAmt}}</div>
+            <div class="col-15">
+              <div class="text-center bold">{{dataFilter.gameType}}</div>
+            </div>
+            <div class="col-15">
+              <div class="text-center bold text-overflow">{{dataFilter.blindAmt}} - {{dataFilter.chalAmt}}</div>
             </div>
             <div class="col-20">
               <div class="text-center bold">{{dataFilter.noOfPlayers}} / {{dataFilter.maximumNoOfPlayers}}</div>
             </div>
-            <div class="col-20">
+            <div class="col-10">
               <button class="custom_button bold" ng-click="goToTable(dataFilter)" ng-if="dataFilter.type=='public'">PLAY</button>
               <button class="custom_button bold" ng-click="goToPrivateTableLogIn(dataFilter)" ng-if="dataFilter.type=='private'">Log In</button>
             </div>

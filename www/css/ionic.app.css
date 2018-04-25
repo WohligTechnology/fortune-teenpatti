@@ -9683,9 +9683,7 @@ a.button {
     padding-right: calc(constant(safe-area-inset-right) + 54px); }
     .item-icon-right .icon {
       right: calc(constant(safe-area-inset-right) + 11px); }
-  .item-complex,
-  a.item.item-complex,
-  button.item.item-complex {
+  .item-complex, a.item.item-complex, button.item.item-complex {
     padding: 0; }
     .item-complex .item-content, a.item.item-complex .item-content, button.item.item-complex .item-content {
       padding: 16px calc(constant(safe-area-inset-right) + 49px) 16px calc(constant(safe-area-inset-left) + 16px); }
@@ -10012,6 +10010,10 @@ body {
 
 .opacity-05 {
   opacity: .5; }
+
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 .lobby {
   background: url("../img/lobby/background.png");
@@ -10347,7 +10349,7 @@ body {
             .table .table_field .plyr .profile .cards card:nth-child(4) {
               left: 45%;
               transition: transform 1s;
-              transition-delay: 1000ms; }
+              transition-delay: 1500ms; }
           .table .table_field .plyr .profile .cards.cards_open {
             transform: scale(2) translate(0%, -5px); }
       .table .table_field .plyr .amt {
@@ -10508,28 +10510,28 @@ body {
             transition: transform 1s;
             transition-delay: 1000ms; }
       .table .bottom .main_player .cards4 {
-        transform: translate(-50%, -40%) scale(1.5); }
+        transform: translate(-44%, -25%) scale(1.5); }
         .table .bottom .main_player .cards4 card {
           width: 20%; }
           .table .bottom .main_player .cards4 card:nth-child(1) {
             position: relative;
-            transform: rotate(-10deg) translate(40%);
+            transform: rotate(-10deg) translate(70%);
             transition: transform 1s; }
           .table .bottom .main_player .cards4 card:nth-child(2) {
             position: relative;
-            transform: rotate(0deg) translate(0%) scale(1.1);
+            transform: rotate(-1deg) translate(5%, -7%) scale(1.1);
             transition: transform 1s;
             transition-delay: 500ms; }
           .table .bottom .main_player .cards4 card:nth-child(3) {
             position: relative;
-            transform: rotate(10deg) translate(-40%, 10%);
+            transform: rotate(10deg) translate(-57%, -2%);
             transition: transform 1s;
             transition-delay: 1000ms; }
           .table .bottom .main_player .cards4 card:nth-child(4) {
             position: relative;
-            transform: rotate(10deg) translate(-60%, 10%);
+            transform: rotate(17deg) translate(-105%, 21%);
             transition: transform 1s;
-            transition-delay: 1000ms; }
+            transition-delay: 1500ms; }
       .table .bottom .main_player .see {
         position: absolute;
         top: -70%;
@@ -11334,7 +11336,8 @@ body {
 .price_range_modal ion-content {
   padding: 4%;
   margin: 0%;
-  margin-bottom: 5%; }
+  margin-bottom: 5%;
+  font-size: .9em; }
 
 .price_range_modal .close {
   position: absolute;
