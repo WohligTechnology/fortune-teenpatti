@@ -10260,6 +10260,16 @@ body {
             left: 20%; }
           .table .table_field .card_shuffle .cards card:nth-child(3) {
             left: 40%; }
+    .table .table_field .card-joker {
+      width: 3vw;
+      position: absolute;
+      top: 24%;
+      right: 40%; }
+      .table .table_field .card-joker .cards {
+        position: relative; }
+        .table .table_field .card-joker .cards card {
+          position: absolute;
+          width: 100%; }
     .table .table_field .doll {
       width: 8%;
       position: absolute;
@@ -10332,6 +10342,10 @@ body {
               transition-delay: 500ms; }
             .table .table_field .plyr .profile .cards card:nth-child(3) {
               left: 30%;
+              transition: transform 1s;
+              transition-delay: 1000ms; }
+            .table .table_field .plyr .profile .cards card:nth-child(4) {
+              left: 45%;
               transition: transform 1s;
               transition-delay: 1000ms; }
           .table .table_field .plyr .profile .cards.cards_open {
@@ -10486,6 +10500,34 @@ body {
           .table .bottom .main_player .cards card:nth-child(3) {
             position: relative;
             transform: rotate(10deg) translate(-40%, 10%);
+            transition: transform 1s;
+            transition-delay: 1000ms; }
+          .table .bottom .main_player .cards card:nth-child(4) {
+            position: relative;
+            transform: rotate(10deg) translate(-60%, 10%);
+            transition: transform 1s;
+            transition-delay: 1000ms; }
+      .table .bottom .main_player .cards4 {
+        transform: translate(-50%, -40%) scale(1.5); }
+        .table .bottom .main_player .cards4 card {
+          width: 20%; }
+          .table .bottom .main_player .cards4 card:nth-child(1) {
+            position: relative;
+            transform: rotate(-10deg) translate(40%);
+            transition: transform 1s; }
+          .table .bottom .main_player .cards4 card:nth-child(2) {
+            position: relative;
+            transform: rotate(0deg) translate(0%) scale(1.1);
+            transition: transform 1s;
+            transition-delay: 500ms; }
+          .table .bottom .main_player .cards4 card:nth-child(3) {
+            position: relative;
+            transform: rotate(10deg) translate(-40%, 10%);
+            transition: transform 1s;
+            transition-delay: 1000ms; }
+          .table .bottom .main_player .cards4 card:nth-child(4) {
+            position: relative;
+            transform: rotate(10deg) translate(-60%, 10%);
             transition: transform 1s;
             transition-delay: 1000ms; }
       .table .bottom .main_player .see {
@@ -11124,6 +11166,8 @@ body {
         background-color: #3f474f;
         color: white;
         padding: 2px 3%; }
+    .statement-model .top_field .game-type {
+      padding: 2px 2% !important; }
     .statement-model .top_field input {
       display: inline-block;
       padding: 2%;
@@ -11447,6 +11491,22 @@ ion-item.item {
           font-family: 'Cinzel-Bold';
           font-weight: bold;
           font-size: 1em; }
+      .change_password-model .field form .login_button select {
+        transform: translateY(15%);
+        height: 100%;
+        width: 100%;
+        font-weight: bold;
+        font-weight: bold;
+        font-size: 1em;
+        color: white;
+        background: transparent;
+        border: none; }
+        .change_password-model .field form .login_button select option {
+          font-family: 'Cinzel-Regular';
+          font-size: 1em;
+          background-color: #3f474f;
+          color: white;
+          padding: 2px 3%; }
     .change_password-model .field form table {
       width: 90%;
       margin: 0 auto; }
@@ -11506,6 +11566,11 @@ span.valid {
     padding-bottom: 3%; }
   .side-show .row {
     margin-top: 5%; }
+
+.align-input {
+  text-align: center;
+  display: block;
+  margin: 10px 0; }
 
 .pie_loader {
   position: absolute;

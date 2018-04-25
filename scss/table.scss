@@ -191,6 +191,11 @@
               transition: transform 1s;
               transition-delay: 1000ms;
             }
+            &:nth-child(4) {
+              left: 45%;
+              transition: transform 1s;
+              transition-delay: 1000ms;
+            }
           }
           &.cards_open {
             transform: scale(2) translate(0%, -5px);
@@ -371,7 +376,6 @@
         position: absolute;
         bottom: 5%;
         transform: translate(-50%, -5%) scale(1.2);
-        ;
         width: 100%;
         left: 50%;
         z-index: 1;
@@ -392,6 +396,41 @@
           &:nth-child(3) {
             position: relative;
             transform: rotate(10deg) translate(-40%, 10%);
+            transition: transform 1s;
+            transition-delay: 1000ms;
+          }
+          &:nth-child(4) {
+            position: relative;
+            transform: rotate(10deg) translate(-60%, 10%);
+            transition: transform 1s;
+            transition-delay: 1000ms;
+          }
+        }
+      }
+      .cards4 {
+        transform: translate(-50%, -40%) scale(1.5);
+        card {
+          width: 20%;
+          &:nth-child(1) {
+            position: relative;
+            transform: rotate(-10deg) translate(40%);
+            transition: transform 1s;
+          }
+          &:nth-child(2) {
+            position: relative;
+            transform: rotate(0deg) translate(0%) scale(1.1);
+            transition: transform 1s;
+            transition-delay: 500ms;
+          }
+          &:nth-child(3) {
+            position: relative;
+            transform: rotate(10deg) translate(-40%, 10%);
+            transition: transform 1s;
+            transition-delay: 1000ms;
+          }
+          &:nth-child(4) {
+            position: relative;
+            transform: rotate(10deg) translate(-60%, 10%);
             transition: transform 1s;
             transition-delay: 1000ms;
           }

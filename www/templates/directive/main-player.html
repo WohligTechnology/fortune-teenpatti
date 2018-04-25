@@ -60,7 +60,7 @@
 
   </div>
   <div class="cards_container" ng-if="!sitHere && (player.cards.length > 0) " ng-class="{'main_card_anime':player.cards.length>0 && startAnimation}">
-    <div class="cards" ng-if="( (player && player.isBlind && !player.isFold && remainingPlayerCount>1) || ( winnerPlayerNo == -1 && remainingPlayerCount == 1) ) && player.cards.length==4">
+    <div class="cards cards4" ng-if="( (player && player.isBlind && !player.isFold && remainingPlayerCount>1) || ( winnerPlayerNo == -1 && remainingPlayerCount == 1) ) && player.cards.length==4">
 
       <card card='NONE'> </card>
       <card card='NONE'> </card>
