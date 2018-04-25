@@ -252,7 +252,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   }
   $scope.closeMyPrivateModal = function () {
     $scope.myPrivateModal.hide();
-    $scope.pageNo = "";
+    $scope.pageNo = 1;
   }
 
   //Private Table Info
@@ -282,8 +282,9 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
           $scope.privateTableDatas.push(n);
         });
         $scope.loadingDisable = false;
-        $scope.$broadcast('scroll.infiniteScrollComplete');
+        
       } else {}
+      $scope.$broadcast('scroll.infiniteScrollComplete');
     });
   };
 
@@ -334,7 +335,9 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   });
 
   $scope.openMyPrivateTable = function () {
+
     $scope.privateTableDatas = [];
+    $scope.myPrivateTable();
     $scope.ModalInfo.show();
 
   }
@@ -362,6 +365,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
 
   $scope.showPrivateLogInModal = function () {
     $scope.privateLogInModal.show();
+    
   }
   $scope.closePrivateLogInModal = function () {
     $scope.privateLogInModal.hide();
@@ -370,6 +374,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
 
   $scope.goToPrivateTableLogIn = function (data) {
     $scope.privateDataForModal = data;
+    $scope.myPrivateModal.hide();
     $scope.showPrivateLogInModal();
     //
   }
@@ -608,6 +613,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
     $scope.changePasswordModal.remove();
     $scope.privateLogInModal.remove();
     $scope.rulesModal.remove();
+    $scope.ModalInfo.remove();
     $scope.myPrivateModal.remove();
     $scope.closeAll();
   });

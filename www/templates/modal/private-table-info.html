@@ -27,7 +27,7 @@
             </div>
           </div>
         </ion-item>
-        <ion-item collection-repeat="data in privateTableDatas" class="item">
+        <ion-item ng-repeat="data in privateTableDatas" class="item">
           <div class="row">
             <div class="col-20">
               <span>{{data.name}}</span>

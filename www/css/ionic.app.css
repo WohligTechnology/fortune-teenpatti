@@ -11708,3 +11708,31 @@ span.valid {
     transform: translate(-50%); }
   .table .bottom .main_player .status {
     top: -380%; } }
+
+.delete_icon {
+  font-size: 1.5em;
+  float: right;
+  margin-right: 8%; }
+
+.delete-popup .popup {
+  background: url("../img/modal_bg.png");
+  background-size: 100% 100%;
+  color: white; }
+  .delete-popup .popup .popup-head h3 {
+    color: white; }
+  .delete-popup .popup .popup-body {
+    font-family: 'Cinzel-Regular'; }
+  .delete-popup .popup button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 1em;
+    padding: 5px 15%;
+    min-height: 35px; }
+    .delete-popup .popup button.button-positive {
+      background-color: transparent; }
+  .delete-popup .popup .popup-buttons {
+    min-height: 50px; }
+
+.modal-open {
+  pointer-events: unset; }
