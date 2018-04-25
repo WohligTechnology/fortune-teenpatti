@@ -436,6 +436,23 @@
           }
         }
       }
+      .cards2{
+        transform: translate(-65%, -16%) scale(1.8);
+        card {
+          width: 20%;
+          &:nth-child(1) {
+            position: relative;
+            transform: rotate(-10deg) translate(70%);
+            transition: transform 1s;
+          }
+          &:nth-child(2) {
+            position: relative;
+            transform: rotate(11deg) translate(13%, -3%) scale(1.1);
+            transition: transform 1s;
+            transition-delay: 500ms;
+          }
+        }
+      }
       .see {
         position: absolute;
         top: -70%;

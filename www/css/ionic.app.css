@@ -10532,6 +10532,19 @@ body {
             transform: rotate(17deg) translate(-105%, 21%);
             transition: transform 1s;
             transition-delay: 1500ms; }
+      .table .bottom .main_player .cards2 {
+        transform: translate(-65%, -16%) scale(1.8); }
+        .table .bottom .main_player .cards2 card {
+          width: 20%; }
+          .table .bottom .main_player .cards2 card:nth-child(1) {
+            position: relative;
+            transform: rotate(-10deg) translate(70%);
+            transition: transform 1s; }
+          .table .bottom .main_player .cards2 card:nth-child(2) {
+            position: relative;
+            transform: rotate(11deg) translate(13%, -3%) scale(1.1);
+            transition: transform 1s;
+            transition-delay: 500ms; }
       .table .bottom .main_player .see {
         position: absolute;
         top: -70%;
@@ -11183,6 +11196,14 @@ body {
       height: 1.8em;
       margin: 0px 1%;
       border: 1px solid rgba(255, 255, 255, 0.1); }
+    .statement-model .top_field .filter-date {
+      padding: 2% 0;
+      width: 24%; }
+    .statement-model .top_field button {
+      background: linear-gradient(to bottom, rgba(152, 56, 83, 0.48) 0%, #983853 100%);
+      border: none;
+      float: right;
+      margin: 0 5px; }
   .statement-model .statement_content {
     overflow-y: scroll;
     height: 75%; }
@@ -11574,6 +11595,21 @@ span.valid {
   text-align: center;
   display: block;
   margin: 10px 0; }
+
+.net_profit_show {
+  border: 1px solid #ddd;
+  padding: 1% 2%;
+  margin-top: 3px;
+  border-bottom: 0px;
+  float: right;
+  margin-right: 10px;
+  font-size: 1.2em; }
+  .net_profit_show .green {
+    color: green;
+    font-weight: bold; }
+  .net_profit_show .red {
+    color: red;
+    font-weight: bold; }
 
 .pie_loader {
   position: absolute;
