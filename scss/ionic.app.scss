@@ -196,6 +196,11 @@ body {
   opacity: .5;
 }
 
+.text-overflow{
+  overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 @import "lobby";
 @import "table";
 @import "login";

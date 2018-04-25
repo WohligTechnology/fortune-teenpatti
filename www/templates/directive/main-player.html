@@ -22,14 +22,14 @@
     </div>
   </div>
   <div class="cards_container" ng-if="!sitHere && (player.cards.length > 0) " ng-class="{'main_card_anime':player.cards.length>0 && startAnimation}">
-    <div class="cards" ng-if="( (player && player.isBlind && !player.isFold && remainingPlayerCount>1) || ( winnerPlayerNo == -1 && remainingPlayerCount == 1) ) && player.cards.length==2">
+    <div class="cards cards2" ng-if="( (player && player.isBlind && !player.isFold && remainingPlayerCount>1) || ( winnerPlayerNo == -1 && remainingPlayerCount == 1) ) && player.cards.length==2">
 
       <card card='NONE'> </card>
       <card card='NONE'> </card>
 
     </div>
 
-    <div class="cards" ng-if="( (!player.isBlind && !player.isFold) || (!player.isFold && winnerPlayerNo > 0 && remainingPlayerCount > 1) ) && player.cards.length==2">
+    <div class="cards cards2" ng-if="( (!player.isBlind && !player.isFold) || (!player.isFold && winnerPlayerNo > 0 && remainingPlayerCount > 1) ) && player.cards.length==2">
       <!-- <img src="img/card.png" alt="card">
             <img src="img/card.png" alt="card">
             <img src="img/card.png" alt="card"> -->
@@ -40,7 +40,7 @@
 
   </div>
   <div class="cards_container" ng-if="!sitHere && (player.cards.length > 0) " ng-class="{'main_card_anime':player.cards.length>0 && startAnimation}">
-    <div class="cards" ng-if="( (player && player.isBlind && !player.isFold && remainingPlayerCount>1) || ( winnerPlayerNo == -1 && remainingPlayerCount == 1) ) && player.cards.length<4">
+    <div class="cards" ng-if="( (player && player.isBlind && !player.isFold && remainingPlayerCount>1) || ( winnerPlayerNo == -1 && remainingPlayerCount == 1) ) && player.cards.length==3">
 
       <card card='NONE'> </card>
       <card card='NONE'> </card>
@@ -48,7 +48,7 @@
 
     </div>
 
-    <div class="cards" ng-if="( (!player.isBlind && !player.isFold) || (!player.isFold && winnerPlayerNo > 0 && remainingPlayerCount > 1) ) && player.cards.length<4">
+    <div class="cards" ng-if="( (!player.isBlind && !player.isFold) || (!player.isFold && winnerPlayerNo > 0 && remainingPlayerCount > 1) ) && player.cards.length==3">
       <!-- <img src="img/card.png" alt="card">
           <img src="img/card.png" alt="card">
           <img src="img/card.png" alt="card"> -->
@@ -69,7 +69,7 @@
 
     </div>
 
-    <div class="cards" ng-if="( (!player.isBlind && !player.isFold) || (!player.isFold && winnerPlayerNo > 0 && remainingPlayerCount > 1) ) && player.cards.length==4">
+    <div class="cards cards4" ng-if="( (!player.isBlind && !player.isFold) || (!player.isFold && winnerPlayerNo > 0 && remainingPlayerCount > 1) ) && player.cards.length==4">
       <!-- <img src="img/card.png" alt="card">
             <img src="img/card.png" alt="card">
             <img src="img/card.png" alt="card"> -->
@@ -84,6 +84,6 @@
 
   <div class="see" ng-click="showCard()" ng-if="player.isBlind && !startAnimation && !player.isFold && (player.cards.length > 0) && (remainingPlayerCount > 1 && winnerPlayerNo == -1)">see</div>
   <div class="amt button_bg shadow_glow">
-    <img src="img/coin.svg">{{player.balance}}
+    <img src="img/coin.svg">{{player.balance | number:0}}
   </div>
 </div>
