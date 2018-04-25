@@ -75,7 +75,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
   }
   $scope.closePLStatementModal = function () {
     $scope.PLStatementModal.hide();
-    $scope.pageNo="";
+    $scope.pageNo = "";
   }
 
   $ionicModal.fromTemplateUrl('templates/modal/transfer_statement.html', {
@@ -102,7 +102,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
   }
   $scope.closeTransferStatement = function () {
     $scope.TransferStatementModal.hide();
-    $scope.pageNo="";
+    $scope.pageNo = "";
   }
   //Transfer Statement
   $scope.loadTransferMore = function () {
@@ -155,10 +155,12 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
       maxPage: 1
     };
     $scope.ACStatementModal.show();
+    $scope.accountStatement();
+    $scope.resetpage();
   }
   $scope.closeACStatement = function () {
     $scope.ACStatementModal.hide();
-    $scope.pageNo="";
+    $scope.pageNo = "";
   }
 
   //Account Statement
@@ -173,19 +175,21 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
   };
 
   $scope.accountStatement = function () {
-    Service.getTransaction($scope.pageNo, function (data) {
+    Service.getTransaction($scope.accountFilterData, $scope.pageNo, function (data) {
+      var transactionData = data.data.data;
       if (data) {
-        if (data.data.data.total === 0) {
+        if (transactionData.PagData.total === 0) {
           $scope.noDataFound = true;
           // Error Message or no data found 
           // $scope.displayMessage = {
           //   main: "<p>No Data Found.</p>",
           // };
         }
-        $scope.paging = data.data.data.options;
-        _.each(data.data.data.results, function (n) {
+        $scope.paging = transactionData.PagData.options;
+        _.each(transactionData.PagData.results, function (n) {
           $scope.results.push(n);
         });
+        $scope.statementNetProfit = transactionData.netProfit;
         $scope.loadingDisable = false;
         $scope.$broadcast('scroll.infiniteScrollComplete');
       } else {}
@@ -206,7 +210,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
   }
   $scope.closePriceRangeModal = function () {
     $scope.priceRangeModal.hide();
-    $scope.pageNo="";
+    $scope.pageNo = "";
   }
 
 
@@ -227,7 +231,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
   }
   $scope.closeChangePasswordModal = function () {
     $scope.changePasswordModal.hide();
-    $scope.pageNo="";
+    $scope.pageNo = "";
   }
 
   //my private Table Info 
@@ -254,7 +258,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
   }
   $scope.closeMyPrivateModal = function () {
     $scope.myPrivateModal.hide();
-    $scope.pageNo="";
+    $scope.pageNo = "";
   }
 
   //Private Table Info
@@ -305,7 +309,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
   }
   $scope.closePrivateTable = function () {
     $scope.ModalCreate.hide();
-    $scope.pageNo="";
+    $scope.pageNo = "";
   };
 
   //Rules
@@ -323,7 +327,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
   }
   $scope.closeRulesModal = function () {
     $scope.rulesModal.hide();
-    $scope.pageNo="";
+    $scope.pageNo = "";
   };
 
   //private table info modal
@@ -415,6 +419,9 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $state, $timeout
     $scope.noDataFound = false;
     $scope.paging = {
       maxPage: 1
+    };
+    $scope.accountFilterData = {
+      date: new Date()
     };
   }
 

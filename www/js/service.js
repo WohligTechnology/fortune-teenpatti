@@ -3,7 +3,7 @@ var url = adminUUU + '/api/';
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 var maxRow = 10;
-myApp.factory('Service', function ($http, $ionicLoading, $ionicActionSheet, $timeout, $state) {
+myApp.factory('Service', function ($http, $ionicLoading, $filter, $ionicActionSheet, $timeout, $state) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -341,25 +341,25 @@ myApp.factory('Service', function ($http, $ionicLoading, $ionicActionSheet, $tim
       };
     },
 
-    getTransaction: function (pageNo, callback) {
+    getTransaction: function (filterData, pageNo, callback) {
       if (!pageNo) {
         pageNo = 1;
       }
       var accessToken = $.jStorage.get("accessToken");
       if (!_.isEmpty(accessToken)) {
         return $http.post(url + 'Transaction/getPlayerTransaction', {
+          "date": $filter('date')(filterData.date, 'MM-dd-yyyy', '+0530'),
           "page": pageNo,
           "accessToken": accessToken
         }).then(function (data) {
           if (data.data) {
-            var totalCount = data.data.data.total;
-            data.data.data.options.maxPage = _.ceil(data.data.data.total / data.data.data.options.count);
+            var totalCount = data.data.data.PagData.total;
+            data.data.data.PagData.options.maxPage = _.ceil(data.data.data.PagData.total / data.data.data.PagData.options.count);
             callback(data);
           } else {}
         });
       }
     },
-
     getByPlrId: function (data, callback) {
       $http.post(url + 'Player/getByPlrId', {
         data: data

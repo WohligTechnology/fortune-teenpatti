@@ -72,6 +72,16 @@
       margin: 0px 1%;
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
+    .filter-date {
+      padding: 2% 0;
+      width: 24%;
+    }
+    button {
+      background: linear-gradient(to bottom, rgba(152, 56, 83, 0.48) 0%, #983853 100%);
+      border: none;
+      float: right;
+      margin: 0 5px;
+    }
   }
   .statement_content {
     overflow-y: scroll;
@@ -340,7 +350,8 @@
   color: #fff;
   font-size: 1em;
 }
-.platform-ios .custom-table{
+
+.platform-ios .custom-table {
   z-index: -1;
 }
 
@@ -608,4 +619,22 @@ span.valid {
   text-align: center;
   display: block;
   margin: 10px 0;
+}
+
+.net_profit_show {
+  border: 1px solid #ddd;
+  padding: 1% 2%;
+  margin-top: 3px;
+  border-bottom: 0px;
+  float: right;
+  margin-right: 10px;
+  font-size: 1.2em;
+  .green {
+    color: green;
+    font-weight: bold;
+  }
+  .red {
+    color: red;
+    font-weight: bold;
+  }
 }
