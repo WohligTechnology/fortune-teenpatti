@@ -1,25 +1,37 @@
-<div class=" table-info border-gradient" ng-if="showTableinfo">
-    <table class="bg-style">
-      <tr>
-        <th colspan="2" class="heading">Table Info</th>
-      </tr>
-      <tr>
-        <td>
-            Boot Amount
-        </td>
-        <td>
-          {{blindAmt}}
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Chal Amount
-        </td>
-        <td>
-          {{chalAmt}}
-        </td>
-      </tr>
-      <!-- <tr>
+<div class=" table-info border-gradient " ng-if="showTableinfo">
+  <table class="bg-style">
+    <tr>
+      <th colspan="2" class="heading">Table Info</th>
+    </tr>
+    <tr>
+      <td>
+        Boot Amount
+      </td>
+      <td>
+        {{blindAmt}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Chal Amount
+      </td>
+      <td>
+        {{chalAmt}}
+      </td>
+    </tr>
+    <tr>
+      <td>Table Show</td>
+      <td>{{tableShow}}</td>
+    </tr>
+    <tr>
+      <td>Table Type</td>
+      <td>{{tableData.type}}</td>
+    </tr>
+    <tr>
+      <td>Game Type</td>
+      <td>{{tableData.gameType}}</td>
+    </tr>
+    <!-- <tr>
         <td>
           Max Blind
         </td>
@@ -27,5 +39,5 @@
           {{maxBlind}}
         </td>
       </tr> -->
-    </table>
-  </div>
+  </table>
+</div>

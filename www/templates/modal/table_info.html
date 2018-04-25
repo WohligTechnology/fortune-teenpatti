@@ -1,4 +1,4 @@
-<ion-modal-view class="custom-model statement-model table_info_modal small-model">
+<ion-modal-view class="custom-model statement-model table_info_modal small-model custom_small_modal">
 
   <ion-content>
     <!-- <div class="close" ng-click="closeTableInfoModal()">
@@ -25,6 +25,18 @@
         <td>
           {{chalAmt}}
         </td>
+      </tr>
+      <tr>
+        <td>Table Show</td>
+        <td>{{tableShow}}</td>
+      </tr>
+      <tr>
+        <td>Table Type</td>
+        <td>{{tableData.type}}</td>
+      </tr>
+      <tr>
+        <td>Game Type</td>
+        <td>{{tableData.gameType}}</td>
       </tr>
       <!-- <tr>
         <td>
