@@ -15,8 +15,8 @@ var myApp = angular.module('starter', ['ionic', 'starter.service', 'ui.select', 
         window.MobileAccessibility.usePreferredTextZoom(false);
       }
       // if (window.cordova && window.cordova.plugins.Keyboard) {
-      //   cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      //   cordova.plugins.Keyboard.disableScroll(true);
+      //   cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
+      //   cordova.plugins.Keyboard.disableScroll(false);
 
       // }
       if (window.StatusBar) {
@@ -39,7 +39,7 @@ var myApp = angular.module('starter', ['ionic', 'starter.service', 'ui.select', 
       window.plugins.NativeAudio.preloadComplex('shuffle', 'audio/shuffle.mp3', 1, 1, 0, function (msg) {}, function (msg) {
         console.log('error: ' + msg);
       });
-      window.plugins.NativeAudio.preloadComplex('button', 'audio/button.mp3', 1, 1, 0, function (msg) {}, function (msg) {
+      window.plugins.NativeAudio.preloadComplex('button', 'audio/click.mp3', 1, 1, 0, function (msg) {}, function (msg) {
         console.log('error: ' + msg);
       });
 
@@ -47,7 +47,8 @@ var myApp = angular.module('starter', ['ionic', 'starter.service', 'ui.select', 
   })
 
   .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-     $ionicConfigProvider.views.swipeBackEnabled(false);
+    $ionicConfigProvider.views.maxCache(10);
+    $ionicConfigProvider.views.swipeBackEnabled(false);
     $stateProvider
 
       //   .state('app', {
@@ -67,6 +68,7 @@ var myApp = angular.module('starter', ['ionic', 'starter.service', 'ui.select', 
         cache: false,
         controller: 'LobbyCtrl'
       })
+
       .state('table', {
         url: '/table/:id',
         cache: false,

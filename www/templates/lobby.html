@@ -29,19 +29,23 @@
         <div class="col play_now" ng-click="playNow($event);resetFilter();">
           <img src="img/lobby/playnow.png">
         </div>
-        <div class="col play_joker" ng-click="playJoker($event);resetFilter()">
-          <img src="img/lobby/playjoker.png">
-        </div>
+        
         <div class="col variation">
           <img src="img/lobby/variations.png" ng-click="$event.stopPropagation();toggleVariations()">
         </div>
         <div class="col private_table" ng-click="playPrivate();resetFilter()">
           <img src="img/lobby/privatetable.png">
         </div>
+        <div class="col play_joker" ng-click="openMyPrivateTable($event);">
+            <img src="img/lobby/my_private_table.png">
+          </div>
       </div>
     </div>
     <div class="category variation_type">
       <div class="row">
+          <div class="col" ng-click="openPriceRangeModal(null,'Joker');resetFilter()">
+              <img src="img/lobby/var_poker.png">
+            </div>
         <div class="col blue_block" ng-click="openPriceRangeModal(null,['Muflis', 'Lowest']);resetFilter()">
           <img src="img/lobby/var_mufils.png">
         </div>
@@ -87,9 +91,9 @@
       <ion-item ng-click="openTransferStatementModal();transferStatement();">
         transfer statement
       </ion-item>
-      <ion-item ng-click="openMyPrivateTable($event);">
+      <!-- <ion-item ng-click="openMyPrivateTable($event);">
         My Private Table
-      </ion-item>
+      </ion-item> -->
       <!-- <ion-item ng-click="createPrivateModal($event)">
         Create Private Table
       </ion-item> -->

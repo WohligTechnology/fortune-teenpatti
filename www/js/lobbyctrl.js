@@ -276,6 +276,25 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
     $scope.pageNo = 1;
   }
 
+
+  //private table info modal
+
+  $ionicModal.fromTemplateUrl('templates/modal/private-table-info.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function (modal) {
+    $scope.ModalInfo = modal;
+  });
+
+  $scope.openMyPrivateTable = function () {
+    // $scope.hideModal();
+    $scope.closeAll();
+    $scope.privateTableDatas = [];
+    $scope.myPrivateTable();
+    $scope.ModalInfo.show();
+
+  }
+
   //Private Table Info
   $scope.loadMorePrivateTable = function () {
     if ($scope.pageNo < $scope.paging.maxPage) {
@@ -321,6 +340,8 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
 
   $scope.createPrivateModal = function ($event) {
     // $scope.hideModal();
+    $scope.closeMyPrivateModal();
+    $scope.ModalInfo.hide();
     $scope.ModalCreate.show();
     $scope.closeAll();
     $event.stopPropagation();
@@ -350,23 +371,6 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
     $scope.pageNo = 1;
   };
 
-  //private table info modal
-
-  $ionicModal.fromTemplateUrl('templates/modal/private-table-info.html', {
-    scope: $scope,
-    animation: 'slide-in-up'
-  }).then(function (modal) {
-    $scope.ModalInfo = modal;
-  });
-
-  $scope.openMyPrivateTable = function () {
-    // $scope.hideModal();
-    $scope.closeAll();
-    $scope.privateTableDatas = [];
-    $scope.myPrivateTable();
-    $scope.ModalInfo.show();
-
-  }
 
 
   //privatetable call
@@ -391,6 +395,9 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
 
   $scope.showPrivateLogInModal = function () {
     // $scope.hideModal();
+    $scope.closeMyPrivateModal();
+    $scope.ModalInfo.hide();
+    $scope.closePriceRangeModal();    // closing because mulitple modal overriding each other
     $scope.privateLogInModal.show();
     $scope.closeAll();
     
@@ -545,14 +552,12 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   };
 
 
-  $scope.playJoker = function ($event) {
+  // $scope.playJoker = function ($event) {
+  //   $event.stopPropagation();
+  //     $scope.openPriceRangeModal(null, 'Joker');
+      
 
-    if (!$scope.activeVariation) {
-      $scope.openPriceRangeModal(null, 'Joker');
-      $event.stopPropagation();
-
-    }
-  }
+  // }
 
 
   $scope.playPrivate = function () {

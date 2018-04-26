@@ -257,3 +257,8 @@ body {
 .modal-open{
   pointer-events: unset ;
 }
+
+button[disabled], html input[disabled] {
+  // cursor: default;
+  opacity: .5;
+}

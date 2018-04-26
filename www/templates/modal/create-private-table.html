@@ -1,10 +1,10 @@
 <ion-modal-view class="custom-model statement-model change_password-model form-update private_table">
-  <ion-content>
+  <ion-content scroll="true">
     <div class="close" ng-click="closePrivateTable()">
       <i class="icon ion-close text_glow"></i>
     </div>
     <div class="heading">Create Private Table</div>
-    <div class="field vertical_scroll" ng-if="!privateTableData">
+    <div class="field" ng-if="!privateTableData">
       <form name="createTable">
         <div class="rel">
           <div class="login_button">
@@ -40,15 +40,17 @@
         </div>
         <div class="rel">
           <div class="login_button">
-            <input type="number" name="chalLimit" ng-model="data.chalAmt" placeholder="Chaal Amount*" required>
+            <input type="number" name="chalLimit" ng-model="data.chalAmt"  min="{{data.blindAmt}}" placeholder="Chaal Amount*" required>
           </div>
-          <span class="valid" ng-show="createTable.chalLimit.$touched && createTable.chalLimit.$invalid">* Chaal Amount is required.</span>
+          <span class="valid" ng-show="createTable.chalLimit.$touched && createTable.chalLimit.$invalid  && !createTable.chalLimit.$error.min">* Chaal Amount is required.</span>
+          <span class="valid" ng-show="createTable.chalLimit.$touched && createTable.chalLimit.$invalid && createTable.chalLimit.$error.min">*enter amount greater than blind amount </span>
         </div>
         <div class="rel">
           <div class="login_button">
-            <input type="number" name="tableShow" ng-model="data.tableShow" placeholder="Table show*" required>
+            <input type="number" name="tableShow" ng-model="data.tableShow" min="{{data.chalAmt}}" placeholder="Table show*" required>
           </div>
-          <span class="valid" ng-show="createTable.tableShow.$touched && createTable.tableShow.$invalid">*Table show is required.</span>
+          <span class="valid" ng-show="createTable.tableShow.$touched && createTable.tableShow.$invalid && !createTable.tableShow.$error.min">*Table show is required.</span>
+          <span class="valid" ng-show="createTable.tableShow.$touched && createTable.tableShow.$invalid && createTable.tableShow.$error.min">*enter amount greater than chaal amount </span>
         </div>
         <!-- <div class="rel">
             <div class="login_button">

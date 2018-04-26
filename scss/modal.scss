@@ -84,7 +84,7 @@
     }
   }
   .statement_content {
-    overflow-y: scroll;
+    // overflow-y: scroll;
     height: 75%;
     &::-webkit-scrollbar {
       width: 3px;
@@ -431,7 +431,7 @@ ion-item.item {
     // margin: 0 auto;
     padding-top: 2%;
     height: calc(80vh - 17vh);
-    overflow-y: scroll;
+    // overflow-y: scroll;
     form {
       width: 70%;
       margin: 0 auto;

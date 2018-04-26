@@ -196,7 +196,6 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
  Service.getOneTable($stateParams.id, function (data) {
   console.log("data", data);
   $scope.tableData = data.data.data;
-  console.log($scope.tableData, "table data");
   $scope.bootAmt = $scope.tableData.bootAmt;
   $scope.chalLimit = $scope.tableData.chalLimit;
   $scope.blindAmt = $scope.tableData.blindAmt;
@@ -338,21 +337,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
 
   //player sitting
   $scope.sitHerefn = function (sitNum) {
-    // window.plugins.NativeAudio.preloadComplex('timer', 'audio/timer.mp3', 1, 1, 0, function (msg) {}, function (msg) {
-    //   console.log('error: ' + msg);
-    // });
-    // window.plugins.NativeAudio.preloadComplex('coin', 'audio/coin.mp3', 1, 1, 0, function (msg) {}, function (msg) {
-    //   console.log('error: ' + msg);
-    // });
-    // window.plugins.NativeAudio.preloadComplex('winner', 'audio/winner.mp3', 1, 1, 0, function (msg) {}, function (msg) {
-    //   console.log('error: ' + msg);
-    // });
-    // window.plugins.NativeAudio.preloadComplex('shuffle', 'audio/shuffle.mp3', 1, 1, 0, function (msg) {}, function (msg) {
-    //   console.log('error: ' + msg);
-    // });
-    // window.plugins.NativeAudio.preloadComplex('button', 'audio/button.mp3', 1, 1, 0, function (msg) {}, function (msg) {
-    //   console.log('error: ' + msg);
-    // });
+   
     if (!$scope.sitHere) {
       return;
     }
@@ -633,7 +618,7 @@ console.log("joker card value", $scope.jokerCardValue);
     if ($scope.winner && $scope.winner.playerNo) {
       $scope.winnerPlayerNo = $scope.winner.playerNo;
     }
-    // console.log($scope.winner);
+
     $scope.changeTableMessage($scope.winner.name + " won the game");
   }
 
@@ -897,7 +882,6 @@ console.log("joker card value", $scope.jokerCardValue);
   });
 
   // $scope.changeTimer = function (duration) {
-  //   console.log("change time", duration);
   //   $(".animation_wrapper .spinner").css("animation-duration", duration + "s");
   //   $(".animation_wrapper .spinner").css("-webkit-animation-duration", duration + "s");
   //   $(".animation_wrapper .filler").css("animation-duration", duration + "s");
