@@ -93,6 +93,7 @@
       position: absolute;
       top: 24%;
       right: 40%;
+      transform: scale(1.6);
       .cards {
         position: relative;
         card {
@@ -1081,6 +1082,9 @@
 .dealer{
   position: absolute;
   left: 0px;
-  top: 20%;
+  top: 10%;
   transform: translate(-140%, 0%);
+  &.main-dealer{
+    top:0px;
+  }
 }

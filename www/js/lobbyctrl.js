@@ -16,6 +16,13 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
     }
 
   })
+  if (window.cordova) {
+    window.plugins.NativeAudio.stop('timer');
+    window.plugins.NativeAudio.stop('coin');
+    window.plugins.NativeAudio.stop('winner');
+    window.plugins.NativeAudio.stop('shuffle');
+    window.plugins.NativeAudio.stop('button');
+  }
   $ionicPlatform.registerBackButtonAction(function (event) {
     event.preventDefault();
   }, 100);
@@ -71,7 +78,9 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
     $scope.PLStatementModal = modal;
   });
   $scope.openPLStatementModal = function () {
+    // $scope.hideModal();
     $scope.PLStatementModal.show();
+    $scope.closeAll();
   }
   $scope.closePLStatementModal = function () {
     $scope.PLStatementModal.hide();
@@ -92,6 +101,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   });
 
   $scope.openTransferStatementModal = function () {
+    // $scope.hideModal();
     $scope.transferStatementData = [];
     $scope.paging = {
       maxPage: 1
@@ -99,6 +109,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
     $scope.pageNo = 1;
     $scope.loadingDisable = false;
     $scope.TransferStatementModal.show();
+    $scope.closeAll();
   }
   $scope.closeTransferStatement = function () {
     $scope.TransferStatementModal.hide();
@@ -149,6 +160,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
     $scope.ACStatementModal = modal;
   });
   $scope.openACStatementModal = function () {
+    // $scope.hideModal();
     $scope.results = [];
     $scope.pageNo = 1;
     $scope.loadingDisable = false;
@@ -158,6 +170,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
     $scope.ACStatementModal.show();
     $scope.accountStatement();
     $scope.resetpage();
+    $scope.closeAll();
   }
   $scope.closeACStatement = function () {
     $scope.ACStatementModal.hide();
@@ -206,9 +219,11 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
 
   });
   $scope.openPriceRangeModal = function (type, gameType) {
+    // $scope.hideModal();
     $scope.type = type;
     $scope.gameType = gameType;
     $scope.priceRangeModal.show();
+    $scope.closeAll();
   }
   $scope.closePriceRangeModal = function () {
     $scope.priceRangeModal.hide();
@@ -225,11 +240,13 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   });
 
   $scope.openChangePasswordModal = function () {
+    // $scope.hideModal();
     $scope.data = {};
     $scope.fail1 = false;
     $scope.success = false;
     $scope.fail2 = false;
     $scope.changePasswordModal.show();
+    $scope.closeAll();
   }
   $scope.closeChangePasswordModal = function () {
     $scope.changePasswordModal.hide();
@@ -244,6 +261,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
     $scope.myPrivateModal = modal;
   });
   $scope.openMyPrivateModal = function () {
+    // $scope.hideModal();
     $scope.privateTableDatas = [];
     $scope.paging = {
       maxPage: 1
@@ -251,6 +269,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
     $scope.pageNo = 1;
     $scope.loadingDisable = false;
     $scope.myPrivateModal.show();
+    $scope.closeAll();
   }
   $scope.closeMyPrivateModal = function () {
     $scope.myPrivateModal.hide();
@@ -301,7 +320,9 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   });
 
   $scope.createPrivateModal = function ($event) {
+    // $scope.hideModal();
     $scope.ModalCreate.show();
+    $scope.closeAll();
     $event.stopPropagation();
   }
   $scope.closePrivateTable = function () {
@@ -319,7 +340,9 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   });
 
   $scope.openRulesModal = function ($event) {
+    // $scope.hideModal();
     $scope.rulesModal.show();
+    $scope.closeAll();
     $event.stopPropagation();
   }
   $scope.closeRulesModal = function () {
@@ -337,7 +360,8 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   });
 
   $scope.openMyPrivateTable = function () {
-
+    // $scope.hideModal();
+    $scope.closeAll();
     $scope.privateTableDatas = [];
     $scope.myPrivateTable();
     $scope.ModalInfo.show();
@@ -366,7 +390,9 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   });
 
   $scope.showPrivateLogInModal = function () {
+    // $scope.hideModal();
     $scope.privateLogInModal.show();
+    $scope.closeAll();
     
   }
   $scope.closePrivateLogInModal = function () {
@@ -603,7 +629,18 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   }
 
 
-
+$scope.hideModal=function(){
+  $scope.PLStatementModal.hide();
+  $scope.TransferStatementModal.hide();
+  $scope.ACStatementModal.hide();
+  $scope.priceRangeModal.hide();
+  // $scope.PLModal.remove();
+  $scope.changePasswordModal.hide();
+  $scope.privateLogInModal.hide();
+  $scope.rulesModal.hide();
+  $scope.ModalInfo.hide();
+  $scope.myPrivateModal.hide();
+}
 
   //destroy every modal
   $scope.$on('$destroy', function () {

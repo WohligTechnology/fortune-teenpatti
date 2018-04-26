@@ -10266,7 +10266,8 @@ body {
       width: 3vw;
       position: absolute;
       top: 24%;
-      right: 40%; }
+      right: 40%;
+      transform: scale(1.6); }
       .table .table_field .card-joker .cards {
         position: relative; }
         .table .table_field .card-joker .cards card {
@@ -11033,8 +11034,10 @@ body {
 .dealer {
   position: absolute;
   left: 0px;
-  top: 20%;
+  top: 10%;
   transform: translate(-140%, 0%); }
+  .dealer.main-dealer {
+    top: 0px; }
 
 .login {
   background: url("../img/login/bg.png");
@@ -11616,6 +11619,15 @@ span.valid {
   .net_profit_show .red {
     color: red;
     font-weight: bold; }
+
+.create-button {
+  position: absolute;
+  right: 9%;
+  top: 2%; }
+
+.custom_small_modal {
+  top: 10%;
+  height: 75%; }
 
 .pie_loader {
   position: absolute;

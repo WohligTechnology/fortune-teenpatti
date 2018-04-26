@@ -9,9 +9,12 @@
     PACK</div>
   <div class="status" ng-if="!player.isBlind && !player.isFold && player.isActive  && remainingPlayerCount>1">
     SEEN </div>
-  <div class="status" ng-if="!player.isActive || remainingPlayerCount==1">
+  <div class="status" ng-if="!player.isActive || remainingPlayerCount==1 ">
     Waiting... </div>
   <div class="main_player_pic">
+      <div class="dealer main-dealer" ng-if="player.isDealer">
+          D
+          </div>
     <img ng-src="{{player.image | serverimage}}" alt="profile">
     <div class="pie_loader" ng-if="player.isTurn  && !sitHere">
       <div class="animation_wrapper">

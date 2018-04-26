@@ -38,10 +38,10 @@
         <card card='NONE'> </card>
       </div>
     </div>
-    <div class="card-joker" ng-if="tableData.jokerCardValue">
+    <div class="card-joker" ng-if="jokerCardValue && remainingPlayerCount>1">
       <div class="cards">
         <card card='NONE' class="front"></card>
-        <card card='{{tableData.jokerCardValue}}' class="back"></card>
+        <card card='{{jokerCardValue}}' class="back"></card>
       </div>
     </div>
     <players ng-pos="1" ng-click="sitHerefn(1)" ng-player="players[0]" ng-game-type="gameType" ng-remaining-player="remainingPlayerCount"

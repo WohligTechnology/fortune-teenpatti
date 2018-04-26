@@ -1,11 +1,11 @@
 <ion-modal-view class="custom-model statement-model">
-  <div class="custom-header ">
+  <div class="custom-header top_field">
     <div class="close" ng-click="closeACStatement()">
       <i class="icon ion-close text_glow"></i>
     </div>
     <div class="heading">Account Statement</div>
     <form name="filterTable">
-      <div class="top_field filter">
+      <div class=" filter">
         Filter with
         <input type="date" ng-model="accountFilterData.date" class="filter-date">
         <button class="custom_button  btn_search" type='submit' ng-click="resetpage();" promise-btn="filterTablePromise">
@@ -26,8 +26,11 @@
       <ion-list>
         <ion-item class="item">
           <div class="row">
-            <div class="col-60">
+            <div class="col-40">
               <div class="bold">Date</div>
+            </div>
+            <div class="col-20">
+              <div class="bold text-center">Game Type</div>
             </div>
             <div class="col-20">
               <div class="bold text-center">W &amp; L</div>
@@ -39,9 +42,12 @@
         </ion-item>
         <ion-item collection-repeat="result in results" class="item">
           <div class="row">
-            <div class="col-60">
+            <div class="col-40">
               <div class="bold">{{result.createdAt | date:'d-MMM-yyyy h:mm a'}}
                 <br/> teenpatti</div>
+            </div>
+            <div class="col-20">
+              <div class="text-center bold">{{result.subGame}}</div>
             </div>
             <div class="col-20">
               <div class="text-center bold">{{result.type}}</div>

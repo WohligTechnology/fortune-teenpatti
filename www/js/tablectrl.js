@@ -192,18 +192,22 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
     $state.go("lobby");
   }
 
-  Service.getOneTable($stateParams.id, function (data) {
-    $scope.gotTableInfo = true;
-    $scope.tableData = data.data.data;
-    $scope.bootAmt = $scope.tableData.bootAmt;
-    $scope.chalLimit = $scope.tableData.chalLimit;
-    $scope.blindAmt = $scope.tableData.blindAmt;
-    $scope.chalAmt = $scope.tableData.chalAmt;
-    $scope.maxBlind = $scope.tableData.maxBlind;
-    $scope.tableShow = $scope.tableData.tableShow;
-    $scope.coin = $scope.blindAmt;
-  });
+ // for displaying table data
+ Service.getOneTable($stateParams.id, function (data) {
+  console.log("data", data);
+  $scope.tableData = data.data.data;
+  console.log($scope.tableData, "table data");
+  $scope.bootAmt = $scope.tableData.bootAmt;
+  $scope.chalLimit = $scope.tableData.chalLimit;
+  $scope.blindAmt = $scope.tableData.blindAmt;
+  $scope.chalAmt = $scope.tableData.chalAmt;
+  $scope.maxBlind = $scope.tableData.maxBlind;
+  $scope.tableShow = $scope.tableData.tableShow;
+  $scope.coin = $scope.blindAmt;
+  $scope.jokerCardValue=$scope.tableData.jokerCardValue;
 
+  console.log($scope.jokerCardValue);
+});
 
   function startSocketUpdate() {
     io.socket.off("Update", updateSocketFunction);
@@ -235,6 +239,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
   $scope.tableMessageShow = false;
   $scope.tableMessage = "";
   $scope.runVibratorFlag = true;
+  $scope.jokerCardValue=false;
 
   $scope.changeTableMessage = function (message) {
     $scope.tableMessageShow = true;
@@ -464,55 +469,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
     data = data.data;
     $scope.extra = data.extra;
 
-    if ($scope.extra) {
-      if ($scope.extra.newGame) {
-        $ionicPlatform.ready(function () {
-          if (window.cordova) {
-            // running on device/emulator
-            window.plugins.NativeAudio.stop('winner');
-          }
-
-        })
-
-
-        $scope.updateSocketVar = 0;
-        $scope.showNewGameTime = false;
-        $scope.chaalAmt = data.table.blindAmt;
-        $scope.startCoinAnime = true;
-        $scope.winnerPlayerNo = -1;
-        $timeout(function () {
-          $scope.startCoinAnime = false;
-        }, 1000);
-      }
-      if ($scope.extra.chaalAmt) {
-        $scope.chaalAmt = $scope.extra.chaalAmt;
-        if (window.cordova) {
-          window.plugins.NativeAudio.play('coin');
-        }
-
-
-
-      }
-      //if card stucks up bychance and then make it false
-      if ($scope.startAnimation) {
-        $scope.startAnimation = false;
-      }
-      if ($scope.extra.serve) {
-        $ionicPlatform.ready(function () {
-          if (window.cordova) {
-            window.plugins.NativeAudio.play('shuffle');
-          }
-        })
-
-        // $scope.shuffleAudio.play();
-        $scope.winnerPlayerNo = -1;
-        $scope.startAnimation = true;
-
-        $timeout(function () {
-          $scope.startAnimation = false;
-        }, 50);
-      }
-    }
+   
 
     if (data.pot) {
       $scope.potAmount = data.pot.totalAmount;
@@ -521,6 +478,9 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
       $scope.potAmount = 0;
     }
 
+    //for joker card
+    $scope.jokerCardValue=data.table.jokerCardValue || false;
+console.log("joker card value", $scope.jokerCardValue);
     $scope.maxAmt = data.maxAmt;
     $scope.minAmt = data.minAmt;
     $scope.setBetAmount($scope.minAmt, $scope.maxAmt);
@@ -581,7 +541,57 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
       // $scope.coinAudio.currentTime = 0;
 
     }
+    if ($scope.extra) {
+      if ($scope.extra.newGame) {
+        $ionicPlatform.ready(function () {
+          if (window.cordova) {
+            // running on device/emulator
+            window.plugins.NativeAudio.stop('winner');
+          }
 
+        })
+
+
+        $scope.updateSocketVar = 0;
+        $scope.showNewGameTime = false;
+        $scope.chaalAmt = data.table.blindAmt;
+        $scope.startCoinAnime = true;
+        $scope.winnerPlayerNo = -1;
+        $scope.jokerCardValue=false;
+        $timeout(function () {
+          $scope.startCoinAnime = false;
+        }, 1000);
+      }
+
+      if ($scope.extra.chaalAmt) {
+        $scope.chaalAmt = $scope.extra.chaalAmt;
+        if (window.cordova) {
+          window.plugins.NativeAudio.play('coin');
+        }
+
+
+
+      }
+      //if card stucks up bychance and then make it false
+      if ($scope.startAnimation) {
+        $scope.startAnimation = false;
+      }
+      if ($scope.extra.serve) {
+        $ionicPlatform.ready(function () {
+          if (window.cordova) {
+            window.plugins.NativeAudio.play('shuffle');
+          }
+        })
+
+        // $scope.shuffleAudio.play();
+        $scope.winnerPlayerNo = -1;
+        $scope.startAnimation = true;
+
+        $timeout(function () {
+          $scope.startAnimation = false;
+        }, 50);
+      }
+    }
 
 
     if (!dontDigest) {
@@ -921,19 +931,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
 
 
 
-  // for displaying table data
-  Service.getOneTable($stateParams.id, function (data) {
-    console.log("data", data);
-    $scope.tableData = data.data.data;
-    console.log($scope.tableData, "table data");
-    $scope.bootAmt = $scope.tableData.bootAmt;
-    $scope.chalLimit = $scope.tableData.chalLimit;
-    $scope.blindAmt = $scope.tableData.blindAmt;
-    $scope.chalAmt = $scope.tableData.chalAmt;
-    $scope.maxBlind = $scope.tableData.maxBlind;
-    $scope.tableShow = $scope.tableData.tableShow;
-    $scope.coin = $scope.blindAmt;
-  });
+ 
 
 
   //destroy every modal
