@@ -11207,7 +11207,8 @@ body {
       border: 1px solid rgba(255, 255, 255, 0.1); }
     .statement-model .top_field .filter-date {
       padding: 2% 0;
-      width: 24%; }
+      width: 24%;
+      padding-top: 2px; }
     .statement-model .top_field button {
       background: linear-gradient(to bottom, rgba(152, 56, 83, 0.48) 0%, #983853 100%);
       border: none;
