@@ -1,5 +1,5 @@
 myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $state, $timeout, Service, $ionicModal) {
-
+  $scope.accessToken = $.jStorage.get("accessToken");
   //ionic cordova 
   $ionicPlatform.ready(function () {
     if (ionic.Platform.isAndroid()) {
@@ -15,14 +15,16 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
       window.plugins.NativeAudio.stop('button');
     }
 
+    
+
   })
-  if (window.cordova) {
-    window.plugins.NativeAudio.stop('timer');
-    window.plugins.NativeAudio.stop('coin');
-    window.plugins.NativeAudio.stop('winner');
-    window.plugins.NativeAudio.stop('shuffle');
-    window.plugins.NativeAudio.stop('button');
-  }
+  // if (window.cordova) {
+  //   window.plugins.NativeAudio.stop('timer');
+  //   window.plugins.NativeAudio.stop('coin');
+  //   window.plugins.NativeAudio.stop('winner');
+  //   window.plugins.NativeAudio.stop('shuffle');
+  //   window.plugins.NativeAudio.stop('button');
+  // }
   $ionicPlatform.registerBackButtonAction(function (event) {
     event.preventDefault();
   }, 100);
@@ -460,7 +462,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
 
   //end of modal initialize
 
-  $scope.accessToken = $.jStorage.get("accessToken");
+
 
   //reset Page
   $scope.resetpage = function () {

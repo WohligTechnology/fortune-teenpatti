@@ -2,9 +2,9 @@ myApp.controller("LoginCtrl", function ($scope, Service, $state, $ionicPlatform,
   $ionicPlatform.ready(function () {
     screen.orientation.lock('portrait');
     if (ionic.Platform.isAndroid()) {
-    screen.orientation.lock('portrait');
+      screen.orientation.lock('portrait');
     }else{
-     
+
     }
   })
   screen.orientation.lock('portrait');
@@ -37,16 +37,13 @@ myApp.controller("LoginCtrl", function ($scope, Service, $state, $ionicPlatform,
           content: "User already loged in another device. Logout from that device. Try Again!!!"
         };
         $scope.showMessageModal();
-      } else if(data.error=="Login denied")
-      {
+      } else if (data.error == "Login denied") {
         $scope.message = {
           heading: "Login denied",
           content: "Login denied"
         };
         $scope.showMessageModal();
-      }
-        
-        else {
+      } else {
         $scope.message = {
           heading: "Incorrect Username Password",
           content: "Try Again!!!"
@@ -57,8 +54,11 @@ myApp.controller("LoginCtrl", function ($scope, Service, $state, $ionicPlatform,
   };
 
 
-  //js Storage 
+  //js Storage  
   $scope.accessToken = $.jStorage.get("accessToken");
+  if (_.isEqual($scope.accessToken, {})) {
+    $.jStorage.flush();
+  }
   if ($scope.accessToken) {
     $state.go("lobby");
   }
