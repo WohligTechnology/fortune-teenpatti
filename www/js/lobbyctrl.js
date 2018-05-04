@@ -195,15 +195,15 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
     Service.getTransaction($scope.accountFilterData, $scope.pageNo, function (data) {
       var transactionData = data.data.data;
       if (data) {
-        if (transactionData.PagData.total === 0) {
+        if (transactionData.accounts.total === 0) {
           $scope.noDataFound = true;
           // Error Message or no data found 
           // $scope.displayMessage = {
           //   main: "<p>No Data Found.</p>",
           // };
         }
-        $scope.paging = transactionData.PagData.options;
-        _.each(transactionData.PagData.results, function (n) {
+        $scope.paging = transactionData.accounts.options;
+        _.each(transactionData.accounts.results, function (n) {
           $scope.results.push(n);
         });
         $scope.statementNetProfit = transactionData.netProfit;

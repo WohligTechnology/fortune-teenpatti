@@ -150,10 +150,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
   $ionicPlatform.ready(function () {
     screen.orientation.lock('landscape');
   });
-  $ionicPlatform.on('pause', function () {
-    // Handle event on pause
-    $scope.destroyAudio();
-  });
+
 
   //back button
   $ionicPlatform.onHardwareBackButton(function (event) {
@@ -925,4 +922,16 @@ console.log("joker card value", $scope.jokerCardValue);
     $scope.tableInfoModal.remove();
   });
 
+  $ionicPlatform.on('pause', function () {
+    // Handle event on pause
+    console.log('pause called');
+    Service.deletePlayer($scope.tableId, function (data) {
+      console.log('removed');
+    });
+    $scope.destroyAudio();
+  });
+
+  $ionicPlatform.on('resume', function () {
+    $state.reload();
+  });
 });

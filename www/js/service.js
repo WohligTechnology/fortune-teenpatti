@@ -86,6 +86,7 @@ myApp.factory('Service', function ($http, $ionicLoading, $filter, $ionicActionSh
         });
       }
     },
+
     searchPlayerTransaction: function (memberId, pageNo, callback) {
       if (!pageNo) {
         pageNo = 1;
@@ -101,7 +102,25 @@ myApp.factory('Service', function ($http, $ionicLoading, $filter, $ionicActionSh
         } else {}
       });
     },
-
+    getTransaction: function (filterData, pageNo, callback) {
+      if (!pageNo) {
+        pageNo = 1;
+      }
+      var accessToken = $.jStorage.get("accessToken");
+      if (!_.isEmpty(accessToken)) {
+        return $http.post(adminurl + 'member/getAccountStatement', {
+          "date": $filter('date')(filterData.date, 'MM-dd-yyyy', '+0530'),
+          "page": pageNo,
+          "accessToken": accessToken
+        }).then(function (data) {
+          if (data.data) {
+            var totalCount = data.data.data.accounts.total;
+            data.data.data.accounts.options.maxPage = _.ceil(data.data.data.accounts.total / data.data.data.accounts.options.count);
+            callback(data);
+          } else {}
+        });
+      }
+    },
 
     //from teenpatti 
     tableData: function (pageNo, callback) {
@@ -341,25 +360,26 @@ myApp.factory('Service', function ($http, $ionicLoading, $filter, $ionicActionSh
       };
     },
 
-    getTransaction: function (filterData, pageNo, callback) {
-      if (!pageNo) {
-        pageNo = 1;
-      }
-      var accessToken = $.jStorage.get("accessToken");
-      if (!_.isEmpty(accessToken)) {
-        return $http.post(url + 'Transaction/getPlayerTransaction', {
-          "date": $filter('date')(filterData.date, 'MM-dd-yyyy', '+0530'),
-          "page": pageNo,
-          "accessToken": accessToken
-        }).then(function (data) {
-          if (data.data) {
-            var totalCount = data.data.data.PagData.total;
-            data.data.data.PagData.options.maxPage = _.ceil(data.data.data.PagData.total / data.data.data.PagData.options.count);
-            callback(data);
-          } else {}
-        });
-      }
-    },
+    // getTransaction: function (filterData, pageNo, callback) {
+    //   if (!pageNo) {
+    //     pageNo = 1;
+    //   }
+    //   var accessToken = $.jStorage.get("accessToken");
+    //   if (!_.isEmpty(accessToken)) {
+    //     return $http.post(url + 'Transaction/getPlayerTransaction', {
+    //       "date": $filter('date')(filterData.date, 'MM-dd-yyyy', '+0530'),
+    //       "page": pageNo,
+    //       "accessToken": accessToken
+    //     }).then(function (data) {
+    //       if (data.data) {
+    //         var totalCount = data.data.data.PagData.total;
+    //         data.data.data.PagData.options.maxPage = _.ceil(data.data.data.PagData.total / data.data.data.PagData.options.count);
+    //         callback(data);
+    //       } else {}
+    //     });
+    //   }
+    // },
+ 
     getByPlrId: function (data, callback) {
       $http.post(url + 'Player/getByPlrId', {
         data: data

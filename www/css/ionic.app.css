@@ -10561,7 +10561,9 @@ body {
         padding: 3%;
         padding-top: 3%;
         -webkit-text-stroke: 0;
-        z-index: 1; }
+        z-index: 1;
+        margin-bottom: 0px;
+        padding-bottom: 5px; }
         .table .bottom .main_player .amt img {
           width: 1em;
           vertical-align: middle; }
@@ -10785,7 +10787,7 @@ body {
   transition: none !important; }
 
 .card_shuffle_animation.player3 card:nth-child(4) {
-  transform: scale(1.6) translate(-1328%, 236%) !important;
+  transform: scale(0.9) translate(-1328%, 236%) !important;
   transition: none !important; }
 
 .card_shuffle_animation.player4 card:nth-child(1) {
@@ -10817,7 +10819,7 @@ body {
   transition: none !important; }
 
 .card_shuffle_animation.player5 card:nth-child(4) {
-  transform: scale(1.5) translate(-1000%, -534%) !important;
+  transform: scale(0.9) translate(-1000%, -534%) !important;
   transition: none !important; }
 
 .main_card_anime card:nth-child(1) {
