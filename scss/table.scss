@@ -93,7 +93,7 @@
       position: absolute;
       top: 24%;
       right: 40%;
-      transform: scale(1.6);
+      transform: scale(1.8);
       .cards {
         position: relative;
         card {
@@ -409,46 +409,46 @@
         }
       }
       .cards4 {
-        transform: translate(-44%, -25%) scale(1.5);
+        transform: translate(-44%, -25%) scale(1);
         card {
           width: 20%;
           &:nth-child(1) {
             position: relative;
-            transform: rotate(-10deg) translate(70%);
+            transform: rotate(-10deg) translate(45%) scale(1.4);
             transition: transform 1s;
           }
           &:nth-child(2) {
             position: relative;
-            transform: rotate(-1deg) translate(5%,-7%) scale(1.1);
+            transform: rotate(-1deg) translate(0%, -7%) scale(1.5);
             transition: transform 1s;
             transition-delay: 500ms;
           }
           &:nth-child(3) {
             position: relative;
-            transform: rotate(10deg) translate(-57%, -2%);
+            transform: rotate(10deg) translate(-65%, -2%) scale(1.5);
             transition: transform 1s;
             transition-delay: 1000ms;
           }
           &:nth-child(4) {
             position: relative;
-            transform: rotate(17deg) translate(-105%, 21%);
+            transform: rotate(17deg) translate(-105%, 21%) scale(1.5);
             transition: transform 1s;
             transition-delay: 1500ms;
           }
         }
       }
       .cards2{
-        transform: translate(-65%, -16%) scale(1.8);
+        transform: translate(-50%, -16%) scale(1);
         card {
           width: 20%;
           &:nth-child(1) {
             position: relative;
-            transform: rotate(-10deg) translate(70%);
+            transform: rotate(-10deg) translate(0%) scale(1.8);
             transition: transform 1s;
           }
           &:nth-child(2) {
             position: relative;
-            transform: rotate(11deg) translate(13%, -3%) scale(1.1);
+            transform: rotate(11deg) translate(-15%, -3%) scale(1.7);
             transition: transform 1s;
             transition-delay: 500ms;
           }

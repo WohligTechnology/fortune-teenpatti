@@ -174,6 +174,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
         $scope.userType = $scope.singlePlayerData.userType;
         $scope.balance = $scope.singlePlayerData.creditLimit + $scope.singlePlayerData.balanceUp;
         $scope.memberId = data.data.data._id;
+        $.jStorage.set('memberId',$scope.memberId);
       } else {
         $state.go("login");
       }
@@ -320,6 +321,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
 
   $scope.iAmThere = function (data) {
     $scope.isThere = false;
+    $scope.memberId= $.jStorage.get('memberId');
     _.forEach(data, function (value) {
       if (value && value.memberId == $scope.memberId) {
         $scope.isThere = true;
