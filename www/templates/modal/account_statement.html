@@ -17,7 +17,7 @@
     <div class="net_profit_show" ng-if="(statementNetProfit || statementNetProfit==0 ) && !(results.length==0)">
       <span>Net {{statementNetProfit
         < 0 ? 'Loss': 'Profit'}} : <span ng-class="{'red':statementNetProfit < 0,'green':statementNetProfit > 0 || statementNetProfit == 0}">
-          {{statementNetProfit}} </span>
+          {{statementNetProfit | number:0}} </span>
       </span>
     </div>
   </div>
@@ -59,7 +59,7 @@
               <div class="text-center bold">{{result.playerWinAmount}}</div>
             </div> -->
             <div class="col-20">
-              <div class="text-center bold">{{result.amount}}</div>
+              <div class="text-center bold">{{result.amount | number:0}}</div>
             </div>
           </div>
         </ion-item>
