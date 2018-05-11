@@ -15,6 +15,10 @@
   }
 }
 
+.has-bottom {
+  bottom: 55px;
+}
+
 .statement-model {
   font-size: 1em;
   .close {
@@ -75,7 +79,7 @@
     .filter-date {
       padding: 2% 0;
       width: 24%;
-      padding-top:2px;
+      padding-top: 2px;
     }
     button {
       background: linear-gradient(to bottom, rgba(152, 56, 83, 0.48) 0%, #983853 100%);
@@ -425,14 +429,66 @@ ion-item.item {
   text-align: center;
 }
 
+.platform-ios .change_password-model .field {
+  height: auto;
+  overflow-y: auto;
+}
+
+.selectType {
+  background: url('../img/login/input_bg.png');
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  align-items: center; // margin: 10px;
+  margin: 3%;
+  padding: 16px 15px 16px;
+  .displayGame {
+    transform: translateY(0%);
+    font-size: 1em;
+    height: 100%;
+    width: 100%;
+    font-weight: bold; // font-family: 'Cinzel-Bold';
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    border: none;
+    .opacity-game {
+      opacity: 0.5;
+    }
+  }
+}
+
+.game-div {
+  margin: 3%;
+}
+
+.selectGame {
+  font-family: 'Cinzel-Regular';
+  font-size: 1em;
+  background: url('../img/login/input_bg.png'); // background: url('../img/model/input_bg.png');
+  // background-size: 100% 100%;
+  color: white;
+  padding: 15px 3%;
+  background-size: 100% 100%;
+}
+
+// .platform-ios .change_password-model .field form .login_button select {
+//   padding: 8px 15px 8px;
+//   transform: translateY(0%);
+//   font-size: 1.1em;
+// }
+.platform-ios .statement-model .close {
+  font-size: 1.8em;
+}
+
 .change_password-model {
   .field {
     text-align: center;
     padding: 5%; // width: 70%;
     // margin: 0 auto;
     padding-top: 2%;
-    height: calc(80vh - 17vh);
-    // overflow-y: scroll;
+    height: calc(80vh - 17vh); // overflow-y: scroll;
     form {
       width: 70%;
       margin: 0 auto;

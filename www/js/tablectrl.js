@@ -4,6 +4,13 @@ var sideShowSocket;
 var myTableNo = 0;
 
 myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $state, Service, $stateParams, $timeout, $interval) {
+  // $scope.timer = function () {
+  //   window.plugins.NativeAudio.preloadSimple('timer', 'audio/timer.mp3', function (msg) {}, function (msg) {
+  //     console.log('error: ' + msg);
+  //   });
+  // }
+
+  // $scope.timer();
 
   $ionicPlatform.ready(function () {
     screen.orientation.lock('landscape');
@@ -150,8 +157,12 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
   $ionicPlatform.ready(function () {
     screen.orientation.lock('landscape');
   });
-
-
+  if (ionic.Platform.isAndroid()) {
+    $ionicPlatform.on('pause', function () {
+      // Handle event on pause
+      $scope.destroyAudio();
+    });
+  } else {}
   //back button
   $ionicPlatform.onHardwareBackButton(function (event) {
     event.preventDefault();
@@ -174,7 +185,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
         $scope.userType = $scope.singlePlayerData.userType;
         $scope.balance = $scope.singlePlayerData.creditLimit + $scope.singlePlayerData.balanceUp;
         $scope.memberId = data.data.data._id;
-        $.jStorage.set('memberId',$scope.memberId);
+        $.jStorage.set('memberId', $scope.memberId);
       } else {
         $state.go("login");
       }
@@ -190,21 +201,21 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
     $state.go("lobby");
   }
 
- // for displaying table data
- Service.getOneTable($stateParams.id, function (data) {
-  console.log("data", data);
-  $scope.tableData = data.data.data;
-  $scope.bootAmt = $scope.tableData.bootAmt;
-  $scope.chalLimit = $scope.tableData.chalLimit;
-  $scope.blindAmt = $scope.tableData.blindAmt;
-  $scope.chalAmt = $scope.tableData.chalAmt;
-  $scope.maxBlind = $scope.tableData.maxBlind;
-  $scope.tableShow = $scope.tableData.tableShow;
-  $scope.coin = $scope.blindAmt;
-  $scope.jokerCardValue=$scope.tableData.jokerCardValue;
+  // for displaying table data
+  Service.getOneTable($stateParams.id, function (data) {
+    console.log("data", data);
+    $scope.tableData = data.data.data;
+    $scope.bootAmt = $scope.tableData.bootAmt;
+    $scope.chalLimit = $scope.tableData.chalLimit;
+    $scope.blindAmt = $scope.tableData.blindAmt;
+    $scope.chalAmt = $scope.tableData.chalAmt;
+    $scope.maxBlind = $scope.tableData.maxBlind;
+    $scope.tableShow = $scope.tableData.tableShow;
+    $scope.coin = $scope.blindAmt;
+    $scope.jokerCardValue = $scope.tableData.jokerCardValue;
 
-  console.log($scope.jokerCardValue);
-});
+    console.log($scope.jokerCardValue);
+  });
 
   function startSocketUpdate() {
     io.socket.off("Update", updateSocketFunction);
@@ -236,7 +247,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
   $scope.tableMessageShow = false;
   $scope.tableMessage = "";
   $scope.runVibratorFlag = true;
-  $scope.jokerCardValue=false;
+  $scope.jokerCardValue = false;
 
   $scope.changeTableMessage = function (message) {
     $scope.tableMessageShow = true;
@@ -313,7 +324,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
         }
       });
 
-     
+
     }
   };
 
@@ -321,7 +332,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
 
   $scope.iAmThere = function (data) {
     $scope.isThere = false;
-    $scope.memberId= $.jStorage.get('memberId');
+    $scope.memberId = $.jStorage.get('memberId');
     _.forEach(data, function (value) {
       if (value && value.memberId == $scope.memberId) {
         $scope.isThere = true;
@@ -336,7 +347,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
 
   //player sitting
   $scope.sitHerefn = function (sitNum) {
-   
+    // $scope.timer();
     if (!$scope.sitHere) {
       return;
     }
@@ -400,7 +411,6 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
     if (!_.isEmpty($scope.tableId)) {
       Service.deletePlayer($scope.tableId, function (data) {});
       $scope.destroyAudio();
-
       $timeout(function () {
         $state.go("lobby");
       }, 1000);
@@ -453,7 +463,7 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
     data = data.data;
     $scope.extra = data.extra;
 
-   
+
 
     if (data.pot) {
       $scope.potAmount = data.pot.totalAmount;
@@ -463,8 +473,8 @@ myApp.controller('TableCtrl', function ($scope, $ionicModal, $ionicPlatform, $st
     }
 
     //for joker card
-    $scope.jokerCardValue=data.table.jokerCardValue || false;
-console.log("joker card value", $scope.jokerCardValue);
+    $scope.jokerCardValue = data.table.jokerCardValue || false;
+    console.log("joker card value", $scope.jokerCardValue);
     $scope.maxAmt = data.maxAmt;
     $scope.minAmt = data.minAmt;
     $scope.setBetAmount($scope.minAmt, $scope.maxAmt);
@@ -499,14 +509,16 @@ console.log("joker card value", $scope.jokerCardValue);
     if ($scope.players[5] && $scope.players[5].isTurn) {
 
       // $scope.timerAudio.play();
-      $ionicPlatform.ready(function () {
-        if (window.cordova) {
-          window.plugins.NativeAudio.play('timer');
-        }
-      })
+      // console.log("player[5] data", $scope.players[5].isTurn, $scope.players[5].isFold)
 
       if ($scope.runVibratorFlag) {
         //to vibrate only one time on socket update
+        // $scope.timer();
+        $ionicPlatform.ready(function () {
+          if (window.cordova) {
+            window.plugins.NativeAudio.play('timer');
+          }
+        })
         navigator.vibrate(500);
         $scope.runVibratorFlag = false;
 
@@ -541,7 +553,7 @@ console.log("joker card value", $scope.jokerCardValue);
         $scope.chaalAmt = data.table.blindAmt;
         $scope.startCoinAnime = true;
         $scope.winnerPlayerNo = -1;
-        $scope.jokerCardValue=false;
+        $scope.jokerCardValue = false;
         $timeout(function () {
           $scope.startCoinAnime = false;
         }, 1000);
@@ -662,15 +674,7 @@ console.log("joker card value", $scope.jokerCardValue);
     return filled;
   };
 
-  $scope.playChaal = function () {
-    // $scope.coinAudio.play();
-    if (!_.isEmpty($scope.tableId)) {
-      $scope.chaalPromise = Service.chaal({
-        tableId: $scope.tableId,
-        amount: $scope.betamount
-      }, function (data) {});
-    };
-  };
+
 
   //tip
   $scope.makeTip = function (data) {
@@ -733,10 +737,10 @@ console.log("joker card value", $scope.jokerCardValue);
 
     if (!_.isEmpty($scope.tableId)) {
       $scope.sideShowPromise = Service.sideShow($scope.tableId, function (data) {
-        console.log("side show service",data);
-        $timeout(function(){
+        console.log("side show service", data);
+        $timeout(function () {
           $scope.sideShowDataFrom = 1;
-        },50)
+        }, 50)
         $scope.sideShowDataFrom = 1;
         // $scope.$apply();
         if (data.data) {
@@ -911,10 +915,19 @@ console.log("joker card value", $scope.jokerCardValue);
   }
 
 
+  $scope.playChaal = function () {
+    // $scope.coinAudio.play();
+    console.log("hellopack")
+    if (!_.isEmpty($scope.tableId)) {
+      $scope.chaalPromise = Service.chaal({
+        tableId: $scope.tableId,
+        amount: $scope.betamount
+      }, function (data) {});
+    };
+  };
 
 
 
- 
 
 
   //destroy every modal
@@ -924,14 +937,17 @@ console.log("joker card value", $scope.jokerCardValue);
     $scope.tableInfoModal.remove();
   });
 
-  $ionicPlatform.on('pause', function () {
-    // Handle event on pause
-    console.log('pause called');
-    Service.deletePlayer($scope.tableId, function (data) {
-      console.log('removed');
+  if (ionic.Platform.isAndroid()) {
+    $ionicPlatform.on('pause', function () {
+      // Handle event on pause
+      console.log('pause called');
+      Service.deletePlayer($scope.tableId, function (data) {
+        console.log('removed');
+      });
+      $scope.destroyAudio();
     });
-    $scope.destroyAudio();
-  });
+  }
+
 
   $ionicPlatform.on('resume', function () {
     $state.reload();

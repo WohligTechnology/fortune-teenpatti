@@ -1,5 +1,5 @@
-<ion-modal-view class="custom-model statement-model change_password-model form-update private_table">
-  <ion-content scroll="true">
+<ion-modal-view class="custom-model statement-model change_password-model form-update private_table" ng-init="data?data:data={}">
+  <ion-content class="has-bottom">
     <div class="close" ng-click="closePrivateTable()">
       <i class="icon ion-close text_glow"></i>
     </div>
@@ -20,17 +20,32 @@
             <span class="valid" ng-show="createTable.bootAmount.$touched && createTable.bootAmount.$invalid">* Boot Amount is required.</span>
           </div> -->
         <div class="rel">
-          <div class="login_button">
-            <select ng-model="data.gameType" name="gameType" id="gameType" required>
-              <option value="" disabled hidden selected>Game Type</option>
-              <option value="Normal">Normal</option>
+          <div class="selectType">
+            <div class="displayGame">
+              <div ng-click="toggleGameType()">
+                <span>{{data.gameType}}</span>
+                <span class="opacity-game" ng-if="!data.gameType">Game Type</span>
+              </div>
+              <div class="game-div" ng-if="toggle">
+                <div class="selectGame" ng-click="selectGameType('Normal')">Normal</div>
+                <div class="selectGame" ng-click="selectGameType('2 Cards')">2 Cards</div>
+                <div class="selectGame" ng-click="selectGameType('4 Cards')">4 Cards</div>
+                <div class="selectGame" ng-click="selectGameType('Joker')">Joker</div>
+                <div class="selectGame" ng-click="selectGameType('Muflis')">Muflis</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <option value="" disabled hidden selected>Game Type</option>
+              <option value="Normal" ng-click="hello('Normal')">Normal</option>
               <option value="2 Cards">2 Cards</option>
               <option value="4 Cards">4 Cards</option>
               <option value="Joker">Joker</option>
-              <option value="Muflis">Muflis</option>
-            </select>
-          </div>
-          <spanclass="valid" ng-show="createTable.gameType.$touched && createTable.gameType.$invalid">*Game Type is required.</span>
+              <option value="Muflis">Muflis</option> -->
+
+
+
+          <span class="valid" ng-show="createTable.gameType.$touched && createTable.gameType.$invalid">*Game Type is required.</span>
         </div>
         <div class="rel">
           <div class="login_button">
@@ -40,7 +55,7 @@
         </div>
         <div class="rel">
           <div class="login_button">
-            <input type="number" name="chalLimit" ng-model="data.chalAmt"  min="{{data.blindAmt}}" placeholder="Chaal Amount*" required>
+            <input type="number" name="chalLimit" ng-model="data.chalAmt" min="{{data.blindAmt}}" placeholder="Chaal Amount*" required>
           </div>
           <span class="valid" ng-show="createTable.chalLimit.$touched && createTable.chalLimit.$invalid  && !createTable.chalLimit.$error.min">* Chaal Amount is required.</span>
           <span class="valid" ng-show="createTable.chalLimit.$touched && createTable.chalLimit.$invalid && createTable.chalLimit.$error.min">*enter amount greater than blind amount </span>

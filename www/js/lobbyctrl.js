@@ -1,5 +1,7 @@
 myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $state, $timeout, Service, $ionicModal) {
   $scope.accessToken = $.jStorage.get("accessToken");
+  $scope.toggle = ""
+  $scope.data = {}
   //ionic cordova 
   $ionicPlatform.ready(function () {
     if (ionic.Platform.isAndroid()) {
@@ -15,7 +17,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
       window.plugins.NativeAudio.stop('button');
     }
 
-    
+
 
   })
   // if (window.cordova) {
@@ -129,7 +131,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   };
 
   $scope.transferStatement = function () {
-    $scope.transferStatementData=[];
+    $scope.transferStatementData = [];
     Service.searchPlayerTransaction($scope.memberId, $scope.pageNo, function (data) {
       if (data) {
         if (data.data.data.total === 0) {
@@ -191,7 +193,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   };
 
   $scope.accountStatement = function () {
-    $scope.pageNo == 1 ? $scope.results =[]:'';
+    $scope.pageNo == 1 ? $scope.results = [] : '';
     Service.getTransaction($scope.accountFilterData, $scope.pageNo, function (data) {
       var transactionData = data.data.data;
       if (data) {
@@ -275,6 +277,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   }
   $scope.closeMyPrivateModal = function () {
     $scope.myPrivateModal.hide();
+    $scope.toggle = false;
     $scope.pageNo = 1;
   }
 
@@ -324,7 +327,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
           $scope.privateTableDatas.push(n);
         });
         $scope.loadingDisable = false;
-        
+
       } else {}
       $scope.$broadcast('scroll.infiniteScrollComplete');
     });
@@ -345,8 +348,19 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
     $scope.closeMyPrivateModal();
     $scope.ModalInfo.hide();
     $scope.ModalCreate.show();
+    $scope.data = {}
     $scope.closeAll();
     $event.stopPropagation();
+  }
+
+  $scope.toggleGameType = function () {
+    $scope.toggle = true;
+  }
+
+  $scope.selectGameType = function (gameType) {
+    console.log(gameType);
+    $scope.data.gameType = gameType;
+    $scope.toggle = false;
   }
   $scope.closePrivateTable = function () {
     $scope.ModalCreate.hide();
@@ -399,10 +413,10 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
     // $scope.hideModal();
     $scope.closeMyPrivateModal();
     $scope.ModalInfo.hide();
-    $scope.closePriceRangeModal();    // closing because mulitple modal overriding each other
+    $scope.closePriceRangeModal(); // closing because mulitple modal overriding each other
     $scope.privateLogInModal.show();
     $scope.closeAll();
-    
+
   }
   $scope.closePrivateLogInModal = function () {
     $scope.privateLogInModal.hide();
@@ -557,7 +571,7 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   // $scope.playJoker = function ($event) {
   //   $event.stopPropagation();
   //     $scope.openPriceRangeModal(null, 'Joker');
-      
+
 
   // }
 
@@ -636,18 +650,18 @@ myApp.controller('LobbyCtrl', function ($scope, $ionicPlatform, $ionicPopup, $st
   }
 
 
-$scope.hideModal=function(){
-  $scope.PLStatementModal.hide();
-  $scope.TransferStatementModal.hide();
-  $scope.ACStatementModal.hide();
-  $scope.priceRangeModal.hide();
-  // $scope.PLModal.remove();
-  $scope.changePasswordModal.hide();
-  $scope.privateLogInModal.hide();
-  $scope.rulesModal.hide();
-  $scope.ModalInfo.hide();
-  $scope.myPrivateModal.hide();
-}
+  $scope.hideModal = function () {
+    $scope.PLStatementModal.hide();
+    $scope.TransferStatementModal.hide();
+    $scope.ACStatementModal.hide();
+    $scope.priceRangeModal.hide();
+    // $scope.PLModal.remove();
+    $scope.changePasswordModal.hide();
+    $scope.privateLogInModal.hide();
+    $scope.rulesModal.hide();
+    $scope.ModalInfo.hide();
+    $scope.myPrivateModal.hide();
+  }
 
   //destroy every modal
   $scope.$on('$destroy', function () {

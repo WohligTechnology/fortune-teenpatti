@@ -45,5 +45,7 @@
     "platforms": [
       "android"
     ]
-  }
+  },
+  "cordovaPlugins": [],
+  "cordovaPlatforms": []
 }

@@ -87,7 +87,7 @@
 
   <!-- bottom block -->
   <div class="bottom" ng-if="!sitHere">
-    <button class="pack shadow_glow text_glow" ng-click="pack()" ng-disabled="sideShowDataFrom == 1" ng-if="players[5].isTurn && !players[5].isFold"
+    <button class="pack shadow_glow text_glow" ng-click="pack()" ng-disabled="sideShowDataFrom == 1" ng-show="players[5].isTurn && !players[5].isFold"
       promise-btn="packPromise">
       Pack
     </button>
@@ -103,24 +103,24 @@
     -->
 
     <!-- for inactive show button -->
-    <button class="slideshow text_glow shadow_glow" ng-click="sideShow()" ng-if="(players[5].isTurn)&& (remainingPlayerCount > 2) && !players[5].isFold"
+    <button class="slideshow text_glow shadow_glow" ng-click="sideShow()" ng-show="(players[5].isTurn)&& (remainingPlayerCount > 2) && !players[5].isFold"
       ng-disabled="true" promise-btn="sideShowPromise">Show</button>
 
 
-    <button class="slideshow text_glow shadow_glow" ng-click="showWinner()" promise-btn="showWinnerPromise" ng-if="(players[5].isTurn) && (remainingPlayerCount == 2) && !players[5].isFold"
+    <button class="slideshow text_glow shadow_glow" ng-click="showWinner()" promise-btn="showWinnerPromise" ng-show="(players[5].isTurn) && (remainingPlayerCount == 2) && !players[5].isFold"
       ng-disabled="players[5].balance < betamount || sideShowDataFrom == 1">Show</button>
 
-    <button class="minus shadow_glow text_glow" ng-disabled="sideShowDataFrom == 1" ng-click="removeCoin()" ng-if="players[5].isTurn && betamount>minAmt && !players[5].isFold">-</button>
-    <button class="minus shadow_glow no-click-effect opacity-05" ng-disabled="sideShowDataFrom == 1" ng-if="players[5].isTurn && betamount<=minAmt && !players[5].isFold">
+    <button class="minus shadow_glow text_glow" ng-disabled="sideShowDataFrom == 1" ng-click="removeCoin()" ng-show="players[5].isTurn && betamount>minAmt && !players[5].isFold">-</button>
+    <button class="minus shadow_glow no-click-effect opacity-05" ng-disabled="sideShowDataFrom == 1" ng-show="players[5].isTurn && betamount<=minAmt && !players[5].isFold">
       -
     </button>
     <button class="chal shadow_glow text_glow" ng-click="playChaal()" ng-disabled="players[5].balance < betamount || sideShowDataFrom == 1"
-      promise-btn="chaalPromise" ng-if="players[5].isTurn && !players[5].isFold">
+      promise-btn="chaalPromise" ng-show="players[5].isTurn && !players[5].isFold">
       <span ng-if="players[5].isBlind">blind </span>
       <span ng-if="!players[5].isBlind"> chaal</span> {{betamount}}
     </button>
-    <button class="plus no-click-effect shadow_glow text_glow" ng-click="addCoin()" ng-disabled="sideShowDataFrom == 1" ng-if="players[5].isTurn && betamount<maxAmt && !players[5].isFold">+</button>
-    <button class="plus no-click-effect no-click-effect shadow_glow opacity-05" ng-disabled="sideShowDataFrom == 1" ng-if="players[5].isTurn && betamount>=maxAmt && !players[5].isFold">+</button>
+    <button class="plus no-click-effect shadow_glow text_glow" ng-click="addCoin()" ng-disabled="sideShowDataFrom == 1" ng-show="players[5].isTurn && betamount<maxAmt && !players[5].isFold">+</button>
+    <button class="plus no-click-effect no-click-effect shadow_glow opacity-05" ng-disabled="sideShowDataFrom == 1" ng-show="players[5].isTurn && betamount>=maxAmt && !players[5].isFold">+</button>
   </div>
   <!-- left menu (option) -->
   <left-menu></left-menu>

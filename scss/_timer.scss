@@ -37,7 +37,7 @@
     z-index: 200;
     border-right: none;
     animation: rota $duration + s linear infinite; // animation-iteration-count: 1; // animation-fill-mode: forwards;
-    -webkit-animation:  rota $duration + s linear infinite; 
+    -webkit-animation: rota $duration + s linear infinite;
   }
   #{$item}:hover .spinner,
   #{$item}:hover .filler,
@@ -51,7 +51,7 @@
     opacity: 0;
     z-index: 100;
     animation: opa $duration + s steps(1, end) infinite reverse;
-    -webkit-animation:  opa $duration + s steps(1, end) infinite reverse;
+    -webkit-animation: opa $duration + s steps(1, end) infinite reverse;
     border-left: none; // animation-iteration-count: 1; // animation-fill-mode: forwards;
   }
   #{$item} .mask {
@@ -62,8 +62,7 @@
     opacity: 1;
     z-index: 300;
     animation: opa $duration + s steps(1, end) infinite;
-    -webkit-animation: opa $duration + s steps(1, end) infinite;
-    // animation-iteration-count: 1; // animation-fill-mode: forwards;
+    -webkit-animation: opa $duration + s steps(1, end) infinite; // animation-iteration-count: 1; // animation-fill-mode: forwards;
   }
   @keyframes rota {
     0% {
@@ -101,4 +100,104 @@
   }
 }
 
-@include timer('.animation_wrapper', 20, 300px, #040404, '5px solid rgba(0,0,0,0.5)');
+@include timer('.platform-android,.platform-browser', '.animation_wrapper', 20, 300px, #040404, '5px solid rgba(0,0,0,0.5)');
+.platform-ios .pie_loader {
+  overflow: hidden;
+  opacity: .8;
+  .animation_wrapper {
+    position: relative; // margin: 40px auto;
+    // background: white;
+    background: #8BC34A;
+    left: 50%;
+    top: 0%;
+    -webkit-transform: translate(-50%, -12%);
+    -moz-transform: translate(-50%, -12%);
+    -ms-transform: translate(-50%, -12%);
+    -o-transform: translate(-50%, -12%);
+    transform: translate(-50%, -12%);
+  }
+}
+
+@mixin ios-timer($platformsource, $item, $duration, $size, $color, $border, $hover: running) {
+  #{$platformsource} {
+    #{$item},
+    #{$item} * {
+      @include box-sizing(border-box);
+    }
+    #{$item} {
+      width: $size;
+      height: $size;
+      -webkit-animation: linear-timer $duration+s linear infinite;
+      -moz-animation: linear-timer $duration+s linear infinite;
+      -ms-animation: linear-timer $duration+s linear infinite;
+      -o-animation: linear-timer $duration+s linear infinite;
+      animation: linear-timer $duration+s linear infinite;
+    }
+  }
+  @-webkit-keyframes linear-timer {
+    0% {
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+    100% {
+      -webkit-transform: translate(-50%, 100%);
+      -moz-transform: translate(-50%, 100%);
+      -ms-transform: translate(-50%, 100%);
+      -o-transform: translate(-50%, 100%);
+      transform: translate(-50%, 100%);
+    }
+  }
+  @-moz-keyframes linear-timer {
+    0% {
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+    100% {
+      -webkit-transform: translate(-50%, 100%);
+      -moz-transform: translate(-50%, 100%);
+      -ms-transform: translate(-50%, 100%);
+      -o-transform: translate(-50%, 100%);
+      transform: translate(-50%, 100%);
+    }
+  }
+  @-o-keyframes linear-timer {
+    0% {
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+    100% {
+      -webkit-transform: translate(-50%, 100%);
+      -moz-transform: translate(-50%, 100%);
+      -ms-transform: translate(-50%, 100%);
+      -o-transform: translate(-50%, 100%);
+      transform: translate(-50%, 100%);
+    }
+  }
+  @keyframes linear-timer {
+    0% {
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+    100% {
+      -webkit-transform: translate(-50%, 100%);
+      -moz-transform: translate(-50%, 100%);
+      -ms-transform: translate(-50%, 100%);
+      -o-transform: translate(-50%, 100%);
+      transform: translate(-50%, 100%);
+    }
+  }
+}
+
+@include ios-timer('.platform-ios', '.animation_wrapper', 20, 100%, #040404, 'rgba(219, 22, 22, 0.80)');

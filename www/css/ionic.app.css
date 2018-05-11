@@ -9683,7 +9683,9 @@ a.button {
     padding-right: calc(constant(safe-area-inset-right) + 54px); }
     .item-icon-right .icon {
       right: calc(constant(safe-area-inset-right) + 11px); }
-  .item-complex, a.item.item-complex, button.item.item-complex {
+  .item-complex,
+  a.item.item-complex,
+  button.item.item-complex {
     padding: 0; }
     .item-complex .item-content, a.item.item-complex .item-content, button.item.item-complex .item-content {
       padding: 16px calc(constant(safe-area-inset-right) + 49px) 16px calc(constant(safe-area-inset-left) + 16px); }
@@ -10014,6 +10016,10 @@ body {
 .text-overflow {
   overflow: hidden;
   text-overflow: ellipsis; }
+
+.platform-android .filler {
+  left: 0% !important;
+  border-radius: 0% !important; }
 
 .lobby {
   background: url("../img/lobby/background.png");
@@ -11160,6 +11166,9 @@ body {
   .custom-model ion-content {
     padding: 2%; }
 
+.has-bottom {
+  bottom: 55px; }
+
 .statement-model {
   font-size: 1em; }
   .statement-model .close {
@@ -11452,6 +11461,46 @@ ion-item.item {
 .side_show_btn {
   text-align: center; }
 
+.platform-ios .change_password-model .field {
+  height: auto;
+  overflow-y: auto; }
+
+.selectType {
+  background: url("../img/login/input_bg.png");
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  align-items: center;
+  margin: 3%;
+  padding: 16px 15px 16px; }
+  .selectType .displayGame {
+    transform: translateY(0%);
+    font-size: 1em;
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    border: none; }
+    .selectType .displayGame .opacity-game {
+      opacity: 0.5; }
+
+.game-div {
+  margin: 3%; }
+
+.selectGame {
+  font-family: 'Cinzel-Regular';
+  font-size: 1em;
+  background: url("../img/login/input_bg.png");
+  color: white;
+  padding: 15px 3%;
+  background-size: 100% 100%; }
+
+.platform-ios .statement-model .close {
+  font-size: 1.8em; }
+
 .change_password-model .field {
   text-align: center;
   padding: 5%;
@@ -11644,55 +11693,55 @@ span.valid {
     top: 50%;
     transform: translate(-50%, -50%); }
 
-.animation_wrapper,
-.animation_wrapper * {
+.platform-android, .platform-browser,
+.platform-android, .platform-browser * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-.animation_wrapper {
-  width: 300px;
-  height: 300px; }
+.platform-android, .platform-browser {
+  width: 20;
+  height: 20; }
 
-.animation_wrapper .pie {
+.platform-android, .platform-browser .pie {
   width: 50%;
   height: 100%;
   transform-origin: 100% 50%;
   position: absolute;
-  background: #040404;
-  border: 5px solid rgba(0,0,0,0.5); }
+  background: 300px;
+  border: #040404; }
 
-.animation_wrapper .spinner {
+.platform-android, .platform-browser .spinner {
   border-radius: 100% 0 0 100% / 50% 0 0 50%;
   z-index: 200;
   border-right: none;
-  animation: rota 20s linear infinite;
-  -webkit-animation: rota 20s linear infinite; }
+  animation: rota ".animation_wrappers" linear infinite;
+  -webkit-animation: rota ".animation_wrappers" linear infinite; }
 
-.animation_wrapper:hover .spinner,
-.animation_wrapper:hover .filler,
-.animation_wrapper:hover .mask {
-  animation-play-state: running;
-  -webkit-animation-play-state: running; }
+.platform-android, .platform-browser:hover .spinner,
+.platform-android, .platform-browser:hover .filler,
+.platform-android, .platform-browser:hover .mask {
+  animation-play-state: "5px solid rgba(0,0,0,0.5)";
+  -webkit-animation-play-state: "5px solid rgba(0,0,0,0.5)"; }
 
-.animation_wrapper .filler {
+.platform-android, .platform-browser .filler {
   border-radius: 0 100% 100% 0 / 0 50% 50% 0;
   left: 50%;
   opacity: 0;
   z-index: 100;
-  animation: opa 20s steps(1, end) infinite reverse;
-  -webkit-animation: opa 20s steps(1, end) infinite reverse;
+  animation: opa ".animation_wrappers" steps(1, end) infinite reverse;
+  -webkit-animation: opa ".animation_wrappers" steps(1, end) infinite reverse;
   border-left: none; }
 
-.animation_wrapper .mask {
+.platform-android, .platform-browser .mask {
   width: 50%;
   height: 100%;
   position: absolute;
   background: inherit;
   opacity: 1;
   z-index: 300;
-  animation: opa 20s steps(1, end) infinite;
-  -webkit-animation: opa 20s steps(1, end) infinite; }
+  animation: opa ".animation_wrappers" steps(1, end) infinite;
+  -webkit-animation: opa ".animation_wrappers" steps(1, end) infinite; }
 
 @keyframes rota {
   0% {
@@ -11719,6 +11768,91 @@ span.valid {
   50%,
   100% {
     opacity: 0; } }
+
+.platform-ios .pie_loader {
+  overflow: hidden;
+  opacity: .8; }
+  .platform-ios .pie_loader .animation_wrapper {
+    position: relative;
+    background: #8BC34A;
+    left: 50%;
+    top: 0%;
+    -webkit-transform: translate(-50%, -12%);
+    -moz-transform: translate(-50%, -12%);
+    -ms-transform: translate(-50%, -12%);
+    -o-transform: translate(-50%, -12%);
+    transform: translate(-50%, -12%); }
+
+.platform-ios .animation_wrapper,
+.platform-ios .animation_wrapper * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.platform-ios .animation_wrapper {
+  width: 100%;
+  height: 100%;
+  -webkit-animation: linear-timer 20s linear infinite;
+  -moz-animation: linear-timer 20s linear infinite;
+  -ms-animation: linear-timer 20s linear infinite;
+  -o-animation: linear-timer 20s linear infinite;
+  animation: linear-timer 20s linear infinite; }
+
+@-webkit-keyframes linear-timer {
+  0% {
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
+  100% {
+    -webkit-transform: translate(-50%, 100%);
+    -moz-transform: translate(-50%, 100%);
+    -ms-transform: translate(-50%, 100%);
+    -o-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%); } }
+
+@-moz-keyframes linear-timer {
+  0% {
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
+  100% {
+    -webkit-transform: translate(-50%, 100%);
+    -moz-transform: translate(-50%, 100%);
+    -ms-transform: translate(-50%, 100%);
+    -o-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%); } }
+
+@-o-keyframes linear-timer {
+  0% {
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
+  100% {
+    -webkit-transform: translate(-50%, 100%);
+    -moz-transform: translate(-50%, 100%);
+    -ms-transform: translate(-50%, 100%);
+    -o-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%); } }
+
+@keyframes linear-timer {
+  0% {
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
+  100% {
+    -webkit-transform: translate(-50%, 100%);
+    -moz-transform: translate(-50%, 100%);
+    -ms-transform: translate(-50%, 100%);
+    -o-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%); } }
 
 @media (min-aspect-ratio: 18 / 9) {
   .table .table_field {
@@ -11756,5 +11890,6 @@ span.valid {
 .modal-open {
   pointer-events: unset; }
 
-button[disabled], html input[disabled] {
+button[disabled],
+html input[disabled] {
   opacity: .5; }
